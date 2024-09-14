@@ -246,38 +246,27 @@ export const myProjects = [
   },
 ];
 
-export const calculateSizes = (isSmall, isMobile, isTablet) => {
+export const calculateSizes = (isSmall, isMedium, isMobile, isTablet) => {
   return {
-    deskScale: isSmall ? 0.05 : isMobile ? 0.06 : 0.065,
-    deskPosition: isMobile ? [0.5, -4.5, 0] : [0.25, -5.5, 0],
-    cubePosition: isSmall
-      ? [4, -5, 0]
+    deskScale: isSmall ? 0.43 : isMobile ? 0.65 : 1,
+    deskPosition: isSmall
+      ? [0.35, 5, 3.5]
+      : isMedium
+      ? [0.35, 3, 3.5]
       : isMobile
-      ? [5, -5, 0]
+      ? [0.35, 0, 3.5]
       : isTablet
-      ? [5, -5, 0]
-      : [9, -5.5, 0],
-    reactLogoPosition: isSmall
-      ? [3, 4, 0]
+      ? [0.35, -2, 3.5]
+      : [0.35, -2, 3.5],
+    deskRotation: isSmall
+      ? [0.15, 0, 0]
+      : isMedium
+      ? [0.1, 0, 0]
       : isMobile
-      ? [5, 4, 0]
+      ? [-0.03, 0, 0]
       : isTablet
-      ? [5, 4, 0]
-      : [12, 3, 0],
-    ringPosition: isSmall
-      ? [-5, 7, 0]
-      : isMobile
-      ? [-10, 10, 0]
-      : isTablet
-      ? [-12, 10, 0]
-      : [-24, 10, 0],
-    targetPosition: isSmall
-      ? [-5, -10, -10]
-      : isMobile
-      ? [-9, -10, -10]
-      : isTablet
-      ? [-11, -7, -10]
-      : [-13, -13, -10],
+      ? [-0.1, 0, 0]
+      : [-0.1, 0, 0],
   };
 };
 

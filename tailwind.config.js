@@ -4,7 +4,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        generalsans: ["General Sans", "sans-serif"],
+        generalsans: ["Oak Sans", "sans-serif"],
+      },
+      fontSize: {
+        "5xl": "2.8rem",
       },
       colors: {
         black: {

@@ -4,13 +4,66 @@ import { PerspectiveCamera } from "@react-three/drei";
 import HeroImage from "../components/HeroImage";
 import { Suspense } from "react";
 import CanvasLoader from "../components/CanvasLoader";
+import { Leva } from "leva";
+// import {useControls } from "leva";
+import { useMediaQuery } from "react-responsive";
+import { calculateSizes } from "../constants/index.js";
+import HeroCamera from "../components/HeroCamera";
 
 const Hero = () => {
   const [text, setText] = useState("");
-  const fullText = "Hi, I am Anna";
+  const fullText = "Hi, I'm Anna";
   const [isTyping, setIsTyping] = useState(true);
   const typingSpeed = 150;
   const delayBetweenLoops = 1300;
+
+  // const controls = useControls("HeroImage", {
+  //   positionX: {
+  //     value: 2.5,
+  //     min: -10,
+  //     max: 10,
+  //   },
+  //   positionY: {
+  //     value: 2.5,
+  //     min: -10,
+  //     max: 10,
+  //   },
+  //   positionZ: {
+  //     value: 2.5,
+  //     min: -10,
+  //     max: 10,
+  //   },
+  //   rotationX: {
+  //     value: 2.5,
+  //     min: -10,
+  //     max: 10,
+  //   },
+  //   rotationY: {
+  //     value: 2.5,
+  //     min: -10,
+  //     max: 10,
+  //   },
+  //   rotationZ: {
+  //     value: 2.5,
+  //     min: -10,
+  //     max: 10,
+  //   },
+
+  //   scale: {
+  //     value: 1,
+  //     min: 0.1,
+  //     max: 10,
+  //   },
+  // });
+
+  const isSmall = useMediaQuery({ query: "(max-width: 440px)" });
+  const isMedium = useMediaQuery({ query: "(max-width: 640px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+  const isTablet = useMediaQuery({
+    query: "( min-width: 767px) and (max-width: 1024px)",
+  });
+
+  const sizes = calculateSizes(isSmall, isMedium, isMobile, isTablet);
 
   useEffect(() => {
     let timeout;
@@ -37,10 +90,7 @@ const Hero = () => {
   return (
     <section className="min-h-screen w-full flex flex-col relative">
       <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
-        <p
-          className="sm:text-3xl text-2xl font-medium text-white text-center font-generalsans typing-effect"
-          style={{ minHeight: "40px" }}
-        >
+        <p className="hi-tag typing-effect">
           {text}
           <span className="caret"></span>
         </p>
@@ -48,7 +98,7 @@ const Hero = () => {
           A curious Software Engineer
           <span>
             <img
-              className="w-10 h-10  mx-3.5 mb-1 inline-block vertical-align-middle"
+              className="octocat-img vertical-align-middle"
               src="/assets/octocat.png"
             />
           </span>
@@ -56,14 +106,25 @@ const Hero = () => {
       </div>
 
       <div className="w-full h-full absolute inset-0">
+        <Leva />
         <Canvas className="w-full h-full">
           <Suspense fallback={<CanvasLoader />}>
             <PerspectiveCamera makeDefault position={[0, 0, 30]} />
 
-            <HeroImage scale={1} position={[0, 0, 0]} rotation={[0, 0, 0]} />
+            <HeroCamera isMobile={isMobile}>
+              <HeroImage
+                // scale={1}
+                // position={[0, 0, 0]}
+                // rotation={[0, 0, 0]}
+                // position={[0.35, 1.5, 3.5]}
+                position={sizes.deskPosition}
+                rotation={sizes.deskRotation}
+                scale={sizes.deskScale}
+              />
+            </HeroCamera>
 
             <ambientLight intensity={1} />
-            <directionalLight position={[10, 10, 10]} intensity={0.5} />
+            <directionalLight position={[5, 2, 5]} intensity={2} />
           </Suspense>
         </Canvas>
       </div>
