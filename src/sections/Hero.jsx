@@ -1,4 +1,9 @@
 import { useState, useEffect } from "react";
+import { Canvas } from "@react-three/fiber";
+import { PerspectiveCamera } from "@react-three/drei";
+import HeroImage from "../components/HeroImage";
+import { Suspense } from "react";
+import CanvasLoader from "../components/CanvasLoader";
 
 const Hero = () => {
   const [text, setText] = useState("");
@@ -39,15 +44,28 @@ const Hero = () => {
           {text}
           <span className="caret"></span>
         </p>
-        <p className="sm:text-2xl text-xl font-medium text-white text-center font-generalsans">
+        <p className="hero_tag text-gray_gradient">
           A curious Software Engineer
           <span>
             <img
-              className="w-8 h-8  mx-2.5 mb-3 inline-block vertical-align-middle"
+              className="w-10 h-10  mx-3.5 mb-1 inline-block vertical-align-middle"
               src="/assets/octocat.png"
             />
           </span>
         </p>
+      </div>
+
+      <div className="w-full h-full absolute inset-0">
+        <Canvas className="w-full h-full">
+          <Suspense fallback={<CanvasLoader />}>
+            <PerspectiveCamera makeDefault position={[0, 0, 30]} />
+
+            <HeroImage scale={1} position={[0, 0, 0]} rotation={[0, 0, 0]} />
+
+            <ambientLight intensity={1} />
+            <directionalLight position={[10, 10, 10]} intensity={0.5} />
+          </Suspense>
+        </Canvas>
       </div>
     </section>
   );
