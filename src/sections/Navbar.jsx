@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { navLinks } from "../constants/index.js";
+import logo from "/assets/project-logo7.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,9 +27,9 @@ const Navbar = () => {
         <div className="flex justify-between items-center py-5 mx-auto c-space">
           <a
             href="/"
-            className="text-neutral-400 font-bold text-xl hover:text-white transition-colors"
+            className="text-neutral-400 font-bold text-xl hover:text-white transition-colors "
           >
-            Anna
+            <img src={logo} />
           </a>
 
           <button
