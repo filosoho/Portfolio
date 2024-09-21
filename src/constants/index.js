@@ -21,38 +21,34 @@ export const navLinks = [
   },
 ];
 
-export const clientReviews = [
+export const skillsAndContributions = [
   {
     id: 1,
-    name: "Emily Johnson",
-    position: "Marketing Director at GreenLeaf",
-    img: "assets/review1.png",
-    review:
-      "Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
+    name: "Creative Collaboration",
+    tag: "Team Player",
+    img: "assets/skills1.svg",
+    desc: "I thrive in collaborative environments, where diverse perspectives can lead to innovative solutions. I enjoy brainstorming with teams, sharing ideas, and collectively bringing projects to life.",
   },
   {
     id: 2,
-    name: "Mark Rogers",
-    position: "Founder of TechGear Shop",
-    img: "assets/review2.png",
-    review:
-      "Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional! Fantastic work.",
+    name: "Strong Work Ethic",
+    tag: "Dedicated Professional",
+    img: "assets/skills2.svg",
+    desc: "I approach my work with dedication and perseverance. I believe in delivering quality results and consistently meeting deadlines, even under pressure, while maintaining a positive attitude.",
   },
   {
     id: 3,
-    name: "John Dohsas",
-    position: "Project Manager at UrbanTech ",
-    img: "assets/review3.png",
-    review:
-      "I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
+    name: "Mentorship & Knowledge Sharing",
+    tag: "Supportive Mentor",
+    img: "assets/skills3.svg",
+    desc: "I value the importance of mentorship and knowledge sharing. I enjoy supporting others in their learning journeys, whether through code reviews, pair programming, or simply sharing insights from my own experiences.",
   },
   {
     id: 4,
-    name: "Ether Smith",
-    position: "CEO of BrightStar Enterprises",
-    img: "assets/review4.png",
-    review:
-      "Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend backend dev are top-notch.",
+    name: "Analytical Thinking",
+    tag: "Problem Solver",
+    img: "assets/skills4.svg",
+    desc: "I possess strong analytical skills that allow me to break down complex problems into manageable parts. This enables me to find effective solutions and optimize processes for better efficiency.",
   },
 ];
 

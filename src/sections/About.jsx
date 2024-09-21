@@ -17,7 +17,7 @@ const About = () => {
 
   return (
     <section className="c-space my-20" id="about">
-      <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
+      <div className="grid xl:grid-cols-3 xl:grid-rows-5 md:grid-cols-2 grid-cols-1 gap-5 h-full">
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
             <div className="profile-img-box mx-auto">
@@ -30,7 +30,7 @@ const About = () => {
             <div>
               <p className="grid-headtext">Hi, I&apos;m Anna</p>
               <p className="grid-subtext">
-                🧠 I&apos;m a Software Engineer who loves building applications
+                I&apos;m a Software Engineer who loves building applications
                 that are not just functional, but thoughtful and fun to use. I
                 enjoy digging into new technologies and finding creative ways to
                 solve problems.
@@ -56,12 +56,12 @@ const About = () => {
           </div>
         </div>
 
-        <div className="col-span-1 xl:row-span-4">
+        <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
-            <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
+            <div className="rounded-3xl w-full sm:h-[276px] h-fit flex justify-center items-center">
               <Globe
-                height={326}
-                width={326}
+                height={276}
+                width={276}
                 backgroundColor="rgba(0,0,0,0)"
                 backgroundImageOpacity={0.5}
                 showAtmosphere
@@ -91,18 +91,20 @@ const About = () => {
           </div>
         </div>
 
-        <div className="xl:col-span-2 xl:row-span-3">
+        <div className="xl:col-span-2 xl:row-span-2">
           <div className="grid-container">
             <img
               src="/assets/grid-3.png"
               alt="grid-3"
               className="w-full sm:h-[266px] h-fit object-contain"
             />
-            <p className="grid-headtext">My love for Coding</p>
-            <p className="grid-subtext">
-              💡 When I&apos;m not coding, you might find me exploring new
-              frameworks or debugging tricky issues just for the challenge.
-            </p>
+            <div>
+              <p className="grid-headtext">My love for Coding</p>
+              <p className="grid-subtext">
+                When I&apos;m not coding, you might find me exploring new
+                frameworks or debugging tricky issues just for the challenge.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -113,6 +115,7 @@ const About = () => {
               alt="grid-4"
               className="w-full md:h-[226px] sm:h-[276px] h-fit object-contain sm:object-top"
             />
+
             <div className="space-y-2">
               <p className="grid-subtext text-center">Contact Me</p>
               <div className="copy-container" onClick={handleCopy}>

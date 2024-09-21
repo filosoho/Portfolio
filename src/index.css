@@ -45,6 +45,8 @@ body {
     background-blend-mode: overlay;
     background-repeat: no-repeat;
     background-position: 100% 30%;
+    border-radius: 15px;
+    width: 93%;
     /* min-height: 320px; */
   }
 
@@ -150,15 +152,15 @@ body {
   }
 
   /* clients section */
-  .client-container {
+  .skills-container {
     @apply grid md:grid-cols-2 grid-cols-1 gap-5 mt-12;
   }
 
-  .client-review {
+  .skills-desc {
     @apply rounded-lg md:p-10 p-5 col-span-1 bg-black-300 bg-opacity-50;
   }
 
-  .client-content {
+  .skills-content {
     @apply flex lg:flex-row flex-col justify-between lg:items-center items-start gap-5 mt-7;
   }
 
