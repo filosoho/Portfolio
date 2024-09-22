@@ -42,15 +42,15 @@ const About = () => {
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
             <img
-              src="/assets/grid-2.png"
-              alt="grid-2"
-              className="w-full sm:w-[276px] h-fit object-contain"
+              src="/assets/grid-3.png"
+              alt="grid-3"
+              className="w-full sm:h-[276px] h-fit object-contain"
             />
-            <div>
-              <p className="grid-headtext">Tech Stack</p>
+            <div className="rounded-3xl w-full sm:h-[276px] h-fit flex flex-col justify-left items-left ">
+              <p className="grid-headtext">My love for Coding</p>
               <p className="grid-subtext">
-                I specialise in JavaScript/TypeScript with a focus on React and
-                Next.js ecosystems.
+                When I&apos;m not coding, you might find me exploring new
+                frameworks or debugging tricky issues just for the challenge.
               </p>
             </div>
           </div>
@@ -91,24 +91,24 @@ const About = () => {
           </div>
         </div>
 
-        <div className="xl:col-span-2 xl:row-span-2">
-          <div className="grid-container">
+        <div className="xl:col-span-2 xl:row-span-4">
+          <div className="grid-container flex justify-center items-center">
             <img
-              src="/assets/grid-3.png"
-              alt="grid-3"
-              className="w-full sm:h-[266px] h-fit object-contain"
+              src="/assets/grid-2.png"
+              alt="grid-2"
+              className="w-full sm:w-[276px] h-fit object-contain"
             />
-            <div>
-              <p className="grid-headtext">My love for Coding</p>
+            <div className="space-y-2 self-start">
+              <p className="grid-headtext">Tech Stack</p>
               <p className="grid-subtext">
-                When I&apos;m not coding, you might find me exploring new
-                frameworks or debugging tricky issues just for the challenge.
+                I specialise in JavaScript/TypeScript with a focus on React and
+                Next.js ecosystems.
               </p>
             </div>
           </div>
         </div>
 
-        <div className="xl:col-span-1 xl:row-span-2">
+        <div className="xl:col-span-1 xl:row-span-4">
           <div className="grid-container">
             <img
               src="/assets/grid-4.png"
@@ -116,7 +116,7 @@ const About = () => {
               className="w-full md:h-[226px] sm:h-[276px] h-fit object-contain sm:object-top"
             />
 
-            <div className="space-y-2">
+            <div className="space-y-2 mt-10">
               <p className="grid-subtext text-center">Contact Me</p>
               <div className="copy-container" onClick={handleCopy}>
                 <img
