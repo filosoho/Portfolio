@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
-import HeroImage from "../components/HeroImage-2";
+import HeroImage from "../components/HeroImage";
 import { Suspense } from "react";
 import CanvasLoader from "../components/CanvasLoader";
 import { Leva } from "leva";
-// import {useControls } from "leva";
 import { useMediaQuery } from "react-responsive";
 import { calculateSizes } from "../constants/index.js";
 import HeroCamera from "../components/HeroCamera";
@@ -17,45 +16,6 @@ const Hero = () => {
   const [isTyping, setIsTyping] = useState(true);
   const typingSpeed = 150;
   const delayBetweenLoops = 1300;
-
-  // const controls = useControls("HeroImage", {
-  //   positionX: {
-  //     value: 2.5,
-  //     min: -10,
-  //     max: 10,
-  //   },
-  //   positionY: {
-  //     value: 2.5,
-  //     min: -10,
-  //     max: 10,
-  //   },
-  //   positionZ: {
-  //     value: 2.5,
-  //     min: -10,
-  //     max: 10,
-  //   },
-  //   rotationX: {
-  //     value: 2.5,
-  //     min: -10,
-  //     max: 10,
-  //   },
-  //   rotationY: {
-  //     value: 2.5,
-  //     min: -10,
-  //     max: 10,
-  //   },
-  //   rotationZ: {
-  //     value: 2.5,
-  //     min: -10,
-  //     max: 10,
-  //   },
-
-  //   scale: {
-  //     value: 1,
-  //     min: 0.1,
-  //     max: 10,
-  //   },
-  // });
 
   const isSmall = useMediaQuery({ query: "(max-width: 440px)" });
   const isMedium = useMediaQuery({ query: "(max-width: 640px)" });
@@ -116,10 +76,6 @@ const Hero = () => {
 
                 <HeroCamera isMobile={isMobile}>
                   <HeroImage
-                    // scale={1}
-                    // position={[0, 0, 0]}
-                    // rotation={[0, 0, 0]}
-                    // position={[0.35, 1.5, 3.5]}
                     position={sizes.deskPosition}
                     rotation={sizes.deskRotation}
                     scale={sizes.deskScale}
@@ -127,7 +83,6 @@ const Hero = () => {
                 </HeroCamera>
 
                 <ambientLight intensity={1} />
-                {/* <directionalLight position={[5, 2, 5]} intensity={2} /> */}
                 <directionalLight position={[5, 2, 5]} intensity={2} />
               </Suspense>
             </Canvas>

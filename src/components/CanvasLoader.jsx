@@ -2,6 +2,11 @@ import { Html, useProgress } from "@react-three/drei";
 
 const CanvasLoader = () => {
   const { progress } = useProgress();
+
+  // Move logic outside JSX
+  const progressText =
+    progress !== 0 ? `${progress.toFixed(2)}%` : "Loading...";
+
   return (
     <Html
       as="div"
@@ -23,7 +28,7 @@ const CanvasLoader = () => {
           marginTop: 40,
         }}
       >
-        {progress !== 0 ? `${progress.toFixed(2)}%` : "Loading..."}
+        {progressText}
       </p>
     </Html>
   );
