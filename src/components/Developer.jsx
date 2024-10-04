@@ -24,11 +24,15 @@ const Developer = ({ animationName = "idle", ...props }) => {
   const { animations: clappingAnimation } = useFBX(
     "/models/animations/clapping.fbx"
   );
+  const { animations: thankfulAnimation } = useFBX(
+    "/models/animations/thankful.fbx"
+  );
 
   idleAnimation[0].name = "idle";
   saluteAnimation[0].name = "salute";
   headNodYesAnimation[0].name = "bow";
   clappingAnimation[0].name = "clapping";
+  thankfulAnimation[0].name = "thankful";
 
   const filterTracks = (animation) => {
     return {
@@ -43,6 +47,7 @@ const Developer = ({ animationName = "idle", ...props }) => {
   const filteredSaluteAnimation = filterTracks(saluteAnimation[0]);
   const filteredHeadNodYesAnimation = filterTracks(headNodYesAnimation[0]);
   const filteredClappingAnimation = filterTracks(clappingAnimation[0]);
+  const filteredThankfulAnimation = filterTracks(thankfulAnimation[0]);
 
   const { actions } = useAnimations(
     [
@@ -50,6 +55,7 @@ const Developer = ({ animationName = "idle", ...props }) => {
       filteredSaluteAnimation,
       filteredHeadNodYesAnimation,
       filteredClappingAnimation,
+      filteredThankfulAnimation,
     ],
     group
   );
