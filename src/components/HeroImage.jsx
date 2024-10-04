@@ -601,32 +601,380 @@ Source: https://sketchfab.com/3d-models/low-poly-sci-fi-tablet-ee1fde7ec1514fd5a
 Title: Low Poly Sci-Fi Tablet
 */
 
-import { useGLTF } from "@react-three/drei";
+// import { useGLTF } from "@react-three/drei";
+// import { useRef } from "react";
+// import { Raycaster, Vector2, Mesh } from "three";
+// import { useThree } from "@react-three/fiber";
 
-const HeroImage = (props) => {
+// const HeroImage = (props) => {
+//   const { nodes, materials } = useGLTF("/models/low_poly_sci-fi_tablet.glb");
+//   const groupRef = useRef();
+//   const raycaster = new Raycaster();
+//   const mouse = new Vector2();
+
+//   const handlePointerMove = (event) => {
+//     // Update the mouse variable with normalized device coordinates
+//     const { clientX, clientY } = event;
+//     const { width, height } = event.target.getBoundingClientRect();
+//     mouse.x = (clientX / width) * 2 - 1;
+//     mouse.y = -(clientY / height) * 2 + 1;
+//   };
+
+//   const handleClick = () => {
+//     // Perform raycasting to determine which mesh was clicked
+//     raycaster.setFromCamera(mouse, props.camera);
+//     const intersects = raycaster.intersectObjects(
+//       groupRef.current.children,
+//       true
+//     ); // Check all child meshes
+
+//     if (intersects.length > 0) {
+//       const clickedMesh = intersects[0].object; // The mesh that was clicked
+//       console.log("Clicked mesh:", clickedMesh);
+//       // Perform your logic based on the clicked mesh
+//       // For example:
+//       if (clickedMesh.material === materials.MAT_TabletGlass) {
+//         console.log("Tablet Glass clicked!");
+//       } else if (clickedMesh.material === materials.MAT_OpacityText) {
+//         console.log("Opacity Text clicked!");
+//       } else if (clickedMesh.material === materials.MAT_Tablet) {
+//         console.log("Tablet clicked!");
+//       }
+//     }
+//   };
+
+//   return (
+//     <group
+//       ref={groupRef}
+//       {...props}
+//       dispose={null}
+//       onPointerOver={(e) => (document.body.style.cursor = "pointer")}
+//       onPointerOut={(e) => (document.body.style.cursor = "default")}
+//       onClick={handleClick}
+//       onPointerMove={handlePointerMove} // Attach pointer move event to handle raycasting
+//     >
+//       <group position={[0, -1.5, 0]} rotation={[0, 0, 0]} scale={5}>
+//         <group rotation={[Math.PI / 2, 0, 0]}>
+//           <mesh
+//             castShadow
+//             receiveShadow
+//             geometry={nodes.defaultMaterial.geometry}
+//             material={materials.MAT_TabletGlass}
+//           />
+//           <mesh
+//             castShadow
+//             receiveShadow
+//             geometry={nodes.defaultMaterial_1.geometry}
+//             material={materials.MAT_OpacityText}
+//           />
+//           <mesh
+//             castShadow
+//             receiveShadow
+//             geometry={nodes.defaultMaterial_2.geometry}
+//             material={materials.MAT_Tablet}
+//           />
+//         </group>
+//       </group>
+//     </group>
+//   );
+// };
+
+// useGLTF.preload("/models/low_poly_sci-fi_tablet.glb");
+
+// export default HeroImage;
+// import { useGLTF } from "@react-three/drei";
+// import { useRef } from "react";
+// import { Raycaster, Vector2 } from "three";
+// import { useThree } from "@react-three/fiber"; // Import useThree to access the camera
+
+// const HeroImage = (props) => {
+//   const { nodes, materials } = useGLTF("/models/low_poly_sci-fi_tablet.glb");
+//   const groupRef = useRef();
+//   const raycaster = new Raycaster();
+//   const mouse = new Vector2();
+
+//   // Use the useThree hook to access the camera
+//   const { camera } = useThree();
+
+//   const handlePointerMove = (event) => {
+//     // Update the mouse variable with normalized device coordinates
+//     const { clientX, clientY } = event;
+//     const { width, height } = event.target.getBoundingClientRect();
+
+//     // Normalize mouse coordinates
+//     mouse.x = (clientX / width) * 2 - 1;
+//     mouse.y = -(clientY / height) * 2 + 1;
+//   };
+
+//   const handleClick = () => {
+//     raycaster.setFromCamera(mouse, props.camera);
+//     const intersects = raycaster.intersectObjects(
+//       groupRef.current.children,
+//       true
+//     );
+//   };
+
+//   return (
+//     <group
+//       ref={groupRef}
+//       {...props}
+//       dispose={null}
+//       onPointerOver={(e) => (document.body.style.cursor = "pointer")}
+//       onPointerOut={(e) => (document.body.style.cursor = "default")}
+//       onClick={handleClick}
+//       onPointerMove={handlePointerMove} // Attach pointer move event to handle raycasting
+//     >
+//       <group position={[0, -1.5, 0]} rotation={[0, 0, 0]} scale={5}>
+//         <group rotation={[Math.PI / 2, 0, 0]}>
+//           <mesh
+//             castShadow
+//             receiveShadow
+//             geometry={nodes.defaultMaterial.geometry}
+//             material={materials.MAT_TabletGlass}
+//           />
+//           <mesh
+//             castShadow
+//             receiveShadow
+//             geometry={nodes.defaultMaterial_1.geometry}
+//             material={materials.MAT_OpacityText}
+//           />
+//           <mesh
+//             castShadow
+//             receiveShadow
+//             geometry={nodes.defaultMaterial_2.geometry}
+//             material={materials.MAT_Tablet}
+//           />
+//         </group>
+//       </group>
+//     </group>
+//   );
+// };
+
+// useGLTF.preload("/models/low_poly_sci-fi_tablet.glb");
+
+// export default HeroImage;
+
+// import { useGLTF } from "@react-three/drei";
+// import { useRef } from "react";
+// import { Raycaster, Vector2 } from "three";
+// import { useThree } from "@react-three/fiber"; // Import useThree to access the camera
+
+// const HeroImage = (props) => {
+//   const { nodes, materials } = useGLTF("/models/low_poly_sci-fi_tablet.glb");
+//   const groupRef = useRef();
+//   const raycaster = new Raycaster();
+//   const mouse = new Vector2();
+
+//   // Use the useThree hook to access the camera and canvas
+//   const { camera, gl } = useThree();
+//   const canvas = gl.domElement; // Get the canvas element
+
+//   const handlePointerMove = (event) => {
+//     // Update the mouse variable with normalized device coordinates
+//     const { clientX, clientY } = event;
+
+//     // Use the canvas dimensions
+//     const { width, height } = canvas.getBoundingClientRect();
+
+//     // Normalize mouse coordinates
+//     mouse.x = (clientX / width) * 2 - 1;
+//     mouse.y = -(clientY / height) * 2 + 1;
+//   };
+
+//   const handleClick = () => {
+//     raycaster.setFromCamera(mouse, props.camera);
+//     const intersects = raycaster.intersectObjects(
+//       groupRef.current.children,
+//       true
+//     );
+//     // Handle intersections if needed
+//   };
+
+//   return (
+//     <group
+//       ref={groupRef}
+//       {...props}
+//       dispose={null}
+//       onPointerOver={(e) => (document.body.style.cursor = "pointer")}
+//       onPointerOut={(e) => (document.body.style.cursor = "default")}
+//       onClick={handleClick}
+//       onPointerMove={handlePointerMove} // Attach pointer move event to handle raycasting
+//     >
+//       <group position={[0, -1.5, 0]} rotation={[0, 0, 0]} scale={5}>
+//         <group rotation={[Math.PI / 2, 0, 0]}>
+//           <mesh
+//             castShadow
+//             receiveShadow
+//             geometry={nodes.defaultMaterial.geometry}
+//             material={materials.MAT_TabletGlass}
+//           />
+//           <mesh
+//             castShadow
+//             receiveShadow
+//             geometry={nodes.defaultMaterial_1.geometry}
+//             material={materials.MAT_OpacityText}
+//           />
+//           <mesh
+//             castShadow
+//             receiveShadow
+//             geometry={nodes.defaultMaterial_2.geometry}
+//             material={materials.MAT_Tablet}
+//           />
+//         </group>
+//       </group>
+//     </group>
+//   );
+// };
+
+// useGLTF.preload("/models/low_poly_sci-fi_tablet.glb");
+
+// export default HeroImage;
+// import { useGLTF } from "@react-three/drei";
+// import { useRef } from "react";
+// import { Raycaster, Vector2 } from "three";
+// import { useThree } from "@react-three/fiber";
+
+// const HeroImage = ({ onClick, ...props }) => {
+//   const { nodes, materials } = useGLTF("/models/low_poly_sci-fi_tablet.glb");
+//   const groupRef = useRef();
+//   const raycaster = new Raycaster();
+//   const mouse = new Vector2();
+//   const { camera, gl } = useThree();
+//   const canvas = gl.domElement;
+
+//   const handlePointerMove = (event) => {
+//     const { clientX, clientY } = event;
+//     const { width, height } = canvas.getBoundingClientRect();
+
+//     mouse.x = (clientX / width) * 2 - 1;
+//     mouse.y = -(clientY / height) * 2 + 1;
+//   };
+
+//   const handleClick = () => {
+//     raycaster.setFromCamera(mouse, camera);
+//     const intersects = raycaster.intersectObjects(
+//       groupRef.current.children,
+//       true
+//     );
+
+//     if (intersects.length > 0) {
+//       console.log("Intersected object:", intersects[0]);
+//       // Trigger some action here, e.g., changing color or triggering an animation
+//     } else {
+//       console.log("No intersections detected");
+//     }
+//   };
+
+//   return (
+//     <group
+//       ref={groupRef}
+//       {...props}
+//       dispose={null}
+//       onPointerOver={(e) => (document.body.style.cursor = "pointer")}
+//       onPointerOut={(e) => (document.body.style.cursor = "default")}
+//       onClick={handleClick}
+//       onPointerMove={handlePointerMove}
+//     >
+//       <group position={[0, -1.5, 0]} rotation={[0, 0, 0]} scale={5}>
+//         <group rotation={[Math.PI / 2, 0, 0]}>
+//           <mesh {...props} onClick={onClick} style={{ cursor: "pointer" }}>
+//             <mesh
+//               castShadow
+//               receiveShadow
+//               geometry={nodes.defaultMaterial.geometry}
+//               material={materials.MAT_TabletGlass}
+//             />
+//             <mesh
+//               castShadow
+//               receiveShadow
+//               geometry={nodes.defaultMaterial_1.geometry}
+//               material={materials.MAT_OpacityText}
+//             />
+//             <mesh
+//               castShadow
+//               receiveShadow
+//               geometry={nodes.defaultMaterial_2.geometry}
+//               material={materials.MAT_Tablet}
+//             />
+//           </mesh>
+//         </group>
+//       </group>
+//     </group>
+//   );
+// };
+
+// useGLTF.preload("/models/low_poly_sci-fi_tablet.glb");
+
+// export default HeroImage;
+import { useGLTF } from "@react-three/drei";
+import { useRef } from "react";
+// import { Raycaster, Vector2 } from "three";
+// import { useThree } from "@react-three/fiber";
+
+const HeroImage = ({ onClick, ...props }) => {
   const { nodes, materials } = useGLTF("/models/low_poly_sci-fi_tablet.glb");
+  const groupRef = useRef();
+  // const raycaster = new Raycaster();
+  // const mouse = new Vector2();
+  // const { camera, gl } = useThree();
+  // const canvas = gl.domElement;
+
+  // Update mouse position on pointer move
+  // const handlePointerMove = (event) => {
+  //   const { clientX, clientY } = event;
+  //   const { width, height } = canvas.getBoundingClientRect();
+  //   mouse.x = (clientX / width) * 2 - 1;
+  //   mouse.y = -(clientY / height) * 2 + 1;
+
+  //   // Update raycaster on pointer move
+  //   raycaster.setFromCamera(mouse, camera);
+  // };
+
+  // const handlePointerDown = (event) => {
+  //   // Use raycaster to check for intersections on click
+  //   const intersects = raycaster.intersectObjects(
+  //     groupRef.current.children,
+  //     true
+  //   );
+
+  //   if (intersects.length > 0) {
+  //     console.log("Intersected object:", intersects[0]);
+  //     // Trigger some action here
+  //     if (onClick) onClick(); // Call the passed onClick function if provided
+  //   } else {
+  //     console.log("No intersections detected");
+  //   }
+  // };
+
   return (
-    <group {...props} dispose={null}>
-      <group position={[0, -2, 0]} rotation={[0, 0, 0]} scale={5}>
+    <group
+      ref={groupRef}
+      {...props}
+      dispose={null}
+      onClick={onClick} // Use the click handler passed from Hero
+      onPointerOver={(e) => (document.body.style.cursor = "pointer")}
+      onPointerOut={(e) => (document.body.style.cursor = "default")}
+      // onPointerOver={(e) => (document.body.style.cursor = "pointer")}
+      // onPointerOut={(e) => (document.body.style.cursor = "default")}
+      // onPointerMove={handlePointerMove} // Track mouse movements
+      // onPointerDown={handlePointerDown} // Trigger click handling
+    >
+      <group position={[0, -1.5, 0]} rotation={[0, 0, 0]} scale={5}>
         <group rotation={[Math.PI / 2, 0, 0]}>
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.defaultMaterial.geometry}
-            material={materials.MAT_TabletGlass}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.defaultMaterial_1.geometry}
-            material={materials.MAT_OpacityText}
-          />
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.defaultMaterial_2.geometry}
-            material={materials.MAT_Tablet}
-          />
+          <mesh castShadow receiveShadow>
+            <mesh
+              geometry={nodes.defaultMaterial.geometry}
+              material={materials.MAT_TabletGlass}
+            />
+            <mesh
+              geometry={nodes.defaultMaterial_1.geometry}
+              material={materials.MAT_OpacityText}
+            />
+            <mesh
+              geometry={nodes.defaultMaterial_2.geometry}
+              material={materials.MAT_Tablet}
+            />
+          </mesh>
         </group>
       </group>
     </group>
