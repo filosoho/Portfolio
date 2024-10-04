@@ -24,10 +24,10 @@ const Projects = () => {
 
   return (
     <section className="c-space my-20" id="projects">
-      <p className="head-text">My Work</p>
+      <p className="head-text">Projects</p>
 
       <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
-        <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
+        <div className="flex justify-between flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
           <div className="absolute top-0 right-0">
             <img
               src={currentProject.spotlight}
@@ -54,8 +54,8 @@ const Projects = () => {
             <p className="animatedText">{currentProject.desc}</p>
             <p className="animatedText">{currentProject.subdesc}</p>
           </div>
-          <div className="flex items-center justify-between flex-wrap gap-5">
-            <div className="flex items-center gap-3">
+          <div className="flex items-center justify-between flex-wrap gap-2">
+            <div className="flex items-center gap-2 mb-4">
               {currentProject.tags.map((tag, index) => (
                 <div key={index} className="tech-logo">
                   <img src={tag.path} alt={tag.name} />
@@ -63,15 +63,39 @@ const Projects = () => {
               ))}
             </div>
 
-            <a
-              className="flex items-center gap-2 cursor-pointer text-white-600"
-              href={currentProject.href}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <p>Check Live Site</p>
-              <img src="/assets/arrow-up.png" className="w-3 h-3" alt="arrow" />
-            </a>
+            <div className="flex flex-row items-center gap-2">
+              {currentProject.title !== "Filosoho Space - Personal Website" ? (
+                <a
+                  className="flex items-center gap-1 cursor-pointer text-white-600"
+                  href={currentProject.repo}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <p>GitHub</p>
+                  <img
+                    src="/assets/github.png"
+                    className="w-10 h-10"
+                    alt="github"
+                  />
+                </a>
+              ) : null}
+
+              {currentProject.title !== "Totoro-Pomodoro Timer" ? (
+                <a
+                  className="flex items-center gap-1 cursor-pointer text-white-600"
+                  href={currentProject.href}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <p>Live View</p>
+                  <img
+                    src="/assets/arrow-up.png"
+                    className="w-6 h-6"
+                    alt="arrow"
+                  />
+                </a>
+              ) : null}
+            </div>
           </div>
 
           <div className="flex justify-between items-center mt-7">
@@ -104,7 +128,11 @@ const Projects = () => {
             <directionalLight position={[-10, 10, 5]} />
             <Center>
               <Suspense fallback={<CanvasLoader />}>
-                <group scale={0.5} position={[0, -1.8, 0]} rotation={[0, 0, 0]}>
+                <group
+                  scale={0.6}
+                  position={[0, -3.2, 0]}
+                  rotation={[0.3, 0, 0]}
+                >
                   <DemoComputer texture={currentProject.texture} />
                 </group>
               </Suspense>

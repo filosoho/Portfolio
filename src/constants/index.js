@@ -27,21 +27,21 @@ export const skillsAndContributions = [
     name: "Creative Collaboration",
     tag: "Team Player",
     img: "assets/skills1.svg",
-    desc: "I thrive in collaborative environments, where diverse perspectives can lead to innovative solutions. I enjoy brainstorming with teams, sharing ideas, and collectively bringing projects to life.",
+    desc: "I thrive in collaborative spaces where different viewpoints spark innovative ideas. I love brainstorming with my team, sharing insights and turning concepts into reality together.",
   },
   {
     id: 2,
     name: "Strong Work Ethic",
     tag: "Dedicated Professional",
     img: "assets/skills2.svg",
-    desc: "I approach my work with dedication and perseverance. I believe in delivering quality results and consistently meeting deadlines, even under pressure, while maintaining a positive attitude.",
+    desc: "I bring dedication and perseverance to everything I do. I believe in delivering quality work and meeting deadlines, even under pressure, all while keeping a positive attitude.",
   },
   {
     id: 3,
-    name: "Mentorship & Knowledge Sharing",
-    tag: "Supportive Mentor",
+    name: "Curiosity and Continuous Learning",
+    tag: "Growth-Oriented Explorer",
     img: "assets/skills3.svg",
-    desc: "I value the importance of mentorship and knowledge sharing. I enjoy supporting others in their learning journeys, whether through code reviews, pair programming, or simply sharing insights from my own experiences.",
+    desc: "I have a genuine curiosity for technology and a desire to keep learning. Whether I'm diving into new frameworks or exploring coding techniques, I embrace every opportunity to expand my knowledge and skills.",
   },
   {
     id: 4,
@@ -58,6 +58,7 @@ export const myProjects = [
     desc: "NC News is an application that allows users to view articles, vote on them and add comments. The app provides different categories of articles and users can filter articles by topics. Users can also log in to interact more deeply with the content.",
     subdesc:
       "This is a news application built with React for the frontend, using React Router for navigation and Context API for state management. Axios is used for API calls. The platform allows users to read and interact with articles on various topics. The backend service was built to provide data programmatically, mimicking a real-world application like Reddit. The API is designed to interact with a PostgreSQL database using node-postgres and allows for various operations related to articles, comments, users, and topics.",
+    repo: "https://github.com/filosoho/nc-news",
     href: "https://fe-nc-news-gui8.onrender.com/",
     texture: "/textures/project/project1.png",
     logo: "/assets/project-logo1.svg",
@@ -100,6 +101,7 @@ export const myProjects = [
     desc: "Autumn Chick is a Figma-based shopping app prototype that showcases a stylish and user-centric interface for fashion shopping.",
     subdesc:
       "This prototype was designed using Figma, focusing on clean and modern aesthetics combined with intuitive user flows. Interactive elements and consistent design language allow users to visualize the full shopping journey, from product exploration to checkout.",
+    repo: "https://github.com/filosoho/UI-Prototype-Autumn-Chick-Shopping-App",
     href: "https://www.figma.com/proto/pi7lBTXrbKWaAbbgNLF8Rw/Autumn-Chick---Prototype?type=design&node-id=1-754&t=zo52pKhQZx3de15S-1&scaling=scale-down&page-id=1%3A2&starting-point-node-id=1%3A754&mode=design",
     texture: "/textures/project/project2.png",
     logo: "/assets/project-logo5.png",
@@ -127,6 +129,7 @@ export const myProjects = [
     desc: "The CityBite Burgers website is designed to provide a seamless and visually appealing experience for users. From a sleek design to interactive menus, the site combines style and functionality to engage visitors.",
     subdesc:
       "Built with HTML, CSS, JavaScript. This project showcases a modern and user-friendly web development project aimed at bringing the culinary world of CityBite Burgers to life.",
+    repo: "https://github.com/filosoho/CityBite-Burgers",
     href: "https://citybite-burgers.netlify.app/",
     texture: "/textures/project/project3.png",
     logo: "/assets/project-logo4.png",
@@ -164,6 +167,7 @@ export const myProjects = [
     desc: "Creative Spot is a web platform that explores the convergence of art and technology. A dynamic space designed to celebrate creativity, foster innovation, and unite a global community of creatives.",
     subdesc:
       "A dynamic web platform uniting art and technology. Built with HTML, CSS, and JavaScript, it features responsive design for seamless user interaction.",
+    repo: "https://github.com/filosoho/CreativeSpot",
     href: "https://creative-spot.netlify.app/",
     texture: "/textures/project/project4.png",
     logo: "/assets/project-logo2.png",
@@ -196,6 +200,7 @@ export const myProjects = [
     desc: "An interactive two-player dice game developed with HTML, CSS, and JavaScript. Players take turns rolling a die, aiming to reach 100 points first while managing the risk of rolling a 1 and losing their current turn score.",
     subdesc:
       "The game features dynamic UI updates, score tracking, and responsive design, providing an engaging and competitive experience. Hosted on Netlify for seamless deployment and access.",
+    repo: "https://github.com/filosoho/JavaScript-Projects/tree/main/PigGame",
     href: "https://dicepig-game.netlify.app/",
     texture: "/textures/project/project5.png",
     logo: "/assets/project-logo3.png",
@@ -230,7 +235,8 @@ export const myProjects = [
     desc: "Totoro-Pomodoro is a Pomodoro timer application designed to help users manage their time effectively by breaking work into intervals with short breaks in between. Inspired by the Pomodoro technique, the app provides a fun and simple way to boost productivity.",
     subdesc:
       "This Pomodoro timer is built using Python, offering a lightweight and efficient time management tool for Linux users. The application features customizable work and break intervals, visual notifications and an intuitive command-line interface. The design emphasizes simplicity and productivity, making it easy for users to integrate the tool into their daily workflow.",
-    href: "https://github.com/filosoho/Linux-Totoro-Pomodoro-Timer",
+    repo: "https://github.com/filosoho/Linux-Totoro-Pomodoro-Timer",
+
     texture: "/textures/project/project6.png",
     logo: "/assets/project-logo6.png",
     logoStyle: {
@@ -291,6 +297,7 @@ export const myProjects = [
     desc: "Forkify is a recipe search and bookmarking application that allows users to find, view and save their favorite recipes from various sources. It provides an easy way to search for recipes by keyword and view detailed instructions.",
     subdesc:
       "Built using vanilla JavaScript, Forkify integrates with a third-party API to fetch recipe data dynamically. The app features a modern interface that allows users to search recipes, adjust ingredient quantities and save favorite dishes to a personalized list. With an emphasis on clean code and modular design, this project showcases the power of JavaScript in building interactive web applications.",
+    repo: "https://github.com/filosoho/JavaScript-Projects/tree/main/Forkify",
     href: "https://forkify-recipes-js.netlify.app/",
     texture: "/textures/project/project8.png",
     logo: "/assets/project-logo8.png",
@@ -350,35 +357,34 @@ export const calculateSizes = (isSmall, isMedium, isMobile, isTablet) => {
   };
 };
 
-export const workExperiences = [
+export const myApproachValues = [
   {
     id: 1,
-    name: "JavaScript",
-    pos: "Front End Developer",
-    duration: "2022 - Present",
-    title:
-      "Framer serves as my go-to tool for creating interactive prototypes. I use it to bring designs to  life, allowing stakeholders to experience the user flow and interactions before development.",
-    icon: "/assets/javascript.png",
-    animation: "salute",
-  },
-  {
-    id: 2,
-    name: "React",
-    pos: "Front End Developer",
-    duration: "2019 - 2020",
-    title:
-      "Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.",
-    icon: "/assets/react.png",
+    name: "Empowerment",
+    title: `I’m all about creating an environment where everyone feels empowered. By sharing what I know and keeping the conversation open, I aim to inspire creativity and encourage innovative thinking. Together, we can lift each other up and grow, both as individuals and as a team.`,
+
+    icon: "/assets/value1.svg",
     animation: "bow",
   },
   {
-    id: 3,
-    name: "Figma",
-    pos: "Front End Developer",
-    duration: "2020 - 2022",
-    title:
-      "Figma is my collaborative design platform of choice. I utilize it to work seamlessly with team members and clients, facilitating real-time feedback and design iterations. Its cloud-based.",
-    icon: "/assets/figma.png",
+    id: 2,
+    name: "Diversity of Thought",
+    title: `There’s something special about working with people from different backgrounds. Each unique perspective adds to our collective brainstorming, leading to richer discussions and innovative solutions. I love the energy that comes from these diverse conversations.`,
+    icon: "/assets/value2.svg",
     animation: "clapping",
+  },
+  {
+    id: 3,
+    name: "Sustainability and Responsibility",
+    title: `I care deeply about the impact of my work. It's important to me that the applications I build are not just effective but also sustainable. I strive to make choices that benefit users and the environment, leaving a positive footprint through technology.`,
+    icon: "/assets/value3.svg",
+    animation: "salute",
+  },
+  {
+    id: 4,
+    name: "Curiosity and Exploration",
+    title: `Curiosity drives my passion for development. I thrive on exploring new tools and frameworks, which keeps my work exciting and my skills sharp. This sense of adventure helps me tackle challenges with fresh perspectives and innovative solutions.`,
+    icon: "/assets/value4.svg",
+    animation: "thankful",
   },
 ];

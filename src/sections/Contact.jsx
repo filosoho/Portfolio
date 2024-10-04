@@ -53,6 +53,7 @@ const Contact = () => {
 
   return (
     <section
+      id="contact"
       className="c-space my-20 h-full flex items-center justify-center flex-col"
       style={{
         backgroundImage: `url('/assets/terminal.png')`,
@@ -65,9 +66,9 @@ const Contact = () => {
       <div className="contact-container">
         <h3 className="head-text">Let&apos;s talk</h3>
         <p className="text-lg text-white-600 mt-3">
-          Whether you&apos;re looking to build a new website, improve your
-          existing platform or bring a unique project to life, I&apos;m here to
-          help.
+          Have a project in mind or just want to say hello?
+          <br />
+          Feel free to reach out — I'd love to hear from you!
         </p>
 
         <form
@@ -125,7 +126,6 @@ const Contact = () => {
           </button>
         </form>
       </div>
-      {/* </div> */}
     </section>
   );
 };

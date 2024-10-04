@@ -13,8 +13,8 @@ const DemoComputer = (props) => {
 
   const rotation = -1.57;
 
-  txt.repeat.set(0.8, 1.48);
-  txt.offset.set(0.9, 0);
+  txt.repeat.set(1, 1.5);
+  txt.offset.set(1, 0);
   txt.rotation = rotation;
 
   useEffect(() => {

@@ -22,7 +22,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/90">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-filter backdrop-blur-md">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center py-5 mx-auto c-space">
           <a
@@ -38,9 +38,9 @@ const Navbar = () => {
             aria-label="Toggle menu"
           >
             <img
-              src={isOpen ? "assets/close.svg" : "assets/menu.svg"}
+              src={isOpen ? "assets/close.png" : "assets/menu.png"}
               alt="menu toggle"
-              className="w-6 h-6"
+              className="w-10 h-6"
             />
           </button>
 

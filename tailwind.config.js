@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        generalsans: ["General Sans", "sans-serif"],
+        generalsans: ["Oxanium", "sans-serif"],
       },
       fontSize: {
         "5xl": "2.8rem",

@@ -5,19 +5,20 @@ import Projects from "./sections/Projects";
 import Skills from "./sections/Skills";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
-import Experience from "./sections/Experience";
+import MyApproach from "./sections/MyApproach";
 
 const App = () => {
   return (
     <main className="max-w-7xl mx-auto">
       <Navbar />
+
       <Hero />
       <About />
       <Projects />
-      <Skills />
-      <Experience />
+      <MyApproach />
       <Contact />
       <Footer />
+      <Skills />
     </main>
   );
 };
