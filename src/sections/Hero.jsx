@@ -34,6 +34,7 @@ const Hero = () => {
   const [charLimit, setCharLimit] = useState(100);
 
   const cameraRef = useRef();
+  const controlsRef = useRef();
 
   const isSmall = useMediaQuery({ query: "(max-width: 440px)" });
   const isMedium = useMediaQuery({ query: "(max-width: 640px)" });
@@ -57,6 +58,16 @@ const Hero = () => {
     setControlsVisible(true);
   };
 
+  const handleClickOutside = (event) => {
+    if (
+      controlsVisible &&
+      controlsRef.current &&
+      !controlsRef.current.contains(event.target)
+    ) {
+      setControlsVisible(false);
+    }
+  };
+
   useEffect(() => {
     let timeout;
     if (isTyping) {
@@ -78,6 +89,14 @@ const Hero = () => {
 
     return () => clearTimeout(timeout);
   }, [text, isTyping]);
+
+  useEffect(() => {
+    // Add event listener for clicks outside the MatrixControls
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [controlsVisible]);
 
   // Update this effect to set the analogous colors whenever the colorSet changes
   const handleAnalogousColorsChange = (newColors) => {
@@ -174,7 +193,7 @@ const Hero = () => {
           >
             {controlsVisible && (
               <>
-                <div className="controls">
+                <div className="controls" ref={controlsRef}>
                   <div
                     style={{
                       display: "flex",
@@ -210,7 +229,7 @@ const Hero = () => {
                       charLimit={charLimit}
                       setCharLimit={setCharLimit}
                     />
-                    <button
+                    {/* <button
                       style={{
                         position: "relative",
                         // top: "280px",
@@ -229,7 +248,7 @@ const Hero = () => {
                       onClick={() => setControlsVisible((prev) => !prev)}
                     >
                       Hide Controls
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </>
