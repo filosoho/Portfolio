@@ -1,3 +1,4 @@
+import React from "react";
 import { useState, useEffect, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
@@ -11,6 +12,13 @@ import HeroCamera from "../components/HeroCamera";
 import Button from "../components/Button";
 import Matrix from "../components/Matrix";
 import MatrixControls from "../components/MatrixControls";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+
+gsap.registerPlugin();
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(MotionPathPlugin);
 
 const Hero = () => {
   const [isButtonClicked, setIsButtonClicked] = useState(false);
@@ -35,6 +43,8 @@ const Hero = () => {
 
   const cameraRef = useRef();
   const controlsRef = useRef();
+  const floatingRef = useRef();
+  const heroImageRef = useRef();
 
   const isSmall = useMediaQuery({ query: "(max-width: 440px)" });
   const isMedium = useMediaQuery({ query: "(max-width: 640px)" });
@@ -54,7 +64,6 @@ const Hero = () => {
   };
 
   const handleHeroImageClick = () => {
-    // setControlsVisible((prev) => !prev);
     setControlsVisible(true);
   };
 
@@ -100,12 +109,55 @@ const Hero = () => {
 
   // Update this effect to set the analogous colors whenever the colorSet changes
   const handleAnalogousColorsChange = (newColors) => {
-    setAnalogousColors(newColors); // Update the state with new colors
+    setAnalogousColors(newColors);
   };
 
   const handleHueColorsChange = (newColors) => {
-    setHueColors(newColors); // Update the state with new colors
+    setHueColors(newColors);
   };
+
+  // Transition from Hero Image to Controls (Smooth Fade & Slide)
+  useEffect(() => {
+    if (heroImageRef.current) {
+      gsap.to(heroImageRef.current.position, {
+        y: controlsVisible ? -3 : -2,
+        opacity: controlsVisible ? 0 : 1,
+        duration: 0.5,
+        ease: "power1.inOut",
+      });
+    }
+
+    if (controlsRef.current) {
+      gsap.fromTo(
+        controlsRef.current,
+        {
+          y: controlsVisible ? 0 : 0,
+          ease: "power1.inOut",
+        },
+
+        // Close controls with smooth animation
+        {
+          y: controlsVisible ? -18 : 0,
+          opacity: controlsVisible ? 1 : 0,
+          duration: 0.5,
+          ease: "power1.inOut",
+        }
+      );
+    }
+  }, [controlsVisible]);
+
+  // Animate the "click me" text and image to float up and down
+  useEffect(() => {
+    if (floatingRef.current) {
+      gsap.to(floatingRef.current, {
+        y: "-10px", 
+        repeat: -1, 
+        yoyo: true, 
+        ease: "power1.inOut",
+        duration: 1.5, 
+      });
+    }
+  }, [controlsVisible]);
 
   return (
     <section id="home" className="relative min-h-screen w-full">
@@ -119,12 +171,17 @@ const Hero = () => {
             analogousColors={analogousColors}
             hueColors={hueColors}
             displayMode={displayMode}
+            style={{
+              cursor: "pointer",
+              opacity: controlsVisible ? 0 : 1,
+              visibility: controlsVisible ? "hidden" : "visible",
+              transition: "opacity 2s ease, visibility 1s ease",
+            }}
           />
         </div>
       </div>
 
       <div className="flex items-center justify-center hero-container">
-        {/* <section className=" min-h-screen w-full flex flex-col relative header"> */}
         <section
           className={`min-h-screen w-full flex flex-col relative header ${
             isHeaderVisible ? "visible" : "hidden"
@@ -148,6 +205,21 @@ const Hero = () => {
             </div>
           )}
 
+          {!controlsVisible && (
+            <div
+              ref={floatingRef}
+              className="flex justify-center items-center relative z-10 ml-80 mt-[13rem]"
+            >
+              <p className="text-white text-sm absolute ml-9  top-10">
+                click me
+              </p>
+              <img
+                className="w-[115px] scale-x-[-1] rotate-[-10deg] ml-10 mr-8 self-center"
+                src="/assets/click-me.png"
+              />
+            </div>
+          )}
+
           <div className="w-full h-full absolute inset-0">
             <Leva />
 
@@ -158,18 +230,19 @@ const Hero = () => {
                   makeDefault
                   position={[0, 0, 30]}
                 />
-
                 <HeroCamera isMobile={isMobile}>
-                  {controlsVisible ? null : (
-                    <HeroImage
-                      camera={cameraRef.current}
-                      position={sizes.deskPosition}
-                      rotation={sizes.deskRotation}
-                      scale={sizes.deskScale}
-                      onClick={handleHeroImageClick}
-                      style={{ cursor: "pointer" }}
-                    />
-                  )}
+                  <HeroImage
+                    ref={heroImageRef}
+                    camera={cameraRef.current}
+                    position={sizes.deskPosition}
+                    rotation={sizes.deskRotation}
+                    scale={sizes.deskScale}
+                    onClick={handleHeroImageClick}
+                    style={{
+                      cursor: "pointer",
+                      transition: "opacity 1s ease, visibility 1s ease",
+                    }}
+                  />
                 </HeroCamera>
 
                 <ambientLight intensity={1} />
@@ -193,7 +266,13 @@ const Hero = () => {
           >
             {controlsVisible && (
               <>
-                <div className="controls" ref={controlsRef}>
+                <div
+                  className="controls"
+                  ref={controlsRef}
+                  style={{
+                    zIndex: 100,
+                  }}
+                >
                   <div
                     style={{
                       display: "flex",
@@ -201,7 +280,7 @@ const Hero = () => {
                       position: "absolute",
                       top: "165px",
                       right: "76px",
-                      zIndex: 100,
+
                       borderRadius: "5px",
                       backdropFilter: "blur(8px)",
                       backgroundColor: "rgba(0, 0, 0, 0.1)",
@@ -229,26 +308,6 @@ const Hero = () => {
                       charLimit={charLimit}
                       setCharLimit={setCharLimit}
                     />
-                    {/* <button
-                      style={{
-                        position: "relative",
-                        // top: "280px",
-                        // right: "530px",
-
-                        zIndex: 10,
-                        backgroundColor: "rgba(19, 19, 19, 0.75)",
-                        boxShadow: "1px 1px 2px rgba(126, 126, 126, 0.35)",
-                        color: "#f5deb3",
-                        fontSize: "14px",
-                        border: "1px solid #ccc",
-                        padding: "8px 20px",
-                        borderRadius: "6px",
-                        cursor: "pointer",
-                      }}
-                      onClick={() => setControlsVisible((prev) => !prev)}
-                    >
-                      Hide Controls
-                    </button> */}
                   </div>
                 </div>
               </>

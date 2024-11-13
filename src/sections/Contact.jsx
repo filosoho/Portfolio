@@ -64,11 +64,11 @@ const Contact = () => {
       }}
     >
       <div className="contact-container">
-        <h3 className="head-text">Let&apos;s talk</h3>
+        <h3 className="head-text">Contact Me</h3>
         <p className="text-lg text-white-600 mt-3">
-          Have a project in mind or just want to say hello?
+          Let’s connect!
           <br />
-          Feel free to reach out — I'd love to hear from you!
+          I’d love to hear from you! Let’s connect and share ideas.
         </p>
 
         <form

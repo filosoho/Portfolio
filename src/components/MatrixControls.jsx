@@ -22,7 +22,11 @@ const MatrixControls = ({
   columnSpacing2,
   charLimit,
 }) => {
-  const [selectedColor, setSelectedColor] = useState("#FF6F61");
+
+  const [selectedColor, setSelectedColor] = useState(() => {
+    // Initialize with the saved color or a default color
+    return localStorage.getItem("selectedColor") || "#FF6F61";
+  });
   const [colorSets, setColorSets] = useState({
     default: [
       "#FF6F61",
@@ -42,7 +46,6 @@ const MatrixControls = ({
     hue: [],
   });
   const [isPickerOpen, setIsPickerOpen] = useState(false);
-
   const pickerRef = useRef(null);
 
   const generateHueColors = (baseColor) => {
@@ -150,6 +153,11 @@ const MatrixControls = ({
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isPickerOpen]);
+
+  useEffect(() => {
+    // Save the selected color to localStorage whenever it changes
+    localStorage.setItem("selectedColor", selectedColor);
+  }, [selectedColor]);
 
   return (
     <div
@@ -285,7 +293,7 @@ const MatrixControls = ({
             padding: "5px 10px",
           }}
         >
-          <option value="words">Words</option>
+          <option value="words">Tech Stack</option>
           <option value="randomSymbols">Random Symbols</option>
           <option value="binary">Binary (0 and 1)</option>
         </select>
@@ -316,7 +324,7 @@ const MatrixControls = ({
             padding: "5px 10px",
           }}
         >
-          <option value="default">Default</option>
+          <option value="default">Colourful</option>
           <option value="analogous">Analogous Colors</option>
           <option value="hue">Hue</option>
         </select>
@@ -348,14 +356,6 @@ const MatrixControls = ({
       )}
 
       {/* Button to toggle color picker visibility */}
-      {/* {(colorSet === "analogous" || colorSet === "hue") && (
-        <button
-          onClick={() => setIsPickerOpen((prev) => !prev)}
-          style={{ marginTop: "10px" }}
-        >
-          {isPickerOpen ? "" : "Show Color Picker"}
-        </button>
-      )} */}
       {(colorSet === "analogous" || colorSet === "hue") && !isPickerOpen && (
         <button
           onClick={() => setIsPickerOpen(true)}

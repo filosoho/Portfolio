@@ -17,6 +17,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Russo+One&family=Share+Tech+Mono&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -48,8 +50,10 @@ body {
   /* font-family: "Russo One", sans-serif; */
   /* font-family: "nobel", sans-serif; */
 
-  font-family: "Oxanium", sans-serif;
   /* font-family: "Titillium Web", sans-serif; */
+  font-family: "Oxanium", sans-serif;
+  /* font-family: "Anonymous Pro", monospace; */
+  /* font-family: "Source Code Pro", monospace; */
 }
 
 @layer utilities {
@@ -151,10 +155,7 @@ body {
 
   .styled-range {
     -webkit-appearance: none;
-    /* width: 100%; */
-
     height: 6px;
-    /* margin: 15px; */
     border-radius: 5px;
     background: linear-gradient(90deg, #ff6f61, #ffca3a);
     outline: none;
@@ -211,10 +212,6 @@ body {
     border-color: grey;
   }
 
-  /* .color-set-select:option {
-    background-color: rgba(0, 0, 0, 0.9);
-  } */
-
   .controls {
     position: relative;
     background-image: url("/assets/header/controls.png");
@@ -226,9 +223,6 @@ body {
     width: 500px;
     height: 600px;
     margin-top: -6.25rem;
-
-    /* margin-top: -4rem;
-    margin-left: 12rem; */
   }
 
   @media (max-width: 440px) {
@@ -248,6 +242,7 @@ body {
       @apply w-6 h-6 mx-1.5;
     }
   }
+
   /* about section */
   .grid-container {
     @apply w-full h-full border border-black-300 bg-black-200 rounded-lg sm:p-7 p-4 flex flex-col gap-5;
@@ -265,6 +260,80 @@ body {
     @apply cursor-pointer flex justify-center items-center gap-2;
   }
 
+  .grid-container {
+    position: relative;
+  }
+
+  .about-highlight {
+    padding: 0 5px;
+    margin-right: 3px;
+    border-bottom: 3px solid #1d4154;
+    display: inline-block;
+    background: linear-gradient(
+      to bottom,
+      transparent 60%,
+      rgba(236, 184, 0, 0.5) 40%
+    );
+    background: linear-gradient(
+      to bottom,
+      transparent 20%,
+      rgba(195 123, 2) 140%
+    );
+    transform: skew(-10deg);
+  }
+
+  .tech-grid {
+    background-color: #1c1c21;
+    border-radius: 8px;
+    padding: 35px;
+    margin-top: 2rem;
+  }
+
+  .tech-section {
+    color: #afb0b6;
+    border-radius: 8px;
+  }
+
+  .tech-section-title {
+    font-weight: bold;
+    color: #f0f2f9;
+    margin-bottom: 5px;
+  }
+
+  .tech-list {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+
+  #tech-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .marker {
+    position: relative;
+    text-decoration: none;
+    & svg {
+      position: absolute;
+      left: 0;
+      top: -50%;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      pointer-events: none;
+    }
+    & path {
+      transition: stroke-dashoffset 420ms linear;
+      stroke-width: 0.5;
+      stroke: white;
+      fill: none;
+      stroke-linecap: round;
+    }
+    &:hover path {
+      stroke-dashoffset: 0;
+    }
+  }
+
   /* projects section  */
   .arrow-btn {
     @apply w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full arrow-gradient;
@@ -274,7 +343,7 @@ body {
     @apply w-10 h-10 rounded-md p-2 bg-neutral-100 bg-opacity-10 backdrop-filter backdrop-blur-lg flex justify-center items-center;
   }
 
-  /* clients section */
+  /* skills section */
   .skills-container {
     @apply grid md:grid-cols-2 grid-cols-1 gap-5 mt-12;
   }
@@ -287,28 +356,31 @@ body {
     @apply flex lg:flex-row flex-col justify-between lg:items-center items-start gap-5 mt-7;
   }
 
-  /*  work experience section */
-  .work-container {
+  /*  my approach section */
+  .my-approach-container {
     @apply grid lg:grid-cols-3 grid-cols-1 gap-5 mt-12;
   }
 
-  .work-canvas {
+  .my-approach-canvas {
     @apply col-span-1 rounded-lg bg-black-200 border border-black-300;
+    background-image: url(/assets/room-4-8.png);
+    background-position: 30% 180%;
+    background-size: 120%;
   }
 
-  .work-content {
+  .my-approach-content {
     @apply col-span-2 rounded-lg bg-black-200 border border-black-300;
   }
 
-  .work-content_container {
+  .my-approach-content_container {
     @apply grid grid-cols-[auto_1fr] items-start gap-5  transition-all ease-in-out duration-500 cursor-pointer hover:bg-black-300 rounded-lg sm:px-5 px-2.5;
   }
 
-  .work-content_logo {
+  .my-approach-content_logo {
     @apply rounded-3xl w-16 h-16 p-2 bg-black-600;
   }
 
-  .work-content_bar {
+  .my-approach-content_bar {
     @apply flex-1 w-0.5 mt-4 h-full bg-black-300 group-hover:bg-black-500;
   }
 
@@ -340,14 +412,6 @@ body {
   }
 }
 
-.waving-hand {
-  animation-name: wave-animation;
-  animation-duration: 2.5s;
-  animation-iteration-count: infinite;
-  transform-origin: 70% 70%;
-  display: inline-block;
-}
-
 .arrow-gradient {
   background-image: linear-gradient(
     to right,
@@ -356,31 +420,4 @@ body {
     rgba(255, 255, 255, 0.000025) 50%,
     rgba(255, 255, 255, 0.025) 100%
   );
-}
-
-@keyframes wave-animation {
-  0% {
-    transform: rotate(0deg);
-  }
-  15% {
-    transform: rotate(14deg);
-  }
-  30% {
-    transform: rotate(-8deg);
-  }
-  40% {
-    transform: rotate(14deg);
-  }
-  50% {
-    transform: rotate(-4deg);
-  }
-  60% {
-    transform: rotate(10deg);
-  }
-  70% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
 }

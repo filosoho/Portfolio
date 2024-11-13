@@ -4,6 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import { Center, OrbitControls } from "@react-three/drei";
 import CanvasLoader from "../components/CanvasLoader";
 import DemoComputer from "../components/DemoComputer";
+import "../styles.css";
 
 const projectCount = myProjects.length;
 
@@ -25,9 +26,22 @@ const Projects = () => {
   return (
     <section className="c-space my-20" id="projects">
       <p className="head-text">Projects</p>
+      <div className="flex flex-wrap justify-center gap-3 mt-8 mb-8">
+        {myProjects.map((project, index) => (
+          <button
+            key={project.title}
+            onClick={() => setSelectedProjectIndex(index)}
+            className={`project-button ${
+              index === selectedProjectIndex ? "active" : ""
+            }`}
+          >
+            {project.button}
+          </button>
+        ))}
+      </div>
 
       <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
-        <div className="flex justify-between flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
+        <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200 h-full">
           <div className="absolute top-0 right-0">
             <img
               src={currentProject.spotlight}
@@ -57,12 +71,13 @@ const Projects = () => {
           <div className="flex items-center justify-between flex-wrap gap-2">
             <div className="flex items-center gap-2 mb-4">
               {currentProject.tags.map((tag, index) => (
-                <div key={index} className="tech-logo">
-                  <img src={tag.path} alt={tag.name} />
-                </div>
+                <span className="tooltip" data-text={tag.name}>
+                  <div key={index} className="tech-logo">
+                    <img src={tag.path} alt={tag.name} />
+                  </div>
+                </span>
               ))}
-            </div>
-
+            </div>{" "}
             <div className="flex flex-row items-center gap-2">
               {currentProject.title !== "Filosoho Space - Personal Website" ? (
                 <a
@@ -98,41 +113,41 @@ const Projects = () => {
             </div>
           </div>
 
-          <div className="flex justify-between items-center mt-7">
+          <div className="flex justify-between direction-row items-center mt-auto text-white">
             <button
-              className="arrow-btn"
+              className="flex flex-row items-center space-x-2"
               onClick={() => handleNavigation("previous")}
             >
+              {" "}
               <img
                 src="/assets/left-arrow.png"
                 alt="left arrow"
-                className="w-4 h-4"
-              />
+                className="w-10 h-6 mr-2"
+              />{" "}
+              Prev
             </button>
             <button
-              className="arrow-btn"
+              className="flex flex-row items-center space-x-2"
               onClick={() => handleNavigation("next")}
             >
+              {" "}
+              Next
               <img
                 src="/assets/right-arrow.png"
                 alt="right arrow"
-                className="w-4 h-4"
-              />
+                className="w-10 h-6 ml-2"
+              />{" "}
             </button>
           </div>
         </div>
 
-        <div className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
+        <div className="flex flex-col justify-center items-center border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
           <Canvas>
-            <ambientLight intensity={Math.PI} />
-            <directionalLight position={[-10, 10, 5]} />
+            <ambientLight intensity={0.5} />
+            <directionalLight position={[50, 30, 5]} />
             <Center>
               <Suspense fallback={<CanvasLoader />}>
-                <group
-                  scale={0.6}
-                  position={[0, -3.2, 0]}
-                  rotation={[0.3, 0, 0]}
-                >
+                <group scale={0.4} position={[0, 0, 0]} rotation={[0, 0, 0]}>
                   <DemoComputer texture={currentProject.texture} />
                 </group>
               </Suspense>
