@@ -56,7 +56,44 @@ body {
   /* font-family: "Source Code Pro", monospace; */
 }
 
+p {
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+  }
+}
+
+button {
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+  }
+}
+
 @layer utilities {
+  .canvas-loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .canvas-loader-text {
+    font-size: 14px;
+    color: #f1f1f1;
+    font-weight: 800;
+    margin-top: 40px;
+  }
+
+  section#home {
+    @media (max-width: 480px) {
+      margin-top: 2rem;
+      min-height: 60vh;
+    }
+  }
+
+  header {
+    z-index: 99999;
+  }
+
   .header {
     background-size: cover;
     background-color: #0000002b;
@@ -65,6 +102,27 @@ body {
     background-position: 100% 30%;
     border-radius: 15px;
     width: 93%;
+
+    @media (max-width: 1024px) {
+      background-position: 50% 50%;
+      background-size: cover;
+      width: 100%;
+    }
+    @media (max-width: 767px) {
+      background-position: 50% 50%;
+      background-size: 120%;
+      width: 100%;
+    }
+    @media (max-width: 640px) {
+      background-position: 50% -15%;
+      background-size: 120%;
+      width: 100%;
+    }
+    @media (max-width: 480px) {
+      background-position: 50% 50%;
+      width: 100%;
+      min-height: 60vh;
+    }
   }
 
   .header.visible {
@@ -75,12 +133,49 @@ body {
     background-image: none;
   }
 
+  .hide-header-btn {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-top: -6.5rem;
+    left: 2rem;
+    font-size: 14px;
+    color: wheat;
+    width: 110px;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 1px solid rgba(245, 222, 179, 0.5);
+    z-index: 99;
+
+    @media (max-width: 767px) {
+      margin-top: 0;
+      font-size: 12px;
+      width: 100px;
+      padding: 8px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 10px;
+      width: 80px;
+      padding: 6px;
+    }
+  }
+
   .c-space {
     @apply sm:px-10 px-5;
+
+    @media (max-width: 480px) {
+      padding-inline: 0.5rem;
+    }
   }
 
   .head-text {
-    @apply sm:text-4xl text-3xl font-semibold text-gray_gradient;
+    @apply text-3xl sm:text-4xl font-semibold text-gray_gradient;
+
+    @media (max-width: 480px) {
+      font-size: 1.2rem;
+      margin-left: 0.5rem;
+    }
   }
 
   .nav-ul {
@@ -103,15 +198,35 @@ body {
     @apply bg-gradient-to-r from-[#BEC1CF] from-60% via-[#D5D8EA] via-60% to-[#D5D8EA] to-100% bg-clip-text text-transparent;
   }
 
+  .logo-img {
+    @media (max-width: 480px) {
+      max-width: 80%;
+    }
+  }
+
   /* button component */
   .btn {
     @apply flex gap-4 items-center justify-center cursor-pointer p-3 rounded-md bg-black-300  transition-all active:scale-95 text-white mx-auto;
+
+    @media (max-width: 480px) {
+      font-size: 0.8rem;
+    }
   }
   .hero-btn {
-    position: "absolute";
-    top: "800px";
-    left: "10px";
-    z-index: 100;
+    position: relative;
+    margin-top: -4rem;
+    z-index: 10;
+
+    @media (max-width: 480px) {
+      margin-top: -1.5rem;
+      font-size: 0.8rem;
+    }
+  }
+
+  .button-container {
+    @media (max-width: 480px) {
+      width: 220px;
+    }
   }
 
   .btn-ping {
@@ -137,8 +252,16 @@ body {
     height: 50%;
   }
 
+  .hero-image {
+    display: block;
+  }
+
+  .hero-image.hidden {
+    display: none;
+  }
+
   .hi-tag {
-    @apply md:text-3xl sm:text-2xl text-xl font-medium text-white text-center font-generalsans;
+    @apply text-base sm:text-lg md:text-2xl lg:text-xl font-medium text-white text-center font-generalsans;
   }
 
   .typing-effect {
@@ -146,11 +269,40 @@ body {
   }
 
   .hero_tag {
-    @apply text-center xl:text-6xl md:text-5xl sm:text-4xl text-2xl font-generalsans font-black !leading-normal;
+    @apply text-center text-2xl sm:text-3xl md:text-4xl  xl:text-6xl font-generalsans font-black !leading-normal;
   }
 
   .octocat-img {
     @apply w-8 h-8  mx-3.5 mb-1 inline-block  sm:w-10 sm:h-10;
+  }
+
+  .matrix-arrow-container {
+    margin-top: 10rem;
+    margin-left: 20.5rem;
+    z-index: 0;
+
+    @media (max-width: 640px) {
+      margin-top: 15rem;
+      margin-left: 16.5rem;
+    }
+
+    @media (max-width: 480px) {
+      margin-top: 5rem;
+      margin-left: 10.5rem;
+    }
+  }
+
+  .matrix-arrow-text {
+    margin-left: 6.25rem;
+
+    @media (max-width: 640px) {
+      top: 1rem;
+    }
+    @media (max-width: 480px) {
+      top: 1.5rem;
+      font-size: 0.6rem;
+      margin-left: 4.5rem;
+    }
   }
 
   .styled-range {
@@ -221,17 +373,57 @@ body {
     background-position: 100% -180%;
     border-radius: 15px;
     width: 500px;
-    height: 600px;
-    margin-top: -6.25rem;
+    height: 500px;
+    margin-top: -3rem;
+
+    @media (max-width: 1200px) {
+      background-position: 50% 50%;
+      width: 480px;
+      height: 480px;
+      margin-top: -1rem;
+    }
+    @media (max-width: 640px) {
+      background-position: 50% 50%;
+      width: 450px;
+      height: 450px;
+      margin-top: -1rem;
+    }
   }
 
-  @media (max-width: 440px) {
-    .hi-tag {
-      @apply text-sm;
-    }
+  .matrix-controls {
+    max-width: 340px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: rgba(19, 19, 19, 0.5);
+    box-shadow: 1px 1px 2px rgba(126, 126, 126, 0.35);
+    border: 1px solid #ccc;
+    color: #f5deb3;
+    font-size: 14px;
+  }
 
+  .controls-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 102px;
+    right: 82px;
+    border-radius: 5px;
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.1);
+
+    @media (max-width: 1200px) {
+      top: 98px;
+      right: 75px;
+    }
+    @media (max-width: 640px) {
+      top: 90px;
+      right: 55px;
+    }
+  }
+
+  @media (max-width: 480px) {
     .typing-effect {
-      min-height: 20px;
+      min-height: 25px;
     }
 
     .hero_tag {
@@ -240,6 +432,19 @@ body {
 
     .octocat-img {
       @apply w-6 h-6 mx-1.5;
+    }
+
+    .controls {
+      background-position: 50% 50%;
+      width: 300px;
+      height: 300px;
+      margin-top: -0.75rem;
+    }
+
+    .controls-container {
+      position: relative;
+      top: 65px;
+      right: 0;
     }
   }
 
@@ -250,10 +455,18 @@ body {
 
   .grid-headtext {
     @apply text-xl font-semibold mb-4 text-white font-generalsans;
+
+    @media (max-width: 480px) {
+      font-size: 1rem;
+    }
   }
 
   .grid-subtext {
     @apply text-[#afb0b6] text-base font-generalsans;
+
+    @media (max-width: 480px) {
+      font-size: 0.8rem;
+    }
   }
 
   .copy-container {
@@ -287,6 +500,10 @@ body {
     border-radius: 8px;
     padding: 35px;
     margin-top: 2rem;
+
+    @media (max-width: 480px) {
+      padding: 20px;
+    }
   }
 
   .tech-section {
@@ -303,16 +520,30 @@ body {
   .tech-list {
     list-style-type: disc;
     padding-left: 20px;
+
+    @media (max-width: 480px) {
+      font-size: 0.9rem;
+    }
   }
 
   #tech-section {
     display: flex;
     flex-direction: column;
   }
+  /* 
+  .marker.grid-cubtext {
+    display: inline-block; 
+    max-width: 100%; 
+    text-align: left;
+    overflow-wrap: break-word;
+  } */
 
   .marker {
     position: relative;
     text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
+
     & svg {
       position: absolute;
       left: 0;
@@ -321,6 +552,10 @@ body {
       margin-left: auto;
       margin-right: auto;
       pointer-events: none;
+
+      @media (max-width: 1200px) {
+        display: none;
+      }
     }
     & path {
       transition: stroke-dashoffset 420ms linear;
@@ -328,6 +563,7 @@ body {
       stroke: white;
       fill: none;
       stroke-linecap: round;
+      transform-origin: center;
     }
     &:hover path {
       stroke-dashoffset: 0;
@@ -341,6 +577,12 @@ body {
 
   .tech-logo {
     @apply w-10 h-10 rounded-md p-2 bg-neutral-100 bg-opacity-10 backdrop-filter backdrop-blur-lg flex justify-center items-center;
+  }
+
+  .projrct-desc {
+    @media (max-width: 480px) {
+      font-size: 0.8rem;
+    }
   }
 
   /* skills section */
@@ -359,13 +601,18 @@ body {
   /*  my approach section */
   .my-approach-container {
     @apply grid lg:grid-cols-3 grid-cols-1 gap-5 mt-12;
+
+    @media (max-width: 1024px) {
+      display: flex;
+      gap: 1rem;
+      justify-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
   }
 
   .my-approach-canvas {
     @apply col-span-1 rounded-lg bg-black-200 border border-black-300;
-    background-image: url(/assets/room-4-8.png);
-    background-position: 30% 180%;
-    background-size: 120%;
   }
 
   .my-approach-content {
@@ -374,10 +621,20 @@ body {
 
   .my-approach-content_container {
     @apply grid grid-cols-[auto_1fr] items-start gap-5  transition-all ease-in-out duration-500 cursor-pointer hover:bg-black-300 rounded-lg sm:px-5 px-2.5;
+
+    @media (max-width: 480px) {
+      gap: 0.5rem;
+      padding-inline: 0;
+    }
   }
 
   .my-approach-content_logo {
     @apply rounded-3xl w-16 h-16 p-2 bg-black-600;
+
+    @media (max-width: 480px) {
+      height: 2.5rem;
+      width: 2.5rem;
+    }
   }
 
   .my-approach-content_bar {
@@ -385,21 +642,32 @@ body {
   }
 
   /* contact section */
+
+  .contact-bg {
+    background-image: url("/assets/terminal.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    background-size: 390%;
+    background-position: 50% 15%;
+    height: 800px;
+    padding-top: 4rem;
+  }
+
   .contact-container {
     @apply max-w-xl relative z-10 sm:px-10 px-5;
-    margin-top: -4rem;
   }
 
   .field-label {
-    @apply text-lg text-white-600;
+    @apply text-base sm:text-lg text-white-600;
   }
 
   .field-input {
-    @apply w-full bg-black-300 px-5 py-2 min-h-14 rounded-lg placeholder:text-white-500 text-lg text-white-800 shadow-black-200 shadow-2xl focus:outline-none;
+    @apply w-full bg-black-300 px-5 py-2 min-h-14 rounded-lg placeholder:text-white-500 text-base sm:text-lg text-white-800 shadow-black-200 shadow-2xl focus:outline-none;
   }
 
   .field-btn {
-    @apply px-5 py-2 min-h-12 rounded-lg shadow-black-200 shadow-2xl flex justify-center items-center text-lg text-white gap-3;
+    @apply px-5 py-2 min-h-12 rounded-lg shadow-black-200 shadow-2xl flex justify-center items-center text-base sm:text-lg text-white gap-3;
     background-color: rgb(54, 54, 64);
   }
 

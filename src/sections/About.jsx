@@ -60,11 +60,10 @@ const About = () => {
         const newPath = circlePath(-0.15, 0.05, 150, 190, 0.05, 0.3);
         $(path).attr({ d: newPath });
       });
-      // Hide the path on mouse out with a delay
       marker.mouseout(function () {
         setTimeout(() => {
           setCircleVisibility(path, false);
-        }, 300); // Adjust the delay as needed
+        }, 300);
       });
     });
   }, []);

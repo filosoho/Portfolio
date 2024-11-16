@@ -58,7 +58,6 @@ const DemoComputer = (props) => {
             geometry={nodes.defaultMaterial_1.geometry}
             material={materials.screen}
           >
-            {" "}
             <meshBasicMaterial map={txt} />
           </mesh>
           <mesh

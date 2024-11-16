@@ -30,10 +30,8 @@
 
 /* Tooltip text styling */
 .tooltip:before {
-  content: attr(data-text); 
+  content: attr(data-text);
   position: absolute;
-
-  /* Positioning: Center vertically and align to the right */
   top: 120%;
   left: 80%;
   transform: translateY(-50%);
@@ -53,10 +51,20 @@
 
   /* Hide by default */
   display: none;
-  z-index: 1000; 
+  z-index: 1000;
 }
 
 /* Show tooltip on hover */
 .tooltip:hover:before {
   display: block;
+}
+
+.my-approach-canvas {
+  background-image: url(/assets/room-4-8.png);
+  background-position: 30% 140%;
+  background-size: 140%;
+
+  @media (max-width: 1200px) {
+    background-image: none;
+  }
 }

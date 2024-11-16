@@ -22,9 +22,7 @@ const MatrixControls = ({
   columnSpacing2,
   charLimit,
 }) => {
-
   const [selectedColor, setSelectedColor] = useState(() => {
-    // Initialize with the saved color or a default color
     return localStorage.getItem("selectedColor") || "#FF6F61";
   });
   const [colorSets, setColorSets] = useState({
@@ -81,7 +79,6 @@ const MatrixControls = ({
     ];
   };
 
-  // Function to generate analogous colors with less variation
   const generateAnalogousColors = (baseColor) => {
     const base = chroma(baseColor);
     const hueShift = 10;
@@ -135,7 +132,6 @@ const MatrixControls = ({
     }
   }, [selectedColor, colorSet, onAnalogousColorsChange, onHueColorsChange]);
 
-  // Close the picker when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (pickerRef.current && !pickerRef.current.contains(event.target)) {
@@ -155,23 +151,11 @@ const MatrixControls = ({
   }, [isPickerOpen]);
 
   useEffect(() => {
-    // Save the selected color to localStorage whenever it changes
     localStorage.setItem("selectedColor", selectedColor);
   }, [selectedColor]);
 
   return (
-    <div
-      style={{
-        width: "340px",
-        padding: "15px",
-        borderRadius: "5px",
-        backgroundColor: "rgba(19, 19, 19, 0.5)",
-        boxShadow: "1px 1px 2px rgba(126, 126, 126, 0.35)",
-        border: "1px solid #ccc",
-        color: "#f5deb3",
-        fontSize: "14px",
-      }}
-    >
+    <div className="matrix-controls">
       <label
         htmlFor="fontSizeMin"
         style={{ display: "flex", alignItems: "center" }}

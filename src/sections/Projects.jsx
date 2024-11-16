@@ -56,23 +56,24 @@ const Projects = () => {
             <img
               src={currentProject.logo}
               alt="logo"
-              className="w-10 h-10"
-              shadow-sm
+              className="w-10 h-10 shadow-sm"
             />
           </div>
 
           <div className="flex flex-col gap-5 text-white-600 my-5">
-            <p className="text-white text-2xl font-semibold animatedText">
+            <p className="text-white text-base sm:text-2xl font-semibold animatedText">
               {currentProject.title}
             </p>
-            <p className="animatedText">{currentProject.desc}</p>
-            <p className="animatedText">{currentProject.subdesc}</p>
+            <p className="animatedText projrct-desc">{currentProject.desc}</p>
+            <p className="animatedText projrct-desc">
+              {currentProject.subdesc}
+            </p>
           </div>
           <div className="flex items-center justify-between flex-wrap gap-2">
             <div className="flex items-center gap-2 mb-4">
               {currentProject.tags.map((tag, index) => (
-                <span className="tooltip" data-text={tag.name}>
-                  <div key={index} className="tech-logo">
+                <span key={tag.name} className="tooltip" data-text={tag.name}>
+                  <div className="tech-logo">
                     <img src={tag.path} alt={tag.name} />
                   </div>
                 </span>
@@ -122,7 +123,7 @@ const Projects = () => {
               <img
                 src="/assets/left-arrow.png"
                 alt="left arrow"
-                className="w-10 h-6 mr-2"
+                className="w-8 h-4 sm:w-10 sm:h-6 mr-2"
               />{" "}
               Prev
             </button>
@@ -135,7 +136,7 @@ const Projects = () => {
               <img
                 src="/assets/right-arrow.png"
                 alt="right arrow"
-                className="w-10 h-6 ml-2"
+                className="w-8 h-4 sm:w-10 sm:h-6 ml-2"
               />{" "}
             </button>
           </div>

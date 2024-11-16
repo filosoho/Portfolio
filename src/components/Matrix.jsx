@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Matrix = ({
   fontSizeMin,
@@ -13,6 +13,7 @@ const Matrix = ({
   charLimit = 100,
 }) => {
   const canvasRef = useRef(null);
+  const [dimensions, setDimensions] = useState({ width: 1440, height: 680 });
 
   const words = [
     "JavaScript",
@@ -77,6 +78,27 @@ const Matrix = ({
   };
 
   useEffect(() => {
+    const updateCanvasSize = () => {
+      const container = canvasRef.current.parentElement;
+      const width = container.clientWidth;
+
+      if (width <= 480) {
+        setDimensions({ width, height: 291 });
+      } else if (width <= 1024) {
+        setDimensions({ width, height: 528 });
+      } else {
+        const aspectRatio = 1440 / 680;
+        const newHeight = width / aspectRatio;
+        setDimensions({ width, height: newHeight });
+      }
+    };
+
+    updateCanvasSize();
+    window.addEventListener("resize", updateCanvasSize);
+    return () => window.removeEventListener("resize", updateCanvasSize);
+  }, []);
+
+  useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
 
@@ -85,8 +107,9 @@ const Matrix = ({
       return;
     }
 
-    const w = canvas.width;
-    const h = canvas.height;
+    const { width: w, height: h } = dimensions;
+    canvas.width = w;
+    canvas.height = h;
 
     const cols = Math.floor(w / columnSpacing) + 1;
     const ypos = Array(cols).fill(0);
@@ -143,7 +166,14 @@ const Matrix = ({
     charLimit,
   ]);
 
-  return <canvas ref={canvasRef} width="1260" height="685" />;
+  return (
+    <canvas
+      ref={canvasRef}
+      width={dimensions.width}
+      height={dimensions.height}
+      style={{ width: "100%", height: "auto" }}
+    />
+  );
 };
 
 export default Matrix;
