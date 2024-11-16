@@ -70,7 +70,7 @@ export const myProjects = [
     button: "NC NEWS",
     repo: "https://github.com/filosoho/nc-news",
     href: "https://fe-nc-news-gui8.onrender.com/",
-    texture: "/textures/project/project1.png",
+    texture: "/textures/project/project1.avif",
     logo: "/assets/project-logo1.svg",
     logoStyle: {
       backgroundColor: "#2A1816",
@@ -113,7 +113,7 @@ export const myProjects = [
     button: "Autumn Chick",
     repo: "https://github.com/filosoho/UI-Prototype-Autumn-Chick-Shopping-App",
     href: "https://www.figma.com/proto/pi7lBTXrbKWaAbbgNLF8Rw/Autumn-Chick---Prototype?type=design&node-id=1-754&t=zo52pKhQZx3de15S-1&scaling=scale-down&page-id=1%3A2&starting-point-node-id=1%3A754&mode=design",
-    texture: "/textures/project/project2.png",
+    texture: "/textures/project/project2.avif",
     logo: "/assets/project-logo5.png",
     logoStyle: {
       backgroundColor: "#2A1816",
@@ -141,7 +141,7 @@ export const myProjects = [
     button: "CityBite Burgers",
     repo: "https://github.com/filosoho/CityBite-Burgers",
     href: "https://citybite-burgers.netlify.app/",
-    texture: "/textures/project/project3.png",
+    texture: "/textures/project/project3.avif",
     logo: "/assets/project-logo4.png",
     logoStyle: {
       backgroundColor: "#2A1816",
@@ -179,7 +179,7 @@ export const myProjects = [
     button: "Creative Spot",
     repo: "https://github.com/filosoho/CreativeSpot",
     href: "https://creative-spot.netlify.app/",
-    texture: "/textures/project/project4.png",
+    texture: "/textures/project/project4.avif",
     logo: "/assets/project-logo2.png",
     logoStyle: {
       backgroundColor: "#2A1816",
@@ -212,7 +212,7 @@ export const myProjects = [
     button: "Pig Game",
     repo: "https://github.com/filosoho/JavaScript-Projects/tree/main/PigGame",
     href: "https://dicepig-game.netlify.app/",
-    texture: "/textures/project/project5.png",
+    texture: "/textures/project/project5.avif",
     logo: "/assets/project-logo3.png",
     logoStyle: {
       backgroundColor: "#60f5a1",
@@ -247,7 +247,7 @@ export const myProjects = [
     button: "Totoro Pomodoro",
     repo: "https://github.com/filosoho/Linux-Totoro-Pomodoro-Timer",
 
-    texture: "/textures/project/project6.png",
+    texture: "/textures/project/project6.avif",
     logo: "/assets/project-logo6.png",
     logoStyle: {
       backgroundColor: "#2C6E49",
@@ -276,7 +276,7 @@ export const myProjects = [
     subdesc: ` Using HTML, CSS and JavaScript, I ensured the site was visually appealing and easy to navigate while keeping performance in mind. A significant part of the project was optimizing the design to be responsive, allowing users to seamlessly browse the site on various devices. I also paid close attention to accessibility, making sure that all users, regardless of their needs, could easily interact with the site. By focusing on best practices in web development, such as semantic HTML and mobile-first design, I was able to create a website that not only looks good but also functions efficiently. Throughout this project, I praqcticed my skills in layout design, performance optimization and making sure the site loads quickly and remains functional. Filosoho Space reflects my commitment to clean, accessible and high-quality web development while offering a space to share my work and connect with like-minded people.`,
     button: "Filosoho Space",
     href: "https://filosoho.space/",
-    texture: "/textures/project/project7.png",
+    texture: "/textures/project/project7.avif",
     logo: "/assets/project-logo7.png",
     logoStyle: {
       backgroundColor: "#13202F",
@@ -309,7 +309,7 @@ export const myProjects = [
     button: "Forkify",
     repo: "https://github.com/filosoho/JavaScript-Projects/tree/main/Forkify",
     href: "https://forkify-recipes-js.netlify.app/",
-    texture: "/textures/project/project8.png",
+    texture: "/textures/project/project8.avif",
     logo: "/assets/project-logo8.png",
     logoStyle: {
       backgroundColor: "#2A1816",

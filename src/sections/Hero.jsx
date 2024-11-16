@@ -254,7 +254,7 @@ const Hero = () => {
                 <div className="w-[85px] sm:w-[115px] inline-block overflow-hidden ml-10 mr-8 justify-center items-center">
                   <img
                     className="w-full h-auto scale-x-[-1] rotate-[-10deg]"
-                    src="/assets/click-me-3.png"
+                    src="/assets/click-me.png"
                     alt="Click me arrow"
                   />
                 </div>
