@@ -83,6 +83,12 @@ button {
     margin-top: 40px;
   }
 
+  #home {
+    min-height: 100vh;
+    @media (max-width: 1200px) {
+      min-height: 55vh;
+    }
+  }
   section#home {
     @media (max-width: 480px) {
       margin-top: 2rem;
@@ -104,7 +110,7 @@ button {
     width: 93%;
 
     @media (max-width: 1024px) {
-      background-position: 50% 50%;
+      background-position: 50% -30%;
       background-size: cover;
       width: 100%;
     }
@@ -131,6 +137,13 @@ button {
 
   .header.hidden {
     background-image: none;
+  }
+
+  .hero-canvas {
+    min-height: 100vh;
+    @media (max-width: 1200px) {
+      min-height: 55vh;
+    }
   }
 
   .hide-header-btn {
@@ -643,6 +656,11 @@ button {
     @apply flex-1 w-0.5 mt-4 h-full bg-black-300 group-hover:bg-black-500;
   }
 
+  @media (max-width: 1024px) {
+    .canvas-full-height {
+      height: 400px;
+    }
+  }
   /* contact section */
 
   .contact-bg {

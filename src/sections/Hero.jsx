@@ -51,8 +51,9 @@ const Hero = () => {
   const isMedium = useMediaQuery({ query: "(max-width: 640px)" });
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
   const isTablet = useMediaQuery({
-    query: "( min-width: 767px) and (max-width: 1024px)",
+    query: "( min-width: 768px) and (max-width: 1024px)",
   });
+  const isDesktop = useMediaQuery({ query: "(min-width: 1200px)" });
 
   const sizes = calculateSizes(isSmall, isMedium, isMobile, isTablet);
 
@@ -144,6 +145,10 @@ const Hero = () => {
           ? controlsVisible
             ? -2
             : 0
+          : isTablet
+          ? controlsVisible
+            ? -4
+            : -2
           : controlsVisible
           ? -4
           : -2,
@@ -169,10 +174,10 @@ const Hero = () => {
         }
       );
     }
-  }, [controlsVisible, isMobile, isMedium, isMobile]);
+  }, [controlsVisible, isMobile, isMedium, isMobile, isTablet]);
 
   useEffect(() => {
-    if (floatingRef.current) {
+    if (isDesktop && floatingRef.current) {
       gsap.to(floatingRef.current, {
         y: "-10px",
         repeat: -1,
@@ -181,7 +186,7 @@ const Hero = () => {
         duration: 1.5,
       });
     }
-  }, [controlsVisible]);
+  }, [controlsVisible, isDesktop]);
 
   useEffect(() => {
     if (controlsVisible) {
@@ -193,7 +198,7 @@ const Hero = () => {
 
   return (
     <>
-      <section id="home" className="relative min-h-screen w-full">
+      <section id="home" className="relative  w-full">
         <div className="absolute inset-0 -z-10">
           <div style={{ marginTop: "70px" }}>
             <Matrix
@@ -214,9 +219,9 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="flex items-center justify-center hero-container">
+        <div className="flex items-center justify-center hero-container ">
           <section
-            className={`min-h-screen w-full flex flex-col relative header ${
+            className={` hero-canvas w-full flex flex-col relative header ${
               isHeaderVisible ? "visible" : "hidden"
             } `}
           >
@@ -263,7 +268,7 @@ const Hero = () => {
             >
               {/* <Leva /> */}
 
-              <Canvas className=" w-full h-full">
+              <Canvas className=" hero-canvas w-full h-full ">
                 <Suspense fallback={<CanvasLoader />}>
                   <PerspectiveCamera
                     ref={cameraRef}

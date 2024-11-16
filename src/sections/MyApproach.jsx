@@ -49,7 +49,7 @@ const MyApproach = () => {
               ))}
             </div>
           </div>
-          <div className="my-approach-canvas">
+          <div className="my-approach-canvas canvas-full-height">
             <Canvas>
               <ambientLight intensity={3} />
               <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
