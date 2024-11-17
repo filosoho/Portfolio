@@ -124,7 +124,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="col-span-1  xl:row-span-3">
+        <div className="col-span-1 md:col-span-2 xl:col-span-1 xl:row-span-3">
           <div className="grid-container">
             <div className="rounded-3xl max-w-full max-h-[226px] flex justify-center items-center mt-5 mb-2">
               <Globe
@@ -152,7 +152,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="xl:col-span-2 xl:row-span-2">
+        <div className="xl:col-span-2 md:col-span-2 xl:row-span-2">
           <div className="grid-container flex justify-center items-center">
             <img
               src="/assets/grid-2.png"
