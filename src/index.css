@@ -232,8 +232,6 @@ button {
     }
   }
   .hero-btn {
-    position: relative;
-    margin-top: -4rem;
     z-index: 10;
 
     @media (max-width: 480px) {

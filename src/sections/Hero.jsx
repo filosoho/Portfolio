@@ -335,17 +335,18 @@ const Hero = () => {
                 </>
               )}
             </section>
+            <div className="hero-btn  absolute bottom-7 left-0 right-0 w-full z-10 c-space">
+              <Button
+                name="Let's work together"
+                isBeam
+                containerClass="button-container sm:w-fit w-full sm:min-w-96"
+                onClick={handleButtonClick}
+              />
+            </div>
           </section>
         </div>
       </section>
-      <div className="hero-btn  absolute bottom-7 left-0 right-0 w-full z-10 c-space">
-        <Button
-          name="Let's work together"
-          isBeam
-          containerClass="button-container sm:w-fit w-full sm:min-w-96"
-          onClick={handleButtonClick}
-        />
-      </div>
+
       {/* Always show the header toggle button */}
       <div
         className="flex justify-center md:justify-start   items-center max-w-[1300px] mx-auto"
