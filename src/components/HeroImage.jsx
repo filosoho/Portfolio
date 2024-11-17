@@ -21,10 +21,10 @@ const HeroImage = React.forwardRef(({ onClick, ...props }, ref) => {
         setScale(5);
         setPosition([0, -5.5, 0]);
       } else if (width <= 1200) {
-        setScale(3);
+        setScale(2.5);
         setPosition([0, -2.5, 0]);
       } else {
-        setScale(4);
+        setScale(3);
         setPosition([0, -1.5, 0]);
       }
     };

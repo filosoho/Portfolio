@@ -84,7 +84,7 @@ button {
   }
 
   #home {
-    min-height: 100vh;
+    min-height: 800px;
     @media (max-width: 1200px) {
       min-height: 700px;
     }
@@ -148,7 +148,7 @@ button {
   }
 
   .hero-canvas {
-    min-height: 100vh;
+    min-height: 800px;
     @media (max-width: 1200px) {
       min-height: 700px;
     }
