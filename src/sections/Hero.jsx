@@ -231,7 +231,7 @@ const Hero = () => {
                   {text}
                   <span className="caret"></span>
                 </p>
-                <p className="hero_tag text-gray_gradient">
+                <h1 className="hero_tag text-gray_gradient">
                   A Curious Front End Developer
                   {/* <span>
                 <img
@@ -239,7 +239,7 @@ const Hero = () => {
                   src="/assets/octocat.png"
                 />
               </span> */}
-                </p>
+                </h1>
               </div>
             )}
 
