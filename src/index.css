@@ -58,13 +58,13 @@ body {
 
 p {
   @media (max-width: 480px) {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 }
 
 button {
   @media (max-width: 480px) {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 }
 
@@ -86,13 +86,21 @@ button {
   #home {
     min-height: 100vh;
     @media (max-width: 1200px) {
-      min-height: 55vh;
+      min-height: 700px;
+    }
+    @media (max-width: 1024px) {
+      min-height: 700px;
+    }
+    @media (max-width: 767px) {
+      min-height: 700px;
+    }
+    @media (max-width: 640px) {
+      min-height: 500px;
     }
   }
   section#home {
     @media (max-width: 480px) {
-      margin-top: 2rem;
-      min-height: 60vh;
+      min-height: 400px;
     }
   }
 
@@ -142,7 +150,19 @@ button {
   .hero-canvas {
     min-height: 100vh;
     @media (max-width: 1200px) {
-      min-height: 55vh;
+      min-height: 700px;
+    }
+    @media (max-width: 1024px) {
+      min-height: 700px;
+    }
+    @media (max-width: 767px) {
+      min-height: 700px;
+    }
+    @media (max-width: 640px) {
+      min-height: 500px;
+    }
+    @media (max-width: 480px) {
+      min-height: 400px;
     }
   }
 
@@ -224,7 +244,7 @@ button {
     @apply flex gap-4 items-center justify-center cursor-pointer p-3 rounded-md bg-black-300  transition-all active:scale-95 text-white mx-auto;
 
     @media (max-width: 480px) {
-      font-size: 0.8rem;
+      font-size: 1rem;
     }
   }
   .hero-btn {
@@ -239,7 +259,7 @@ button {
   }
 
   .button-container {
-    @media (max-width: 480px) {
+    @media (max-width: 640px) {
       width: 220px;
     }
   }
@@ -296,11 +316,18 @@ button {
     margin-left: 20.5rem;
     z-index: 0;
 
-    @media (max-width: 640px) {
+    /* @media (max-width: 640px) {
       margin-top: 15rem;
       margin-left: 16.5rem;
+    } */
+    @media (max-width: 1024px) {
+      margin-top: 10rem;
+      margin-left: 15.5rem;
     }
-
+    @media (max-width: 640px) {
+      margin-top: 5rem;
+      margin-left: 10.5rem;
+    }
     @media (max-width: 480px) {
       margin-top: 5rem;
       margin-left: 10.5rem;
@@ -470,18 +497,10 @@ button {
 
   .grid-headtext {
     @apply text-xl font-semibold mb-4 text-white font-generalsans;
-
-    @media (max-width: 480px) {
-      font-size: 1rem;
-    }
   }
 
   .grid-subtext {
     @apply text-[#afb0b6] text-base font-generalsans;
-
-    @media (max-width: 480px) {
-      font-size: 0.8rem;
-    }
   }
 
   .copy-container {
@@ -592,12 +611,6 @@ button {
 
   .tech-logo {
     @apply w-10 h-10 rounded-md p-2 bg-neutral-100 bg-opacity-10 backdrop-filter backdrop-blur-lg flex justify-center items-center;
-  }
-
-  .projrct-desc {
-    @media (max-width: 480px) {
-      font-size: 0.8rem;
-    }
   }
 
   /* skills section */

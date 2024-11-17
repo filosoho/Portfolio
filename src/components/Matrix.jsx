@@ -84,7 +84,13 @@ const Matrix = ({
 
       if (width <= 480) {
         setDimensions({ width, height: 291 });
+      } else if (width <= 640) {
+        setDimensions({ width, height: 338 });
+      } else if (width <= 767) {
+        setDimensions({ width, height: 528 });
       } else if (width <= 1024) {
+        setDimensions({ width, height: 528 });
+      } else if (width <= 1200) {
         setDimensions({ width, height: 528 });
       } else {
         const aspectRatio = 1440 / 680;

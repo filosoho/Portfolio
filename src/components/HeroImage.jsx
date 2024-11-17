@@ -12,19 +12,19 @@ const HeroImage = React.forwardRef(({ onClick, ...props }, ref) => {
     const handleResize = () => {
       const width = window.innerWidth;
       if (width <= 480) {
-        setScale(12);
+        setScale(8);
         setPosition([0, -22, 0]);
       } else if (width <= 640) {
-        setScale(7);
-        setPosition([0, -12, 0]);
+        setScale(5);
+        setPosition([0, -10, 0]);
       } else if (width <= 767) {
-        setScale(8);
+        setScale(5);
         setPosition([0, -5.5, 0]);
       } else if (width <= 1200) {
-        setScale(4);
+        setScale(3);
         setPosition([0, -2.5, 0]);
       } else {
-        setScale(5);
+        setScale(4);
         setPosition([0, -1.5, 0]);
       }
     };
