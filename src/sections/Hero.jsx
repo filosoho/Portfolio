@@ -358,7 +358,7 @@ const Hero = () => {
           className="hide-header-btn"
           onClick={() => setIsHeaderVisible((prev) => !prev)}
         >
-          {isHeaderVisible ? "Hide Header" : "Show Header"}
+          {isHeaderVisible ? "Show Matrix" : "Hide Matrix"}
         </button>
       </div>
     </>
