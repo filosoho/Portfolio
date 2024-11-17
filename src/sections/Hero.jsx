@@ -348,7 +348,7 @@ const Hero = () => {
       </div>
       {/* Always show the header toggle button */}
       <div
-        className="flex justify-center  items-center"
+        className="flex justify-center md:justify-start   items-center max-w-[1300px] mx-auto"
         style={{
           zIndex: 100,
         }}

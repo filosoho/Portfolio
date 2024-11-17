@@ -88,12 +88,6 @@ button {
     @media (max-width: 1200px) {
       min-height: 700px;
     }
-    @media (max-width: 1024px) {
-      min-height: 700px;
-    }
-    @media (max-width: 767px) {
-      min-height: 700px;
-    }
     @media (max-width: 640px) {
       min-height: 500px;
     }
@@ -125,17 +119,13 @@ button {
     @media (max-width: 767px) {
       background-position: 50% 50%;
       background-size: 120%;
-      width: 100%;
     }
     @media (max-width: 640px) {
       background-position: 50% -15%;
-      background-size: 120%;
-      width: 100%;
     }
     @media (max-width: 480px) {
       background-position: 50% 50%;
-      width: 100%;
-      min-height: 60vh;
+      /* min-height: 60vh; */
     }
   }
 
@@ -152,12 +142,6 @@ button {
     @media (max-width: 1200px) {
       min-height: 700px;
     }
-    @media (max-width: 1024px) {
-      min-height: 700px;
-    }
-    @media (max-width: 767px) {
-      min-height: 700px;
-    }
     @media (max-width: 640px) {
       min-height: 500px;
     }
@@ -167,10 +151,10 @@ button {
   }
 
   .hide-header-btn {
-    position: absolute;
+    position: relative;
     background-color: rgba(0, 0, 0, 0.7);
     margin-top: -6.5rem;
-    left: 2rem;
+    left: 2.5rem;
     font-size: 14px;
     color: white;
     width: 110px;
@@ -416,19 +400,17 @@ button {
     border-radius: 15px;
     width: 500px;
     height: 500px;
-    margin-top: -3rem;
+    margin-top: -2rem;
 
     @media (max-width: 1200px) {
       background-position: 50% 50%;
       width: 480px;
       height: 480px;
-      margin-top: -1rem;
     }
     @media (max-width: 640px) {
       background-position: 50% 50%;
       width: 450px;
       height: 450px;
-      margin-top: -1rem;
     }
   }
 
