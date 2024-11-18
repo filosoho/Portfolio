@@ -254,6 +254,42 @@ button {
     @apply relative inline-flex rounded-full h-3 w-3 bg-amber-500;
   }
 
+  .buttons {
+    position: relative;
+    margin-right: 2.5rem;
+    z-index: 99;
+
+    @media (max-width: 767px) {
+      position: relative;
+      margin-right: 0;
+      margin-top: 0.5rem;
+    }
+  }
+  .play-btn {
+    transition: background-color 0.3s;
+  }
+
+  .stop-btn {
+    transition: background-color 0.3s;
+  }
+
+  .hover-light {
+    transition: filter 0.3s ease;
+  }
+
+  .hover-light:hover {
+    filter: brightness(2);
+  }
+
+  .button-effect {
+    transition: transform 0.2s ease, filter 0.3s ease;
+  }
+
+  .button-effect:active {
+    transform: scale(0.9);
+    filter: brightness(1);
+  }
+
   /* hero section */
 
   .hero-container {
@@ -298,10 +334,6 @@ button {
     margin-left: 20.5rem;
     z-index: 0;
 
-    /* @media (max-width: 640px) {
-      margin-top: 15rem;
-      margin-left: 16.5rem;
-    } */
     @media (max-width: 1024px) {
       margin-top: 10rem;
       margin-left: 15.5rem;

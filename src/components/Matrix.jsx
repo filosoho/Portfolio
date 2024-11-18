@@ -11,9 +11,11 @@ const Matrix = ({
   columnSpacing = 20,
   columnSpacing2 = 40,
   charLimit = 100,
+  animationState,
 }) => {
   const canvasRef = useRef(null);
   const [dimensions, setDimensions] = useState({ width: 1440, height: 680 });
+  const [ypos, setYpos] = useState([]);
 
   const words = [
     "JavaScript",
@@ -118,13 +120,23 @@ const Matrix = ({
     canvas.height = h;
 
     const cols = Math.floor(w / columnSpacing) + 1;
-    const ypos = Array(cols).fill(0);
+
+    if (ypos.length === 0) {
+      setYpos(Array(cols).fill(0));
+    }
 
     const matrixEffect = () => {
+      if (animationState === "stop") {
+        ctx.clearRect(0, 0, w, h);
+        return;
+      }
+
       ctx.fillStyle = "#0002";
       ctx.fillRect(0, 0, w, h);
 
-      ypos.forEach((y, ind) => {
+      const newYpos = [...ypos];
+
+      newYpos.forEach((y, ind) => {
         let text;
 
         if (displayMode === "words") {
@@ -170,6 +182,8 @@ const Matrix = ({
     columnSpacing,
     columnSpacing2,
     charLimit,
+    animationState,
+    ypos,
   ]);
 
   return (

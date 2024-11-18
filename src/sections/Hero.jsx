@@ -42,6 +42,8 @@ const Hero = () => {
   const [columnSpacing2, setColumnSpacing2] = useState(40);
   const [charLimit, setCharLimit] = useState(100);
 
+  const [animationState, setAnimationState] = useState("play");
+
   const cameraRef = useRef();
   const controlsRef = useRef();
   const floatingRef = useRef();
@@ -196,6 +198,14 @@ const Hero = () => {
     }
   }, [controlsVisible]);
 
+  const handlePlay = () => {
+    setAnimationState("play");
+  };
+
+  const handleStop = () => {
+    setAnimationState("stop");
+  };
+
   return (
     <>
       <section id="home" className="relative  w-full">
@@ -209,6 +219,7 @@ const Hero = () => {
               analogousColors={analogousColors}
               hueColors={hueColors}
               displayMode={displayMode}
+              animationState={animationState}
               style={{
                 cursor: "pointer",
                 opacity: controlsVisible ? 0 : 1,
@@ -346,7 +357,6 @@ const Hero = () => {
           </section>
         </div>
       </section>
-
       {/* Always show the header toggle button */}
       <div
         className="flex justify-center md:justify-start   items-center max-w-[1300px] mx-auto"
@@ -360,6 +370,18 @@ const Hero = () => {
         >
           {isHeaderVisible ? "Show Matrix" : "Hide Matrix"}
         </button>
+      </div>
+      <div className="flex justify-center md:justify-end items-center  mt-[-4.5rem] buttons">
+        <img
+          className="w-12 h-12 hover-light button-effect "
+          src="/assets/play.png"
+          onClick={handlePlay}
+        />
+        <img
+          className="w-12 h-12 hover-light button-effect "
+          src="/assets/stop.png"
+          onClick={handleStop}
+        />
       </div>
     </>
   );
