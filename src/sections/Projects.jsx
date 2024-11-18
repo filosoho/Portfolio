@@ -55,7 +55,7 @@ const Projects = () => {
           >
             <img
               src={currentProject.logo}
-              alt="logo"
+              alt={currentProject.alt}
               className="w-10 h-10 shadow-sm"
             />
           </div>
@@ -105,7 +105,7 @@ const Projects = () => {
                   <img
                     src="/assets/arrow-up.png"
                     className="w-6 h-6"
-                    alt="arrow"
+                    alt="arrow pointing up for live view"
                   />
                 </a>
               ) : null}
@@ -120,7 +120,7 @@ const Projects = () => {
               {" "}
               <img
                 src="/assets/left-arrow.png"
-                alt="left arrow"
+                alt="arrow pointing left to the previous project"
                 className="w-8 h-4 sm:w-10 sm:h-6 mr-2"
               />{" "}
               Prev
@@ -133,7 +133,7 @@ const Projects = () => {
               Next
               <img
                 src="/assets/right-arrow.png"
-                alt="right arrow"
+                alt="arrow pointing right to next project"
                 className="w-8 h-4 sm:w-10 sm:h-6 ml-2"
               />{" "}
             </button>

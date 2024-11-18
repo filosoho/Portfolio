@@ -72,6 +72,7 @@ export const myProjects = [
     href: "https://fe-nc-news-gui8.onrender.com/",
     texture: "/textures/project/project1.avif",
     logo: "/assets/project-logo1.svg",
+    alt: "NC NEWS logo - newspaper icon",
     logoStyle: {
       backgroundColor: "#2A1816",
       border: "0.2px solid #36201D",
@@ -115,6 +116,7 @@ export const myProjects = [
     href: "https://www.figma.com/proto/pi7lBTXrbKWaAbbgNLF8Rw/Autumn-Chick---Prototype?type=design&node-id=1-754&t=zo52pKhQZx3de15S-1&scaling=scale-down&page-id=1%3A2&starting-point-node-id=1%3A754&mode=design",
     texture: "/textures/project/project2.avif",
     logo: "/assets/project-logo5.png",
+    alt: "Autumn Chick logo - autumn chick icon maple leaf",
     logoStyle: {
       backgroundColor: "#2A1816",
       border: "0.2px solid #36201D",
@@ -143,6 +145,7 @@ export const myProjects = [
     href: "https://citybite-burgers.netlify.app/",
     texture: "/textures/project/project3.avif",
     logo: "/assets/project-logo4.png",
+    alt: "CityBite Burgers logo - burger icon",
     logoStyle: {
       backgroundColor: "#2A1816",
       border: "0.2px solid #36201D",
@@ -181,6 +184,7 @@ export const myProjects = [
     href: "https://creative-spot.netlify.app/",
     texture: "/textures/project/project4.avif",
     logo: "/assets/project-logo2.png",
+    alt: "Creative Spot logo - creative spot icon heart with hands",
     logoStyle: {
       backgroundColor: "#2A1816",
       border: "0.2px solid #36201D",
@@ -214,6 +218,7 @@ export const myProjects = [
     href: "https://dicepig-game.netlify.app/",
     texture: "/textures/project/project5.avif",
     logo: "/assets/project-logo3.png",
+    alt: "Dice Pig Game logo - dice pig game icon dice",
     logoStyle: {
       backgroundColor: "#60f5a1",
       background:
@@ -246,9 +251,9 @@ export const myProjects = [
     subdesc: `Working on this project, I gained a deeper understanding of GUI development, particularly with Tkinter, which I used to create a clean, user-friendly interface that responds to input without delays. One of the key challenges I faced was implementing threading to ensure the timer countdowns and session transitions wouldn’t block the main UI thread. I used Python’s threading module to achieve this, reinforcing my ability to manage parallel processes in Python. Another important aspect was integrating audio notifications with pygame.mixer to signal the start of work sessions and breaks. I also implemented real-time volume control, which taught me how to manipulate sound properties dynamically within an app. Throughout this project, I improved my problem-solving skills, refining error handling and enhancing the user experience. The inclusion of Totoro-themed images made the app more engaging, making it not only functional but also enjoyable to use. This project helped me sharpen my Python skills while gaining valuable experience in integrating threading, sound and GUI elements into a cohesive application.`,
     button: "Totoro Pomodoro",
     repo: "https://github.com/filosoho/Linux-Totoro-Pomodoro-Timer",
-
     texture: "/textures/project/project6.avif",
     logo: "/assets/project-logo6.png",
+    alt: "Totoro Pomodoro logo - totoro pomodoro icon Totoro",
     logoStyle: {
       backgroundColor: "#2C6E49",
       background:
@@ -278,6 +283,7 @@ export const myProjects = [
     href: "https://filosoho.space/",
     texture: "/textures/project/project7.avif",
     logo: "/assets/project-logo7.png",
+    alt: "Filosoho Space logo - black circle with yellow white and gray circels in the middle",
     logoStyle: {
       backgroundColor: "#13202F",
       border: "0.2px solid #17293E",
@@ -311,6 +317,7 @@ export const myProjects = [
     href: "https://forkify-recipes-js.netlify.app/",
     texture: "/textures/project/project8.avif",
     logo: "/assets/project-logo8.png",
+    alt: "Forkify logo - fork and spoon icon",
     logoStyle: {
       backgroundColor: "#2A1816",
       border: "0.2px solid #36201D",
