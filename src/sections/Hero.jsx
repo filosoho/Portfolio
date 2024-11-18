@@ -130,10 +130,6 @@ const Hero = () => {
 
   useEffect(() => {
     if (heroImageRef.current) {
-      console.log(
-        "heroImageRef.current.position",
-        heroImageRef.current.position
-      );
       gsap.to(heroImageRef.current.position, {
         y: isSmall
           ? controlsVisible
