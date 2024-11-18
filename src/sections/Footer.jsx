@@ -11,7 +11,7 @@ const Footer = () => {
             <img
               src="/assets/github.png"
               alt="github"
-              className="w-full h-full"
+              className="w-10 h-10 sm:w-full sm:h-full"
             />
           </a>
         </div>
@@ -25,7 +25,7 @@ const Footer = () => {
             <img
               src="/assets/linkedin.png"
               alt="linkedin"
-              className="w-full h-full"
+              className="w-10 h-10 sm:w-full sm:h-full"
             />
           </a>
         </div>
