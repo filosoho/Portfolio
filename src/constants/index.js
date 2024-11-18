@@ -31,37 +31,6 @@ export const navLinks = [
   },
 ];
 
-export const skillsAndContributions = [
-  {
-    id: 1,
-    name: "Creative Collaboration",
-    tag: "Team Player",
-    img: "assets/skills1.svg",
-    desc: "I thrive in collaborative spaces where different viewpoints spark innovative ideas. I love brainstorming with my team, sharing insights and turning concepts into reality together.",
-  },
-  {
-    id: 2,
-    name: "Strong Work Ethic",
-    tag: "Dedicated Professional",
-    img: "assets/skills2.svg",
-    desc: "I bring dedication and perseverance to everything I do. I believe in delivering quality work and meeting deadlines, even under pressure, all while keeping a positive attitude.",
-  },
-  {
-    id: 3,
-    name: "Curiosity and Continuous Learning",
-    tag: "Growth-Oriented Explorer",
-    img: "assets/skills3.svg",
-    desc: "I have a genuine curiosity for technology and a desire to keep learning. Whether I'm diving into new frameworks or exploring coding techniques, I embrace every opportunity to expand my knowledge and skills.",
-  },
-  {
-    id: 4,
-    name: "Analytical Thinking",
-    tag: "Problem Solver",
-    img: "assets/skills4.svg",
-    desc: "I possess strong analytical skills that allow me to break down complex problems into manageable parts. This enables me to find effective solutions and optimize processes for better efficiency.",
-  },
-];
-
 export const myProjects = [
   {
     title: "NC NEWS - News Application",
