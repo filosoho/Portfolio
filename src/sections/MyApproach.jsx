@@ -12,7 +12,7 @@ const MyApproach = () => {
   return (
     <section className="c-space my-20" id="myApproach">
       <div className="w-full text-white-600">
-        <p className="head-text">My Approach</p>
+        <h2 className="head-text">My Approach</h2>
 
         <div className="my-approach-container">
           <div className="my-approach-content">
@@ -32,7 +32,7 @@ const MyApproach = () => {
                       <img
                         className="w-full h-full"
                         src={item.icon}
-                        alt="company logo"
+                        alt={item.alt}
                       />
                     </div>
                     <div className="my-approach-content_bar" />

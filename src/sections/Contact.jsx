@@ -58,7 +58,7 @@ const Contact = () => {
     >
       <div className="contact-bg">
         <div className="contact-container">
-          <h3 className="head-text">Contact Me</h3>
+          <h2 className="head-text">Contact Me</h2>
           <p className="text-base sm:text-lg text-white-600 mt-3 ml-2 sm:ml-0">
             Let’s connect!
             <br />

@@ -25,7 +25,7 @@ const Projects = () => {
 
   return (
     <section className="c-space my-20" id="projects">
-      <p className="head-text">Projects</p>
+      <h2 className="head-text">Projects</h2>
       <div className="flex flex-wrap justify-center gap-3 mt-8 mb-8">
         {myProjects.map((project, index) => (
           <button
@@ -61,9 +61,9 @@ const Projects = () => {
           </div>
 
           <div className="flex flex-col gap-5 text-white-600 my-5">
-            <p className="text-white text-xl sm:text-2xl font-semibold animatedText">
+            <h3 className="text-white text-xl sm:text-2xl font-semibold animatedText">
               {currentProject.title}
-            </p>
+            </h3>
             <p className="animatedText">{currentProject.desc}</p>
             <p className="animatedText">{currentProject.subdesc}</p>
           </div>

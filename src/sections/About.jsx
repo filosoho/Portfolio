@@ -70,7 +70,7 @@ const About = () => {
 
   return (
     <section className="c-space my-20" id="about">
-      <p className="head-text mb-10">About Me</p>
+      <h2 className="head-text mb-10">About Me</h2>
       <div className="grid xl:grid-cols-3 xl:grid-rows-2 md:grid-cols-2 grid-cols-1 gap-5 h-full ">
         <div className="col-span-1  xl:row-span-3">
           <div className="grid-container ">
@@ -82,7 +82,7 @@ const About = () => {
               />
             </div>
             <div>
-              <p className="grid-headtext">Hi, I&apos;m Anna</p>
+              <h4 className="grid-headtext">Hi, I&apos;m Anna</h4>
               <p className="grid-subtext">
                 <span className="about-highlight font-bold text-white">
                   Front End Developer
@@ -108,7 +108,7 @@ const About = () => {
               className="w-full max-h-[226px] object-contain mt-5 mb-2"
             />
             <div>
-              <p className="grid-headtext">The Joy of Coding</p>
+              <h4 className="grid-headtext">The Joy of Coding</h4>
               <p className="grid-subtext">
                 I see coding as an adventure, mixing creativity with the joy of
                 discovering something new. Each project is a chance to solve
@@ -139,7 +139,7 @@ const About = () => {
               />
             </div>
             <div>
-              <p className="grid-headtext">Effective Remote Collaboration</p>
+              <h4 className="grid-headtext">Effective Remote Collaboration</h4>
               <p className="grid-subtext">
                 As a London-based developer, I embrace the flexibility of remote
                 work across various time zones. I believe that strong
@@ -160,7 +160,7 @@ const About = () => {
               className="max-w-full  max-h-full object-contain"
             />
             <div id="tech-section" ref={(el) => markerRef.current.push(el)}>
-              <p className="grid-headtext ">Tech Stack</p>
+              <h4 className="grid-headtext ">Tech Stack</h4>
               <p className="grid-subtext">
                 <span className="relative inline-block font-bold text-yellow-500 marker">
                   JavaScript
@@ -196,7 +196,7 @@ const About = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 tech-grid">
                 {/* Frontend Section*/}
                 <div className="tech-section">
-                  <h3 className="tech-section-title">Frontend</h3>
+                  <h5 className="tech-section-title">Frontend</h5>
                   <ul className="tech-list">
                     <li>JavaScript</li>
                     <li>TypeScript</li>
@@ -217,14 +217,14 @@ const About = () => {
 
                 {/* Backend Section  & Tools Section */}
                 <div className="tech-section">
-                  <h3 className="tech-section-title">Backend</h3>
+                  <h5 className="tech-section-title">Backend</h5>
                   <ul className="tech-list">
                     <li>Node.js</li>
                     <li>Express.js</li>
                     <li>API</li>
                   </ul>
                   <br />
-                  <h3 className="tech-section-title">Tools</h3>
+                  <h5 className="tech-section-title">Tools</h5>
                   <ul className="tech-list">
                     <li>Git</li>
                     <li>Linux</li>
@@ -244,7 +244,7 @@ const About = () => {
 
                 {/* Databases Section & Workflows & Design Section & UI Section */}
                 <div className="tech-section">
-                  <h3 className="tech-section-title">Databases</h3>
+                  <h5 className="tech-section-title">Databases</h5>
                   <ul className="tech-list">
                     <li>SQL</li>
                     <li>PostgreSQL</li>
@@ -252,14 +252,14 @@ const About = () => {
                     <li>Supabase</li>
                   </ul>
                   <br />
-                  <h3 className="tech-section-title">Workflows</h3>
+                  <h5 className="tech-section-title">Workflows</h5>
                   <ul className="tech-list">
                     <li>Agile</li>
                     <li>Scrum</li>
                     <li>Paired Programming</li>
                   </ul>
                   <br />
-                  <h3 className="tech-section-title">Design</h3>
+                  <h5 className="tech-section-title">Design</h5>
                   <ul className="tech-list">
                     <li>Figma</li>
                     <li>Adobe Illustrator</li>
@@ -268,7 +268,7 @@ const About = () => {
                     <li>Procreate</li>
                   </ul>
                   <br />
-                  <h3 className="tech-section-title">UI/UX</h3>
+                  <h5 className="tech-section-title">UI/UX</h5>
                   <ul className="tech-list">
                     <li>UI Design</li>
                   </ul>
@@ -287,7 +287,7 @@ const About = () => {
             />
 
             <div>
-              <p className="grid-headtext">Fun Fact</p>
+              <h4 className="grid-headtext">Fun Fact</h4>
               <p className="grid-subtext">
                 While learning Blender, I followed{" "}
                 <a
