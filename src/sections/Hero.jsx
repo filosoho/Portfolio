@@ -375,11 +375,13 @@ const Hero = () => {
         <img
           className="w-8 h-8 sm:w-12 sm:h-12 hover-light button-effect "
           src="/assets/play.png"
+          alt="round play button"
           onClick={handlePlay}
         />
         <img
           className="w-8 h-8 sm:w-12 sm:h-12 hover-light button-effect "
           src="/assets/stop.png"
+          alt="square stop button"
           onClick={handleStop}
         />
       </div>
