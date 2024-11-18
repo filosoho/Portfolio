@@ -373,12 +373,12 @@ const Hero = () => {
       </div>
       <div className="flex justify-center md:justify-end items-center  mt-[-4.5rem] buttons">
         <img
-          className="w-12 h-12 hover-light button-effect "
+          className="w-8 h-8 sm:w-12 sm:h-12 hover-light button-effect "
           src="/assets/play.png"
           onClick={handlePlay}
         />
         <img
-          className="w-12 h-12 hover-light button-effect "
+          className="w-8 h-8 sm:w-12 sm:h-12 hover-light button-effect "
           src="/assets/stop.png"
           onClick={handleStop}
         />
