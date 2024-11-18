@@ -721,6 +721,7 @@ button {
   }
 
   /*  footer */
+
   .social-icon {
     @apply w-12 h-12  flex justify-center items-center;
   }

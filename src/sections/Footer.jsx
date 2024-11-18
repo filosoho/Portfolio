@@ -30,11 +30,11 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <div className="flex justify-between items-center gap-5">
-        <div className="text-white-500 flex gap-2">
+      <div className="text-white-600 flex justify-between items-center gap-5">
+        <div className=" flex gap-2">
           <p>&copy; {new Date().getFullYear()} Filosoho Space</p>
         </div>
-        <p className="text-white-500">All rights reserved.</p>
+        <p>All rights reserved.</p>
       </div>
     </footer>
   );
