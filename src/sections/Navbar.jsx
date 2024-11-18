@@ -29,7 +29,7 @@ const Navbar = () => {
             href="/"
             className="text-neutral-400 font-bold text-xl hover:text-white transition-colors "
           >
-            <img className="logo-img" src={logo} />
+            <img className="logo-img" src={logo} alt="filosoho space logo" />
           </a>
 
           <button
