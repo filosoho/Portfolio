@@ -689,12 +689,13 @@ button {
   /* contact section */
 
   .contact-bg {
-    background-image: url("/assets/terminal.png");
-    background-position: center;
-    background-repeat: no-repeat;
+    /* background-image: url("/assets/terminal.avif"); */
+    /* background-position: center;
+    background-repeat: no-repeat; */
     border-radius: 10px;
-    background-size: 390%;
-    background-position: 50% 15%;
+    /* background-size: 390%; */
+    /* background-position: 50% 15%; */
+    background-color: #0e0e10;
     height: 800px;
     padding-top: 4rem;
   }
