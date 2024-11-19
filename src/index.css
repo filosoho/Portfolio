@@ -683,7 +683,7 @@ button {
 
   @media (max-width: 1024px) {
     .canvas-full-height {
-      height: 400px;
+      height: 200px;
     }
   }
   /* contact section */
