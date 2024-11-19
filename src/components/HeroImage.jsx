@@ -1,5 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useGLTF } from "@react-three/drei";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
+
+const dracoLoader = new DRACOLoader();
+dracoLoader.setDecoderPath("https://www.gstatic.com/draco/v1/decoders/");
 
 const HeroImage = React.forwardRef(({ onClick, ...props }, ref) => {
   const { nodes, materials } = useGLTF("/models/low_poly_sci-fi_tablet.glb");
@@ -67,6 +71,6 @@ const HeroImage = React.forwardRef(({ onClick, ...props }, ref) => {
   );
 });
 
-useGLTF.preload("/models/low_poly_sci-fi_tablet.glb");
+useGLTF.preload("/models/low_poly_sci-fi_tablet.glb", true, dracoLoader);
 
 export default HeroImage;

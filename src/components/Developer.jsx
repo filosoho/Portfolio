@@ -7,6 +7,7 @@ import { useGraph, useThree } from "@react-three/fiber";
 import { useAnimations, useFBX, useGLTF } from "@react-three/drei";
 import { SkeletonUtils } from "three-stdlib";
 import CanvasLoader from "./CanvasLoader";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader";
 
 const DeveloperModel = ({ animationName = "idle", ...props }) => {
   const group = useRef();
@@ -15,7 +16,14 @@ const DeveloperModel = ({ animationName = "idle", ...props }) => {
   const container = group.current?.parentElement;
   const width = container?.clientWidth || window.innerWidth;
 
-  const { scene } = useGLTF("/models/animations/developer.glb");
+  const dracoLoader = new DRACOLoader();
+  dracoLoader.setDecoderPath("https://www.gstatic.com/draco/v1/decoders/");
+
+  const { scene } = useGLTF(
+    "/models/animations/developer.glb",
+    true,
+    dracoLoader
+  );
   const clone = useMemo(() => SkeletonUtils.clone(scene), [scene]);
   const { nodes, materials } = useGraph(clone);
 
@@ -85,8 +93,6 @@ const DeveloperModel = ({ animationName = "idle", ...props }) => {
       }
     };
   }, [animationName, actions]);
-
-  console.log("width:", width);
 
   return (
     <group ref={group} {...props} dispose={null}>
