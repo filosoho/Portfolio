@@ -354,32 +354,27 @@ const Hero = () => {
         </div>
       </section>
       {/* Always show the header toggle button */}
-      <div
-        className="flex justify-center md:justify-start   items-center max-w-[1300px] mx-auto"
-        style={{
-          zIndex: 100,
-        }}
-      >
+      <div className="flex justify-center md:justify-between flex-col  md:flex-row items-center max-w-[1300px] mx-auto">
         <button
           className="hide-header-btn"
           onClick={() => setIsHeaderVisible((prev) => !prev)}
         >
           {isHeaderVisible ? "Show Matrix" : "Hide Matrix"}
         </button>
-      </div>
-      <div className="flex justify-center md:justify-end items-center  mt-[-4.5rem] buttons">
-        <img
-          className="w-8 h-8 sm:w-12 sm:h-12 hover-light button-effect "
-          src="/assets/play.png"
-          alt="round play button"
-          onClick={handlePlay}
-        />
-        <img
-          className="w-8 h-8 sm:w-12 sm:h-12 hover-light button-effect "
-          src="/assets/stop.png"
-          alt="square stop button"
-          onClick={handleStop}
-        />
+        <div className="flex justify-center md:justify-end items-center  mt-[-4.5rem] buttons">
+          <img
+            className="w-8 h-8 sm:w-12 sm:h-12 hover-light button-effect "
+            src="/assets/play.png"
+            alt="round play button"
+            onClick={handlePlay}
+          />
+          <img
+            className="w-8 h-8 sm:w-12 sm:h-12 hover-light button-effect "
+            src="/assets/stop.png"
+            alt="square stop button"
+            onClick={handleStop}
+          />
+        </div>
       </div>
     </>
   );
