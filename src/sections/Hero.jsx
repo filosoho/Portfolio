@@ -361,7 +361,7 @@ const Hero = () => {
         >
           {isHeaderVisible ? "Show Matrix" : "Hide Matrix"}
         </button>
-        <div className="flex justify-center md:justify-end items-center  mt-[-4.5rem] buttons">
+        <div className="flex justify-center md:justify-end items-center  mt-[-6rem] buttons">
           <img
             className="w-8 h-8 sm:w-12 sm:h-12 hover-light button-effect "
             src="/assets/play.png"
