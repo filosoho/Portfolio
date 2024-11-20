@@ -25,7 +25,7 @@ const Navbar = () => {
     <header className="fixed top-0 left-0 right-0  bg-transparent backdrop-filter backdrop-blur-md">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center py-5 mx-auto c-space">
-          <img className="logo-img" src={logo} alt="filosoho space logo" />
+          <img className="logo-img" src={logo} alt="filosoho space logo"  loading="lazy"/>
           <button
             onClick={toggleMenu}
             className="text-neutral-400 hover:text-white focus:outline-none sm:hidden flex"
@@ -35,6 +35,7 @@ const Navbar = () => {
               src={isOpen ? "assets/close.png" : "assets/menu.png"}
               alt="menu toggle"
               className="w-10 h-6"
+               loading="lazy"
             />
           </button>
 

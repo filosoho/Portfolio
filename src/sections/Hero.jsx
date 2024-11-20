@@ -253,6 +253,7 @@ const Hero = () => {
                     className="w-full h-auto scale-x-[-1] rotate-[-10deg]"
                     src="/assets/click-me.png"
                     alt="Click me arrow"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -354,12 +355,14 @@ const Hero = () => {
             className="w-8 h-8 sm:w-12 sm:h-12 hover-light button-effect "
             src="/assets/play.png"
             alt="round play button"
+            loading="lazy"
             onClick={handlePlay}
           />
           <img
             className="w-8 h-8 sm:w-12 sm:h-12 hover-light button-effect "
             src="/assets/stop.png"
             alt="square stop button"
+            loading="lazy"
             onClick={handleStop}
           />
         </div>

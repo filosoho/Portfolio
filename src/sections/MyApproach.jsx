@@ -33,6 +33,7 @@ const MyApproach = () => {
                         className="w-full h-full"
                         src={item.icon}
                         alt={item.alt}
+                        loading="lazy"
                       />
                     </div>
                     <div className="my-approach-content_bar" />

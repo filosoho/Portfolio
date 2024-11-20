@@ -1,7 +1,6 @@
 import Globe from "react-globe.gl";
 import Button from "../components/Button";
 import { useState, useEffect, useRef } from "react";
-import { gsap } from "gsap";
 import $ from "jquery";
 import {
   createSVGElement,
@@ -15,14 +14,13 @@ const About = () => {
   const [isButtonClicked, setIsButtonClicked] = useState(false);
   const markerRef = useRef([]);
 
+  const widthGain = 1;
+  const heightGain = 1;
+
   const handleCopy = () => {
     navigator.clipboard.writeText("filosoho@gmail.com");
-
     setHasCopied(true);
-
-    setTimeout(() => {
-      setHasCopied(false);
-    }, 2000);
+    setTimeout(() => setHasCopied(false), 2000);
   };
 
   const handleButtonClick = () => {
@@ -79,6 +77,7 @@ const About = () => {
                 src="/assets/grid-1.png"
                 alt="grid-1"
                 className="max-w-full max-h-[226px] object-contain mt-5 mb-2"
+                loading="lazy"
               />
             </div>
             <div>
@@ -106,6 +105,7 @@ const About = () => {
               src="/assets/grid-3.png"
               alt="grid-3"
               className="w-full max-h-[226px] object-contain mt-5 mb-2"
+              loading="lazy"
             />
             <div>
               <h4 className="grid-headtext">The Joy of Coding</h4>
@@ -158,6 +158,7 @@ const About = () => {
               src="/assets/grid-2.png"
               alt="grid-2"
               className="max-w-full  max-h-full object-contain"
+              loading="lazy"
             />
             <div id="tech-section" ref={(el) => markerRef.current.push(el)}>
               <h4 className="grid-headtext ">Tech Stack</h4>
@@ -284,6 +285,7 @@ const About = () => {
               src="/assets/doughnut.png"
               alt="My Blender Doughnut"
               className="max-w-full max-h-[150px] object-contain sm:object-top mt-5 mb-2"
+              loading="lazy"
             />
 
             <div>
@@ -335,6 +337,7 @@ const About = () => {
               src="/assets/grid-4.png"
               alt="grid-4"
               className="w-full max-h-[276px] object-contain sm:object-top mt-5 mb-2"
+              loading="lazy"
             />
 
             <div className="space-y-2">
@@ -343,6 +346,7 @@ const About = () => {
                   src={hasCopied ? "/assets/tick.png" : "/assets/copy.png"}
                   alt="copy"
                   className="w-10 h-10"
+                  loading="lazy"
                 />
 
                 <p className=" font-medium text-md text-gray_gradient text-white">

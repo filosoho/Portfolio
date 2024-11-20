@@ -47,6 +47,7 @@ const Projects = () => {
               src={currentProject.spotlight}
               alt="spotlight"
               className="w-full h-96 object-cover rounded-xl"
+              loading="lazy"
             />
           </div>
           <div
@@ -57,6 +58,7 @@ const Projects = () => {
               src={currentProject.logo}
               alt={currentProject.alt}
               className="w-10 h-10 shadow-sm"
+              loading="lazy"
             />
           </div>
 
@@ -72,7 +74,7 @@ const Projects = () => {
               {currentProject.tags.map((tag, index) => (
                 <span key={tag.name} className="tooltip" data-text={tag.name}>
                   <div className="tech-logo">
-                    <img src={tag.path} alt={tag.name} />
+                    <img src={tag.path} alt={tag.name} loading="lazy" />
                   </div>
                 </span>
               ))}
@@ -90,6 +92,7 @@ const Projects = () => {
                     src="/assets/github.png"
                     className="w-10 h-10"
                     alt="github"
+                    loading="lazy"
                   />
                 </a>
               ) : null}
@@ -106,6 +109,7 @@ const Projects = () => {
                     src="/assets/arrow-up.png"
                     className="w-6 h-6"
                     alt="arrow pointing up for live view"
+                    loading="lazy"
                   />
                 </a>
               ) : null}
@@ -122,6 +126,7 @@ const Projects = () => {
                 src="/assets/left-arrow.png"
                 alt="arrow pointing left to the previous project"
                 className="w-8 h-4 sm:w-10 sm:h-6 mr-2"
+                loading="lazy"
               />{" "}
               Prev
             </button>
@@ -135,6 +140,7 @@ const Projects = () => {
                 src="/assets/right-arrow.png"
                 alt="arrow pointing right to next project"
                 className="w-8 h-4 sm:w-10 sm:h-6 ml-2"
+                loading="lazy"
               />{" "}
             </button>
           </div>
