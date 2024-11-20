@@ -12,19 +12,37 @@ const HeroImage = React.forwardRef(({ onClick, ...props }, ref) => {
   const [scale, setScale] = useState(5);
   const [position, setPosition] = useState([0, -1.5, 0]);
 
+  function useDebounce(value, delay) {
+    const [debouncedValue, setDebouncedValue] = useState(value);
+
+    useEffect(() => {
+      const handler = setTimeout(() => {
+        setDebouncedValue(value);
+      }, delay);
+
+      return () => {
+        clearTimeout(handler);
+      };
+    }, [value, delay]);
+
+    return debouncedValue;
+  }
+
+  const debouncedWidth = useDebounce(window.innerWidth, 150);
+
   useEffect(() => {
+    // Handle resize logic within the effect
     const handleResize = () => {
-      const width = window.innerWidth;
-      if (width <= 480) {
+      if (debouncedWidth <= 480) {
         setScale(8);
         setPosition([0, -22, 0]);
-      } else if (width <= 640) {
+      } else if (debouncedWidth <= 640) {
         setScale(5);
         setPosition([0, -10, 0]);
-      } else if (width <= 767) {
+      } else if (debouncedWidth <= 767) {
         setScale(5);
         setPosition([0, -5.5, 0]);
-      } else if (width <= 1200) {
+      } else if (debouncedWidth <= 1200) {
         setScale(2.5);
         setPosition([0, -2.5, 0]);
       } else {
