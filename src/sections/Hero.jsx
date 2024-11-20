@@ -251,7 +251,7 @@ const Hero = () => {
                 <div className="w-[85px] sm:w-[115px] inline-block overflow-hidden ml-10 mr-8 justify-center items-center">
                   <img
                     className="w-full h-auto scale-x-[-1] rotate-[-10deg]"
-                    src="/assets/click-me.png"
+                    src="https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/click-me.png"
                     alt="Click me arrow"
                     loading="lazy"
                   />
@@ -353,14 +353,14 @@ const Hero = () => {
         <div className="flex justify-center md:justify-end items-center  mt-[-6rem] buttons">
           <img
             className="w-8 h-8 sm:w-12 sm:h-12 hover-light button-effect "
-            src="/assets/play.png"
+            src="https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/play.png"
             alt="round play button"
             loading="lazy"
             onClick={handlePlay}
           />
           <img
             className="w-8 h-8 sm:w-12 sm:h-12 hover-light button-effect "
-            src="/assets/stop.png"
+            src="https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/stop.png"
             alt="square stop button"
             loading="lazy"
             onClick={handleStop}

@@ -60,7 +60,7 @@
 }
 
 .my-approach-canvas {
-  background-image: url("/assets/room.avif");
+  background-image: url("https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/room.avif");
   background-position: 30% 140%;
   background-size: 140%;
 

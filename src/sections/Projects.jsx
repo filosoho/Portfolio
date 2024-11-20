@@ -89,7 +89,7 @@ const Projects = () => {
                 >
                   <p>GitHub</p>
                   <img
-                    src="/assets/github.png"
+                    src="https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/github.png"
                     className="w-10 h-10"
                     alt="github"
                     loading="lazy"
@@ -106,7 +106,7 @@ const Projects = () => {
                 >
                   <p>Live View</p>
                   <img
-                    src="/assets/arrow-up.png"
+                    src="https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/arrow-up.png"
                     className="w-6 h-6"
                     alt="arrow pointing up for live view"
                     loading="lazy"
@@ -123,7 +123,7 @@ const Projects = () => {
             >
               {" "}
               <img
-                src="/assets/left-arrow.png"
+                src="https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/left-arrow.png"
                 alt="arrow pointing left to the previous project"
                 className="w-8 h-4 sm:w-10 sm:h-6 mr-2"
                 loading="lazy"
@@ -137,7 +137,7 @@ const Projects = () => {
               {" "}
               Next
               <img
-                src="/assets/right-arrow.png"
+                src="https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/right-arrow.png"
                 alt="arrow pointing right to next project"
                 className="w-8 h-4 sm:w-10 sm:h-6 ml-2"
                 loading="lazy"

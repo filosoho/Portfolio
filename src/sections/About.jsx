@@ -74,7 +74,7 @@ const About = () => {
           <div className="grid-container ">
             <div className="profile-img-box mx-auto">
               <img
-                src="/assets/grid-1.png"
+                src="https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/grid-1.png"
                 alt="grid-1"
                 className="max-w-full max-h-[226px] object-contain mt-5 mb-2"
                 loading="lazy"
@@ -102,7 +102,7 @@ const About = () => {
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container ">
             <img
-              src="/assets/grid-3.png"
+              src="https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/grid-3.png"
               alt="grid-3"
               className="w-full max-h-[226px] object-contain mt-5 mb-2"
               loading="lazy"
@@ -155,7 +155,7 @@ const About = () => {
         <div className="xl:col-span-2 md:col-span-2 xl:row-span-2">
           <div className="grid-container flex justify-center items-center">
             <img
-              src="/assets/grid-2.png"
+              src="https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/grid-2.png"
               alt="grid-2"
               className="max-w-full  max-h-full object-contain"
               loading="lazy"
@@ -282,7 +282,7 @@ const About = () => {
         <div className="xl:col-span-1 xl:row-span-1">
           <div className="grid-container flex justify-center items-center">
             <img
-              src="/assets/doughnut.png"
+              src="https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/doughnut.png"
               alt="My Blender Doughnut"
               className="max-w-full max-h-[150px] object-contain sm:object-top mt-5 mb-2"
               loading="lazy"
@@ -334,7 +334,7 @@ const About = () => {
         <div className="xl:col-span-1 xl:row-span-1">
           <div className="grid-container flex justify-center items-center">
             <img
-              src="/assets/grid-4.png"
+              src="https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/grid-4.png"
               alt="grid-4"
               className="w-full max-h-[276px] object-contain sm:object-top mt-5 mb-2"
               loading="lazy"

@@ -9,7 +9,7 @@ const Footer = () => {
             rel="noopener noreferrer"
           >
             <img
-              src="/assets/github.png"
+              src="https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/github.png"
               alt="github"
               className="w-10 h-10 sm:w-full sm:h-full"
             />
@@ -23,7 +23,7 @@ const Footer = () => {
             rel="noopener noreferrer"
           >
             <img
-              src="/assets/linkedin.png"
+              src="https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/linkedin.png"
               alt="linkedin"
               className="w-10 h-10 sm:w-full sm:h-full"
             />

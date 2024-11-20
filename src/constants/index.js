@@ -39,40 +39,42 @@ export const myProjects = [
     button: "NC NEWS",
     repo: "https://github.com/filosoho/nc-news",
     href: "https://fe-nc-news-gui8.onrender.com/",
-    texture: "/textures/project/project1.avif",
-    logo: "/assets/project-logo1.svg",
+    texture:
+      "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/textures/project/project1.avif",
+    logo: "https://raw.githubusercontent.com/filosoho/Portfolio/217d970bde711e49dc5c9a04011b51da7dde35de/public/assets/project-logo1.svg",
     alt: "NC NEWS logo - newspaper icon",
     logoStyle: {
       backgroundColor: "#2A1816",
       border: "0.2px solid #36201D",
       boxShadow: "0px 0px 60px 0px #AA3C304D",
     },
-    spotlight: "/assets/spotlight1.png",
+    spotlight:
+      "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/spotlight1.png",
     tags: [
       {
         id: 1,
         name: "React.js",
-        path: "/assets/react.svg",
+        path: "https://raw.githubusercontent.com/filosoho/Portfolio/217d970bde711e49dc5c9a04011b51da7dde35de/public/assets/react.svg",
       },
       {
         id: 2,
         name: "Express.js",
-        path: "assets/expressjs.png",
+        path: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/expressjs.png",
       },
       {
         id: 3,
         name: "API",
-        path: "/assets/api.png",
+        path: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/api.png",
       },
       {
         id: 4,
         name: "PostgreSQL",
-        path: "/assets/psql.png",
+        path: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/psql.png",
       },
       {
         id: 5,
         name: "CSS",
-        path: "/assets/css.png",
+        path: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/css.png",
       },
     ],
   },
@@ -83,25 +85,27 @@ export const myProjects = [
     button: "Autumn Chick",
     repo: "https://github.com/filosoho/UI-Prototype-Autumn-Chick-Shopping-App",
     href: "https://www.figma.com/proto/pi7lBTXrbKWaAbbgNLF8Rw/Autumn-Chick---Prototype?type=design&node-id=1-754&t=zo52pKhQZx3de15S-1&scaling=scale-down&page-id=1%3A2&starting-point-node-id=1%3A754&mode=design",
-    texture: "/textures/project/project2.avif",
-    logo: "/assets/project-logo5.png",
+    texture:
+      "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/textures/project/project2.avif",
+    logo: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/project-logo5.png",
     alt: "Autumn Chick logo - autumn chick icon maple leaf",
     logoStyle: {
       backgroundColor: "#2A1816",
       border: "0.2px solid #36201D",
       boxShadow: "0px 0px 60px 0px #AA3C304D",
     },
-    spotlight: "/assets/spotlight1.png",
+    spotlight:
+      "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/spotlight1.png",
     tags: [
       {
         id: 1,
         name: "Figma",
-        path: "/assets/figma.png",
+        path: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/figma.png",
       },
       {
         id: 2,
         name: "UI/UX",
-        path: "/assets/ui.png",
+        path: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/ui.png",
       },
     ],
   },
@@ -112,35 +116,37 @@ export const myProjects = [
     button: "CityBite Burgers",
     repo: "https://github.com/filosoho/CityBite-Burgers",
     href: "https://citybite-burgers.netlify.app/",
-    texture: "/textures/project/project3.avif",
-    logo: "/assets/project-logo4.png",
+    texture:
+      "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/textures/project/project3.avif",
+    logo: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/project-logo4.png",
     alt: "CityBite Burgers logo - burger icon",
     logoStyle: {
       backgroundColor: "#2A1816",
       border: "0.2px solid #36201D",
       boxShadow: "0px 0px 60px 0px #AA3C304D",
     },
-    spotlight: "/assets/spotlight1.png",
+    spotlight:
+      "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/spotlight1.png",
     tags: [
       {
         id: 1,
         name: "HTML",
-        path: "assets/html.png",
+        path: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/html.png",
       },
       {
         id: 2,
         name: "CSS",
-        path: "/assets/css.png",
+        path: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/css.png",
       },
       {
         id: 3,
         name: "SCSS",
-        path: "/assets/sass.png",
+        path: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/sass.png",
       },
       {
         id: 4,
         name: "JavaScript",
-        path: "/assets/javascript.png",
+        path: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/javascript.png",
       },
     ],
   },
@@ -151,30 +157,32 @@ export const myProjects = [
     button: "Creative Spot",
     repo: "https://github.com/filosoho/CreativeSpot",
     href: "https://creative-spot.netlify.app/",
-    texture: "/textures/project/project4.avif",
-    logo: "/assets/project-logo2.png",
+    texture:
+      "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/textures/project/project4.avif",
+    logo: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/project-logo2.png",
     alt: "Creative Spot logo - creative spot icon heart with hands",
     logoStyle: {
       backgroundColor: "#2A1816",
       border: "0.2px solid #36201D",
       boxShadow: "0px 0px 60px 0px #AA3C304D",
     },
-    spotlight: "/assets/spotlight1.png",
+    spotlight:
+      "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/spotlight1.png",
     tags: [
       {
         id: 1,
         name: "HTML",
-        path: "assets/html.png",
+        path: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/html.png",
       },
       {
         id: 2,
         name: "CSS",
-        path: "/assets/css.png",
+        path: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/css.png",
       },
       {
         id: 3,
         name: "JavaScript",
-        path: "/assets/javascript.png",
+        path: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/javascript.png",
       },
     ],
   },
@@ -185,8 +193,9 @@ export const myProjects = [
     button: "Pig Game",
     repo: "https://github.com/filosoho/JavaScript-Projects/tree/main/PigGame",
     href: "https://dicepig-game.netlify.app/",
-    texture: "/textures/project/project5.avif",
-    logo: "/assets/project-logo3.png",
+    texture:
+      "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/textures/project/project5.avif",
+    logo: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/project-logo3.png",
     alt: "Dice Pig Game logo - dice pig game icon dice",
     logoStyle: {
       backgroundColor: "#60f5a1",
@@ -195,22 +204,23 @@ export const myProjects = [
       border: "0.2px solid rgba(16, 63, 86, 1)",
       boxShadow: "0px 0px 60px 0px rgba(35, 131, 96, 0.3)",
     },
-    spotlight: "/assets/spotlight2.png",
+    spotlight:
+      "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/spotlight2.png",
     tags: [
       {
         id: 1,
         name: "HTML",
-        path: "assets/html.png",
+        path: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/html.png",
       },
       {
         id: 2,
         name: "CSS",
-        path: "/assets/css.png",
+        path: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/css.png",
       },
       {
         id: 3,
         name: "JavaScript",
-        path: "/assets/javascript.png",
+        path: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/javascript.png",
       },
     ],
   },
@@ -220,8 +230,9 @@ export const myProjects = [
     subdesc: `Working on this project, I gained a deeper understanding of GUI development, particularly with Tkinter, which I used to create a clean, user-friendly interface that responds to input without delays. One of the key challenges I faced was implementing threading to ensure the timer countdowns and session transitions wouldn’t block the main UI thread. I used Python’s threading module to achieve this, reinforcing my ability to manage parallel processes in Python. Another important aspect was integrating audio notifications with pygame.mixer to signal the start of work sessions and breaks. I also implemented real-time volume control, which taught me how to manipulate sound properties dynamically within an app. Throughout this project, I improved my problem-solving skills, refining error handling and enhancing the user experience. The inclusion of Totoro-themed images made the app more engaging, making it not only functional but also enjoyable to use. This project helped me sharpen my Python skills while gaining valuable experience in integrating threading, sound and GUI elements into a cohesive application.`,
     button: "Totoro Pomodoro",
     repo: "https://github.com/filosoho/Linux-Totoro-Pomodoro-Timer",
-    texture: "/textures/project/project6.avif",
-    logo: "/assets/project-logo6.png",
+    texture:
+      "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/textures/project/project6.avif",
+    logo: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/project-logo6.png",
     alt: "Totoro Pomodoro logo - totoro pomodoro icon Totoro",
     logoStyle: {
       backgroundColor: "#2C6E49",
@@ -230,17 +241,18 @@ export const myProjects = [
       border: "0.2px solid rgba(44, 110, 73, 1)",
       boxShadow: "0px 0px 60px 0px rgba(44, 110, 73, 0.3)",
     },
-    spotlight: "/assets/spotlight3.png",
+    spotlight:
+      "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/spotlight3.png",
     tags: [
       {
         id: 1,
         name: "Python",
-        path: "/assets/python.png",
+        path: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/python.png",
       },
       {
         id: 2,
         name: "Linux",
-        path: "/assets/linux.png",
+        path: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/linux.png",
       },
     ],
   },
@@ -250,30 +262,32 @@ export const myProjects = [
     subdesc: ` Using HTML, CSS and JavaScript, I ensured the site was visually appealing and easy to navigate while keeping performance in mind. A significant part of the project was optimizing the design to be responsive, allowing users to seamlessly browse the site on various devices. I also paid close attention to accessibility, making sure that all users, regardless of their needs, could easily interact with the site. By focusing on best practices in web development, such as semantic HTML and mobile-first design, I was able to create a website that not only looks good but also functions efficiently. Throughout this project, I praqcticed my skills in layout design, performance optimization and making sure the site loads quickly and remains functional. Filosoho Space reflects my commitment to clean, accessible and high-quality web development while offering a space to share my work and connect with like-minded people.`,
     button: "Filosoho Space",
     href: "https://filosoho.space/",
-    texture: "/textures/project/project7.avif",
-    logo: "/assets/project-logo7.png",
+    texture:
+      "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/textures/project/project7.avif",
+    logo: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/project-logo7.png",
     alt: "Filosoho Space logo - black circle with yellow white and gray circels in the middle",
     logoStyle: {
       backgroundColor: "#13202F",
       border: "0.2px solid #17293E",
       boxShadow: "0px 0px 60px 0px #2F6DB54D",
     },
-    spotlight: "/assets/spotlight4.png",
+    spotlight:
+      "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/spotlight4.png",
     tags: [
       {
         id: 1,
         name: "HTML",
-        path: "assets/html.png",
+        path: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/html.png",
       },
       {
         id: 2,
         name: "CSS",
-        path: "/assets/css.png",
+        path: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/css.png",
       },
       {
         id: 3,
         name: "JavaScript",
-        path: "/assets/javascript.png",
+        path: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/javascript.png",
       },
     ],
   },
@@ -284,36 +298,37 @@ export const myProjects = [
     button: "Forkify",
     repo: "https://github.com/filosoho/JavaScript-Projects/tree/main/Forkify",
     href: "https://forkify-recipes-js.netlify.app/",
-    texture: "/textures/project/project8.avif",
-    logo: "/assets/project-logo8.png",
+    texture:
+      "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/textures/project/project8.avif",
+    logo: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/project-logo8.png",
     alt: "Forkify logo - fork and spoon icon",
     logoStyle: {
       backgroundColor: "#2A1816",
       border: "0.2px solid #36201D",
       boxShadow: "0px 0px 60px 0px #AA3C304D",
-      // boxShadow: "0px 0px 60px 0px rgba(246, 162, 132, 0.5)",
     },
-    spotlight: "/assets/spotlight1.png",
+    spotlight:
+      "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/spotlight1.png",
     tags: [
       {
         id: 1,
         name: "JavaScript",
-        path: "/assets/javascript.png",
+        path: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/javascript.png",
       },
       {
         id: 2,
         name: "API",
-        path: "/assets/api.png",
+        path: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/api.png",
       },
       {
         id: 3,
         name: "HTML",
-        path: "/assets/html.png",
+        path: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/html.png",
       },
       {
         id: 4,
         name: "CSS",
-        path: "/assets/css.png",
+        path: "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/css.png",
       },
     ],
   },
@@ -348,7 +363,7 @@ export const myApproachValues = [
     id: 1,
     title: "Empowerment",
     desc: `I’m all about creating an environment where everyone feels empowered. By sharing what I know and keeping the conversation open, I aim to inspire creativity and encourage innovative thinking. Together, we can lift each other up and grow, both as individuals and as a team.`,
-    icon: "/assets/value1.svg",
+    icon: "https://raw.githubusercontent.com/filosoho/Portfolio/217d970bde711e49dc5c9a04011b51da7dde35de/public/assets/value1.svg",
     alt: "hand with a heart icon",
     animation: "bow",
   },
@@ -356,7 +371,7 @@ export const myApproachValues = [
     id: 2,
     title: "Diversity of Thought",
     desc: `There’s something special about working with people from different backgrounds. Each unique perspective adds to our collective brainstorming, leading to richer discussions and innovative solutions. I love the energy that comes from these diverse conversations.`,
-    icon: "/assets/value2.svg",
+    icon: "https://raw.githubusercontent.com/filosoho/Portfolio/217d970bde711e49dc5c9a04011b51da7dde35de/public/assets/value2.svg",
     alt: "lightbulb icon",
     animation: "clapping",
   },
@@ -364,7 +379,7 @@ export const myApproachValues = [
     id: 3,
     title: "Pragmatic Problem-Solving",
     desc: `I take a pragmatic approach to development, balancing ambition with realistic solutions. By focusing on what works best for each project, I ensure that my contributions are both impactful and efficient, meeting the needs of users and stakeholders alike.`,
-    icon: "/assets/value3.svg",
+    icon: "https://raw.githubusercontent.com/filosoho/Portfolio/217d970bde711e49dc5c9a04011b51da7dde35de/public/assets/value3.svg",
     alt: "suitcase icon",
     animation: "salute",
   },
@@ -372,7 +387,7 @@ export const myApproachValues = [
     id: 4,
     title: "Curiosity and Exploration",
     desc: `Curiosity drives my passion for development. I thrive on exploring new tools and frameworks, which keeps my work exciting and my skills sharp. This sense of adventure helps me to go through challenges with fresh perspectives and innovative solutions.`,
-    icon: "/assets/value4.svg",
+    icon: "https://raw.githubusercontent.com/filosoho/Portfolio/217d970bde711e49dc5c9a04011b51da7dde35de/public/assets/value4.svg",
     alt: "book icon",
     animation: "thankful",
   },

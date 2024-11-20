@@ -85,7 +85,7 @@ button {
   }
 
   .header.visible {
-    background-image: url("/assets/header/space-console-sci-fi.png");
+    background-image: url("https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/header/space-console-sci-fi.png");
   }
 
   .header.hidden {
@@ -377,7 +377,7 @@ button {
 
   .controls {
     position: relative;
-    background-image: url("/assets/header/controls.png");
+    background-image: url("https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/header/controls.png");
     background-size: cover;
     background-blend-mode: overlay;
     background-repeat: no-repeat;
