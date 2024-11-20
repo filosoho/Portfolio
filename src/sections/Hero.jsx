@@ -1,11 +1,9 @@
-import React from "react";
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
 import HeroImage from "../components/HeroImage";
 import { Suspense } from "react";
 import CanvasLoader from "../components/CanvasLoader";
-import { Leva } from "leva";
 import { useMediaQuery } from "react-responsive";
 import { calculateSizes } from "../constants/index.js";
 import HeroCamera from "../components/HeroCamera";
@@ -17,7 +15,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { CSSPlugin } from "gsap/CSSPlugin";
 
-gsap.registerPlugin();
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, CSSPlugin);
 
 const Hero = () => {
@@ -163,7 +160,6 @@ const Hero = () => {
           ease: "power1.inOut",
         },
 
-        // Close controls with smooth animation
         {
           y: controlsVisible ? -18 : 0,
           opacity: controlsVisible ? 1 : 0,
@@ -240,12 +236,6 @@ const Hero = () => {
                 </p>
                 <h1 className="hero_tag text-gray_gradient">
                   A Curious Front End Developer
-                  {/* <span>
-                <img
-                  className="octocat-img vertical-align-middle"
-                  src="/assets/octocat.png"
-                />
-              </span> */}
                 </h1>
               </div>
             )}
@@ -273,8 +263,6 @@ const Hero = () => {
                 heroImageVisible ? "visible" : "hidden"
               } w-full h-full absolute inset-0`}
             >
-              {/* <Leva /> */}
-
               <Canvas className=" hero-canvas w-full h-full ">
                 <Suspense fallback={<CanvasLoader />}>
                   <PerspectiveCamera
