@@ -69,19 +69,32 @@ const DeveloperModel = ({ animationName = "idle", ...props }) => {
   const filteredClappingAnimation = filterTracks(clappingAnimation[0]);
   const filteredThankfulAnimation = filterTracks(thankfulAnimation[0]);
 
-  const { actions } =
+  // const { actions } =
+  //   width < 540
+  //     ? useAnimations([filteredIdleAnimation], group)
+  //     : useAnimations(
+  //         [
+  //           filteredIdleAnimation,
+  //           filteredSaluteAnimation,
+  //           filteredHeadNodYesAnimation,
+  //           filteredClappingAnimation,
+  //           filteredThankfulAnimation,
+  //         ],
+  //         group
+  //       );
+
+  const animations =
     width < 540
-      ? useAnimations([filteredIdleAnimation], group)
-      : useAnimations(
-          [
-            filteredIdleAnimation,
-            filteredSaluteAnimation,
-            filteredHeadNodYesAnimation,
-            filteredClappingAnimation,
-            filteredThankfulAnimation,
-          ],
-          group
-        );
+      ? [filteredIdleAnimation]
+      : [
+          filteredIdleAnimation,
+          filteredSaluteAnimation,
+          filteredHeadNodYesAnimation,
+          filteredClappingAnimation,
+          filteredThankfulAnimation,
+        ];
+
+  const { actions } = useAnimations(animations, group);
 
   useEffect(() => {
     if (actions && actions[animationName]) {
