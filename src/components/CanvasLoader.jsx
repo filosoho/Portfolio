@@ -11,9 +11,9 @@ const CanvasLoader = () => {
   );
 
   return (
-    <Html as="div" center className="canvas-loader-container">
+    <Html as="div" center className="flex justify-center items-center flex-col">
       <span className="canvas-loader"></span>
-      <p className="text-center canvas-loader-text font-generalsans">
+      <p className="text-center text-sm text-[#f1f1f1] font-extrabold mt-10 font-generalsans">
         {progressText}
       </p>
     </Html>

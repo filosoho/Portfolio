@@ -59,7 +59,7 @@ const Contact = () => {
       <div className="contact-bg">
         <div className="contact-container">
           <h2 className="head-text">Contact Me</h2>
-          <p className="text-base sm:text-lg text-white-600 mt-3 ml-2 sm:ml-0">
+          <p className="text-base sm:text-lg text-white-600 mt-3 ">
             I’d love to hear from you!
             <br />
             Let’s connect and share ideas.
