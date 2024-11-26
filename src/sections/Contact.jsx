@@ -64,7 +64,7 @@ const Contact = () => {
           <form
             ref={formRef}
             onSubmit={handleSubmit}
-            className="mt-12 ml-2 sm:ml-0 flex flex-col space-y-7"
+            className="mt-12 flex flex-col space-y-7"
           >
             <label className="space-y-3">
               <span className="field-label">Full Name</span>
