@@ -71,8 +71,9 @@ const Developer = ({ animationName = "idle", ...props }) => {
   const { actions } = useAnimations(animations, group);
 
   useEffect(() => {
-    actions[animationName].reset().fadeIn(0.5).play();
-    return () => actions[animationName].fadeOut(0.5);
+    const activeAnimation = actions[animationName] || actions.idle;
+    activeAnimation.reset().fadeIn(0.5).play();
+    return () => activeAnimation.fadeOut(0.5);
   }, [animationName]);
 
   return (
