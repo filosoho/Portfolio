@@ -1,13 +1,14 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
 import HeroImage from "../components/HeroImage";
-import { Suspense } from "react";
 import CanvasLoader from "../components/CanvasLoader";
 import { useMediaQuery } from "react-responsive";
 import { calculateSizes } from "../constants/index.js";
 import HeroCamera from "../components/HeroCamera";
 import Button from "../components/Button";
+import BtnShowMatrix from "../components/BtnShowMatrix.jsx";
+import BtnPlayStop from "../components/BtnPlayStop.jsx";
 import Matrix from "../components/Matrix";
 import MatrixControls from "../components/MatrixControls";
 import gsap from "gsap";
@@ -38,7 +39,6 @@ const Hero = () => {
   const [columnSpacing, setColumnSpacing] = useState(20);
   const [columnSpacing2, setColumnSpacing2] = useState(40);
   const [charLimit, setCharLimit] = useState(100);
-
   const [animationState, setAnimationState] = useState("play");
 
   const cameraRef = useRef();
@@ -126,7 +126,7 @@ const Hero = () => {
   };
 
   useEffect(() => {
-    if (heroImageRef.current) {
+    if (!isSmall && heroImageRef.current) {
       gsap.to(heroImageRef.current.position, {
         y: isSmall
           ? controlsVisible
@@ -200,174 +200,174 @@ const Hero = () => {
 
   return (
     <>
-      <section id="home" className="relative  w-full">
-        <div className="absolute inset-0 -z-10">
-          <div style={{ marginTop: "70px" }}>
-            <Matrix
-              fontSizeMin={fontSizeMin}
-              fontSizeMax={fontSizeMax}
-              speed={speed}
-              colorSet={colorSet}
-              analogousColors={analogousColors}
-              hueColors={hueColors}
-              displayMode={displayMode}
-              animationState={animationState}
-              style={{
-                cursor: "pointer",
-                opacity: controlsVisible ? 0 : 1,
-                visibility: controlsVisible ? "hidden" : "visible",
-                transition: "opacity 2s ease, visibility 1s ease",
-              }}
-            />
+      <section className="flex justify-center items-center">
+        <section id="home" className="relative w-full">
+          <div className="absolute inset-0 -z-10">
+            <div style={{ marginTop: "70px" }}>
+              <Matrix
+                fontSizeMin={fontSizeMin}
+                fontSizeMax={fontSizeMax}
+                speed={speed}
+                colorSet={colorSet}
+                analogousColors={analogousColors}
+                hueColors={hueColors}
+                displayMode={displayMode}
+                animationState={animationState}
+                style={{
+                  cursor: "pointer",
+                  opacity: controlsVisible ? 0 : 1,
+                  visibility: controlsVisible ? "hidden" : "visible",
+                  transition: "opacity 2s ease, visibility 1s ease",
+                }}
+              />
+            </div>
           </div>
-        </div>
-
-        <div className="flex items-center justify-center hero-container ">
-          <section
-            className={`w-full flex flex-col relative header ${
-              isHeaderVisible ? "visible" : "hidden"
-            } `}
-          >
-            {isHeaderVisible && (
-              <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
-                <p className="hi-tag typing-effect">
-                  {text}
-                  <span className="caret"></span>
-                </p>
-                <h1 className="hero_tag text-gray_gradient">
-                  A Curious Front End Developer
-                </h1>
-              </div>
-            )}
-
-            {!controlsVisible && (
-              <div
-                ref={floatingRef}
-                className="matrix-arrow-container inline-flex justify-center items-center relative"
-              >
-                <p className="matrix-arrow-text text-white text-sm absolute top-10">
-                  Control The Matrix
-                </p>
-                <div className="w-[85px] sm:w-[115px] inline-block overflow-hidden ml-10 mr-8 justify-center items-center">
-                  <img
-                    className="w-full h-auto scale-x-[-1] rotate-[-10deg]"
-                    src="https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/click-me.png"
-                    alt="Click me arrow"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            )}
-
-            <div
-              className={`hero-image  ${
-                heroImageVisible ? "visible" : "hidden"
-              } w-full h-full absolute inset-0`}
+          <div className="flex items-center justify-center hero-container ">
+            <section
+              className={`w-full flex flex-col relative header ${
+                isHeaderVisible ? "visible" : "hidden"
+              } `}
             >
-              <Canvas className=" hero-canvas w-full h-full ">
-                <Suspense fallback={<CanvasLoader />}>
-                  <PerspectiveCamera
-                    ref={cameraRef}
-                    makeDefault
-                    position={[0, 0, 30]}
-                  />
-                  <HeroCamera isMobile={isMobile}>
-                    <HeroImage
+              {isHeaderVisible && (
+                <div className="w-full mx-auto flex flex-col sm:mt-36 mt-20 c-space gap-3">
+                  <p className="hi-tag typing-effect">
+                    {text}
+                    <span className="caret"></span>
+                  </p>
+                  <h1 className="hero_tag text-gray_gradient">
+                    A Curious Front End Developer
+                  </h1>
+                </div>
+              )}
+              {!controlsVisible && (
+                <div
+                  ref={floatingRef}
+                  className="matrix-arrow-container inline-flex justify-center items-center relative"
+                >
+                  <p className="matrix-arrow-text text-white text-sm absolute top-10">
+                    Control The Matrix
+                  </p>
+                  <div className="w-[85px] sm:w-[115px] inline-block overflow-hidden ml-10 mr-8 justify-center items-center">
+                    <img
+                      className="w-full h-auto scale-x-[-1] rotate-[-10deg]"
+                      src="/assets/click-me.png"
+                      alt="Click me arrow"
+                    />
+                  </div>
+                </div>
+              )}
+              <div
+                className={`hero-image  ${
+                  heroImageVisible ? "visible" : "hidden"
+                } w-full h-full absolute inset-0`}
+              >
+                {isSmall ? (
+                  <div className="flex justify-center  items-center  w-full h-full">
+                    <img
                       ref={heroImageRef}
-                      camera={cameraRef.current}
-                      position={sizes.deskPosition}
-                      rotation={sizes.deskRotation}
-                      scale={sizes.deskScale}
+                      src="/assets/hero.png"
+                      alt="Small Screen Image"
+                      className="small-screen-image"
                       onClick={handleHeroImageClick}
                       style={{
+                        width: "80px",
+                        height: "auto",
                         cursor: "pointer",
                       }}
                     />
-                  </HeroCamera>
-
-                  <ambientLight intensity={1} />
-                  <directionalLight position={[5, 2, 5]} intensity={2} />
-                </Suspense>
-              </Canvas>
-            </div>
-            <section
-              className="flex justify-center  items-center "
-              style={{ position: "relative" }}
-            >
-              {controlsVisible && (
-                <>
-                  <div
-                    className="controls"
-                    ref={controlsRef}
-                    style={{
-                      zIndex: 100,
-                    }}
-                  >
-                    <div className="controls-container">
-                      <MatrixControls
-                        fontSizeMin={fontSizeMin}
-                        setFontSizeMin={setFontSizeMin}
-                        fontSizeMax={fontSizeMax}
-                        setFontSizeMax={setFontSizeMax}
-                        speed={speed}
-                        setSpeed={setSpeed}
-                        colorSet={colorSet}
-                        setColorSet={setColorSet}
-                        onAnalogousColorsChange={handleAnalogousColorsChange}
-                        onHueColorsChange={handleHueColorsChange}
-                        isHeaderVisible={isHeaderVisible}
-                        setIsHeaderVisible={setIsHeaderVisible}
-                        displayMode={displayMode}
-                        setDisplayMode={setDisplayMode}
-                        setColumnSpacing={setColumnSpacing}
-                        setColumnSpacing2={setColumnSpacing2}
-                        columnSpacing={columnSpacing}
-                        columnSpacing2={columnSpacing2}
-                        charLimit={charLimit}
-                        setCharLimit={setCharLimit}
-                      />
-                    </div>
                   </div>
-                </>
-              )}
+                ) : (
+                  <Canvas className=" hero-canvas w-full h-full ">
+                    <Suspense fallback={<CanvasLoader />}>
+                      <PerspectiveCamera
+                        ref={cameraRef}
+                        makeDefault
+                        position={[0, 0, 30]}
+                      />
+                      <HeroCamera isMobile={isMobile}>
+                        <HeroImage
+                          ref={heroImageRef}
+                          camera={cameraRef.current}
+                          position={sizes.deskPosition}
+                          rotation={sizes.deskRotation}
+                          scale={sizes.deskScale}
+                          onClick={handleHeroImageClick}
+                          style={{
+                            cursor: "pointer",
+                          }}
+                        />
+                      </HeroCamera>
+                      <ambientLight intensity={1} />
+                      <directionalLight position={[5, 2, 5]} intensity={2} />
+                    </Suspense>
+                  </Canvas>
+                )}
+              </div>
+              <section
+                className="flex justify-center  items-center "
+                style={{ position: "relative" }}
+              >
+                {controlsVisible && (
+                  <>
+                    <div
+                      className="controls"
+                      ref={controlsRef}
+                      style={{
+                        zIndex: 100,
+                        backgroundImage: `url("/assets/header/controls.png")`,
+                        backgroundSize: "cover",
+                        backgroundBlendMode: "overlay",
+                        backgroundRepeat: "no-repeat",
+                        borderRadius: "15px",
+                        position: "relative",
+                      }}
+                    >
+                      <div className="controls-container">
+                        <MatrixControls
+                          fontSizeMin={fontSizeMin}
+                          setFontSizeMin={setFontSizeMin}
+                          fontSizeMax={fontSizeMax}
+                          setFontSizeMax={setFontSizeMax}
+                          speed={speed}
+                          setSpeed={setSpeed}
+                          colorSet={colorSet}
+                          setColorSet={setColorSet}
+                          onAnalogousColorsChange={handleAnalogousColorsChange}
+                          onHueColorsChange={handleHueColorsChange}
+                          isHeaderVisible={isHeaderVisible}
+                          setIsHeaderVisible={setIsHeaderVisible}
+                          displayMode={displayMode}
+                          setDisplayMode={setDisplayMode}
+                          setColumnSpacing={setColumnSpacing}
+                          setColumnSpacing2={setColumnSpacing2}
+                          columnSpacing={columnSpacing}
+                          columnSpacing2={columnSpacing2}
+                          charLimit={charLimit}
+                          setCharLimit={setCharLimit}
+                        />
+                      </div>
+                    </div>
+                  </>
+                )}
+              </section>
+              <div className="hero-btn  absolute bottom-7 left-0 right-0 w-full z-10 c-space">
+                <Button
+                  name="Let's work together"
+                  isBeam
+                  containerClass="button-container sm:w-fit w-full sm:min-w-96"
+                  onClick={handleButtonClick}
+                />
+              </div>
             </section>
-            <div className="hero-btn  absolute bottom-7 left-0 right-0 w-full z-10 c-space">
-              <Button
-                name="Let's work together"
-                isBeam
-                containerClass="button-container sm:w-fit w-full sm:min-w-96"
-                onClick={handleButtonClick}
-              />
-            </div>
-          </section>
-        </div>
+          </div>
+        </section>
       </section>
-      {/* Always show the header toggle button */}
       <div className="flex justify-center md:justify-between flex-col  md:flex-row items-center max-w-[1300px] mx-auto">
-        <button
-          className="relative bg-black bg-opacity-70 mt-0 left-0 text-xs text-white w-[110px] p-2.5 rounded cursor-pointer border border-white z-50 
-  md:left-[2.5rem] md:mt-[-6.5rem] sm:text-sm sm:w-[100px] sm:p-2 
-  xs:text-[10px] xs:w-[80px] xs:p-1"
-          onClick={() => setIsHeaderVisible((prev) => !prev)}
-        >
-          {isHeaderVisible ? "Show Matrix" : "Hide Matrix"}
-        </button>
-        <div className="flex justify-center md:justify-end items-center  mt-[-6rem] buttons">
-          <img
-            className="w-8 h-8 sm:w-12 sm:h-12 hover-light button-effect "
-            src="https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/play.png"
-            alt="round play button"
-            loading="lazy"
-            onClick={handlePlay}
-          />
-          <img
-            className="w-8 h-8 sm:w-12 sm:h-12 hover-light button-effect "
-            src="https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/stop.png"
-            alt="square stop button"
-            loading="lazy"
-            onClick={handleStop}
-          />
-        </div>
+        <BtnShowMatrix
+          isHeaderVisible={isHeaderVisible}
+          setIsHeaderVisible={setIsHeaderVisible}
+        />
+        <BtnPlayStop handlePlay={handlePlay} handleStop={handleStop} />
       </div>
     </>
   );

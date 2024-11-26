@@ -39,7 +39,6 @@ const Projects = () => {
           </button>
         ))}
       </div>
-
       <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
         <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200 h-full">
           <div className="absolute top-0 right-0">
@@ -61,7 +60,6 @@ const Projects = () => {
               loading="lazy"
             />
           </div>
-
           <div className="flex flex-col gap-5 text-white-600 my-5">
             <h3 className="text-white text-xl sm:text-2xl font-semibold animatedText">
               {currentProject.title}
@@ -89,14 +87,13 @@ const Projects = () => {
                 >
                   <p>GitHub</p>
                   <img
-                    src="https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/github.png"
+                    src="/assets/github.png"
                     className="w-10 h-10"
                     alt="github"
                     loading="lazy"
                   />
                 </a>
               ) : null}
-
               {currentProject.title !== "Totoro-Pomodoro Timer" ? (
                 <a
                   className="flex items-center gap-1 cursor-pointer text-white-600"
@@ -106,7 +103,7 @@ const Projects = () => {
                 >
                   <p>Live View</p>
                   <img
-                    src="https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/arrow-up.png"
+                    src="/assets/arrow-up.png"
                     className="w-6 h-6"
                     alt="arrow pointing up for live view"
                     loading="lazy"
@@ -115,7 +112,6 @@ const Projects = () => {
               ) : null}
             </div>
           </div>
-
           <div className="flex justify-between direction-row items-center mt-auto text-white">
             <button
               className="flex flex-row items-center space-x-2"
@@ -123,7 +119,7 @@ const Projects = () => {
             >
               {" "}
               <img
-                src="https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/left-arrow.png"
+                src="/assets/left-arrow.png"
                 alt="arrow pointing left to the previous project"
                 className="w-8 h-4 sm:w-10 sm:h-6 mr-2"
                 loading="lazy"
@@ -137,7 +133,7 @@ const Projects = () => {
               {" "}
               Next
               <img
-                src="https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/right-arrow.png"
+                src="/assets/right-arrow.png"
                 alt="arrow pointing right to next project"
                 className="w-8 h-4 sm:w-10 sm:h-6 ml-2"
                 loading="lazy"
@@ -145,7 +141,6 @@ const Projects = () => {
             </button>
           </div>
         </div>
-
         <div className="flex flex-col justify-center items-center border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
           <Canvas>
             <ambientLight intensity={0.5} />

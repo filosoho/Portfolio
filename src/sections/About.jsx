@@ -1,21 +1,13 @@
-import Globe from "react-globe.gl";
+import React, { useState, Suspense } from "react";
 import Button from "../components/Button";
-import { useState, useEffect, useRef } from "react";
-import $ from "jquery";
-import {
-  createSVGElement,
-  createPathElement,
-  setCircleVisibility,
-  circlePath,
-} from "../sections/utils/marker.js";
+import Profile from "../components/Profile";
+import JoyOfCoding from "../components/JoyOfCoding";
+import Collaboration from "../components/Collaboration";
+import TechStack from "../components/TechStack";
 
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
   const [isButtonClicked, setIsButtonClicked] = useState(false);
-  const markerRef = useRef([]);
-
-  const widthGain = 1;
-  const heightGain = 1;
 
   const handleCopy = () => {
     navigator.clipboard.writeText("filosoho@gmail.com");
@@ -31,263 +23,44 @@ const About = () => {
     }
   };
 
-  useEffect(() => {
-    const markers = $(".marker");
-    const widthGain = 1;
-    const heightGain = 1;
-
-    markers.each(function () {
-      const marker = $(this);
-      const width = marker.width();
-      const height = 2 * marker.height();
-
-      // Create SVG element
-      const svg = createSVGElement(width, height, widthGain, heightGain);
-      marker[0].appendChild(svg);
-
-      // Create path element
-      const path = createPathElement();
-      svg.appendChild(path);
-
-      // Hide path initially
-      setCircleVisibility(path, false);
-
-      // Generate a new circle and show path on mouse hover
-      marker.mouseover(function () {
-        setCircleVisibility(path, true);
-        const newPath = circlePath(-0.15, 0.05, 150, 190, 0.05, 0.3);
-        $(path).attr({ d: newPath });
-      });
-      marker.mouseout(function () {
-        setTimeout(() => {
-          setCircleVisibility(path, false);
-        }, 300);
-      });
-    });
-  }, []);
-
   return (
     <section className="c-space my-20" id="about">
       <h2 className="head-text mb-10">About Me</h2>
       <div className="grid xl:grid-cols-3 xl:grid-rows-2 md:grid-cols-2 grid-cols-1 gap-5 h-full ">
         <div className="col-span-1  xl:row-span-3">
-          <div className="grid-container ">
-            <div className="profile-img-box mx-auto">
-              <img
-                src="https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/grid-1.png"
-                alt="grid-1"
-                className="max-w-full max-h-[226px] object-contain mt-5 mb-2"
-                loading="lazy"
-              />
-            </div>
-            <div>
-              <h4 className="grid-headtext">Hi, I&apos;m Anna</h4>
-              <p className="grid-subtext">
-                <span className="about-highlight font-bold text-white">
-                  Front End Developer
-                </span>{" "}
-                who loves turning ideas into fun, interactive web experiences.
-                My background in Full-Stack Development gives me the flexibility
-                to work on both the front and back end of projects, but I have a
-                special passion for Front End Development, designing smooth,
-                responsive and engaging user interfaces. Usually I&apos;m
-                exploring new tech or solving tricky problems and I&apos;m
-                always looking for creative ways to build something fun and
-                functional.
-              </p>
-            </div>
-          </div>
+          <Suspense fallback={<div>Loading Profile...</div>}>
+            <Profile />
+          </Suspense>
         </div>
-
         <div className="col-span-1 xl:row-span-3">
-          <div className="grid-container ">
-            <img
-              src="https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/grid-3.png"
-              alt="grid-3"
-              className="w-full max-h-[226px] object-contain mt-5 mb-2"
-              loading="lazy"
-            />
-            <div>
-              <h4 className="grid-headtext">The Joy of Coding</h4>
-              <p className="grid-subtext">
-                I see coding as an adventure, mixing creativity with the joy of
-                discovering something new. Each project is a chance to solve
-                puzzles and express ideas in a way that&apos;s visually
-                engaging. Creating smooth user experiences is important to me. I
-                focus on perfecting animations and ensuring designs are
-                responsive and work well on all platforms. And the best part?
-                There&apos;s always something new to learn! When I&apos;m not
-                coding, I&apos;m out there discovering the latest frameworks or
-                diving into new challenges just for the thrill of it.
-              </p>
-            </div>
-          </div>
+          <Suspense fallback={<div>Loading Joy Of Coding..</div>}>
+            <JoyOfCoding />
+          </Suspense>
         </div>
-
         <div className="col-span-1 md:col-span-2 xl:col-span-1 xl:row-span-3">
-          <div className="grid-container">
-            <div className="rounded-3xl max-w-full max-h-[226px] flex justify-center items-center mt-5 mb-2">
-              <Globe
-                height={276}
-                width={276}
-                backgroundColor="rgba(0,0,0,0)"
-                backgroundImageOpacity={0.5}
-                showAtmosphere
-                showGraticules
-                globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
-                bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-              />
-            </div>
-            <div>
-              <h4 className="grid-headtext">Effective Remote Collaboration</h4>
-              <p className="grid-subtext">
-                As a London-based developer, I embrace the flexibility of remote
-                work across various time zones. I believe that strong
-                communication and a collaborative spirit are essential for
-                delivering successful projects. I&apos;m well-versed in using
-                remote work tools and best practices, ensuring that every team
-                member feels connected and engaged, no matter where they are.
-              </p>
-            </div>
-          </div>
+          <Collaboration />
         </div>
-
         <div className="xl:col-span-2 md:col-span-2 xl:row-span-2">
           <div className="grid-container flex justify-center items-center">
             <img
-              src="https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/grid-2.png"
+              src="/assets/grid-2.png"
               alt="grid-2"
               className="max-w-full  max-h-full object-contain"
               loading="lazy"
             />
-            <div id="tech-section" ref={(el) => markerRef.current.push(el)}>
-              <h4 className="grid-headtext ">Tech Stack</h4>
-              <p className="grid-subtext">
-                <span className="relative inline-block font-bold text-yellow-500 marker">
-                  JavaScript
-                </span>{" "}
-                and{" "}
-                <span className="relative inline-block font-bold text-cyan-600 marker">
-                  React
-                </span>{" "}
-                are my go-to tools for building engaging, user-friendly
-                websites. I use{" "}
-                <span className="relative inline-block  font-bold text-blue-500 marker">
-                  CSS
-                </span>{" "}
-                to perfect the design, ensuring everything looks polished and
-                responsive across all devices. Right now, I'm diving into{" "}
-                <span className="relative inline-block font-bold px-1 rounded  bg-zinc-950 text-zinc-50 marker">
-                  Next.js
-                </span>{" "}
-                to improve performance,{" "}
-                <span className="relative inline-block font-bold text-blue-400 marker">
-                  TypeScript
-                </span>{" "}
-                to write cleaner, more maintainable code and{" "}
-                <span className="relative inline-block font-bold text-cyan-300 marker">
-                  Tailwind CSS
-                </span>{" "}
-                for faster, custom styling. I love the energy that comes from
-                learning these tools and can’t wait to see how they’ll shape my
-                projects and the experiences I create for users.
-              </p>
-
-              {/* Tech Stack Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 tech-grid">
-                {/* Frontend Section*/}
-                <div className="tech-section">
-                  <h5 className="tech-section-title">Frontend</h5>
-                  <ul className="tech-list">
-                    <li>JavaScript</li>
-                    <li>TypeScript</li>
-                    <li>React</li>
-                    <li>React Native</li>
-                    <li>Next.js</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>Tailwind CSS</li>
-                    <li>Sass</li>
-                    <li>Three.js</li>
-                    <li>GSAP</li>
-                    <li>DOM</li>
-                    <li>jQuery</li>
-                    <li>Responsive Design</li>
-                  </ul>
-                </div>
-
-                {/* Backend Section  & Tools Section */}
-                <div className="tech-section">
-                  <h5 className="tech-section-title">Backend</h5>
-                  <ul className="tech-list">
-                    <li>Node.js</li>
-                    <li>Express.js</li>
-                    <li>API</li>
-                  </ul>
-                  <br />
-                  <h5 className="tech-section-title">Tools</h5>
-                  <ul className="tech-list">
-                    <li>Git</li>
-                    <li>Linux</li>
-                    <li>NPM</li>
-                    <li>Slack</li>
-                    <li>Trello</li>
-                    <li>Jest</li>
-                    <li>Supertest</li>
-                    <li>Vite</li>
-                    <li>WAVE</li>
-                    <li>Lighthouse</li>
-                    <li>Netlify</li>
-                    <li>Render</li>
-                    <li>Excalidraw</li>
-                  </ul>
-                </div>
-
-                {/* Databases Section & Workflows & Design Section & UI Section */}
-                <div className="tech-section">
-                  <h5 className="tech-section-title">Databases</h5>
-                  <ul className="tech-list">
-                    <li>SQL</li>
-                    <li>PostgreSQL</li>
-                    <li>MongoDB</li>
-                    <li>Supabase</li>
-                  </ul>
-                  <br />
-                  <h5 className="tech-section-title">Workflows</h5>
-                  <ul className="tech-list">
-                    <li>Agile</li>
-                    <li>Scrum</li>
-                    <li>Paired Programming</li>
-                  </ul>
-                  <br />
-                  <h5 className="tech-section-title">Design</h5>
-                  <ul className="tech-list">
-                    <li>Figma</li>
-                    <li>Adobe Illustrator</li>
-                    <li>Adobe Photoshop</li>
-                    <li>Adobe After Effects</li>
-                    <li>Procreate</li>
-                  </ul>
-                  <br />
-                  <h5 className="tech-section-title">UI/UX</h5>
-                  <ul className="tech-list">
-                    <li>UI Design</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+            <Suspense fallback={<div>Loading Tech Stack...</div>}>
+              <TechStack />
+            </Suspense>
           </div>
         </div>
-
         <div className="xl:col-span-1 xl:row-span-1">
           <div className="grid-container flex justify-center items-center">
             <img
-              src="https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/doughnut.png"
+              src="/assets/doughnut.png"
               alt="My Blender Doughnut"
               className="max-w-full max-h-[150px] object-contain sm:object-top mt-5 mb-2"
               loading="lazy"
             />
-
             <div>
               <h4 className="grid-headtext">Fun Fact</h4>
               <p className="grid-subtext">
@@ -330,16 +103,14 @@ const About = () => {
             </div>
           </div>
         </div>
-
         <div className="xl:col-span-1 xl:row-span-1">
           <div className="grid-container flex justify-center items-center">
             <img
-              src="https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/grid-4.png"
+              src="/assets/grid-4.png"
               alt="grid-4"
               className="w-full max-h-[276px] object-contain sm:object-top mt-5 mb-2"
               loading="lazy"
             />
-
             <div className="space-y-2">
               <div className="copy-container" onClick={handleCopy}>
                 <img
@@ -348,7 +119,6 @@ const About = () => {
                   className="w-10 h-10"
                   loading="lazy"
                 />
-
                 <p className=" font-medium text-md text-gray_gradient text-white">
                   filosoho@gmail.com
                 </p>

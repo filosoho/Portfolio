@@ -9,13 +9,12 @@ const Footer = () => {
             rel="noopener noreferrer"
           >
             <img
-              src="https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/github.png"
+              src="/assets/github.png"
               alt="github"
               className="w-10 h-10 sm:w-full sm:h-full"
             />
           </a>
         </div>
-
         <div className="social-icon">
           <a
             href="https://www.linkedin.com/in/filosoho"
@@ -23,7 +22,7 @@ const Footer = () => {
             rel="noopener noreferrer"
           >
             <img
-              src="https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/linkedin.png"
+              src="/assets/linkedin.png"
               alt="linkedin"
               className="w-10 h-10 sm:w-full sm:h-full"
             />

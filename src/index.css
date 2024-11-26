@@ -26,6 +26,7 @@ button {
 @layer utilities {
   #home {
     min-height: 800px;
+    max-width: 1200px;
     @media (max-width: 1200px) {
       min-height: 700px;
     }
@@ -33,7 +34,7 @@ button {
       min-height: 500px;
     }
     @media (max-width: 480px) {
-      min-height: 400px;
+      min-height: 500px;
     }
   }
 
@@ -64,11 +65,11 @@ button {
     }
     @media (max-width: 480px) {
       background-position: 50% 50%;
-      min-height: 400px;
+      min-height: 500px;
     }
   }
   .header.visible {
-    background-image: url("https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/header/space-console-sci-fi.png");
+    background-image: url("/assets/header/space-console-sci-fi.png");
   }
   .header.hidden {
     background-image: none;
@@ -291,13 +292,7 @@ button {
   }
 
   .controls {
-    position: relative;
-    background-image: url("https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/header/controls.png");
-    background-size: cover;
-    background-blend-mode: overlay;
-    background-repeat: no-repeat;
     background-position: 100% -180%;
-    border-radius: 15px;
     width: 500px;
     height: 500px;
     margin-top: -2rem;
@@ -542,7 +537,6 @@ button {
     }
   }
   /* contact section */
-
   .contact-bg {
     border-radius: 10px;
     background-color: #0e0e10;
@@ -572,7 +566,6 @@ button {
   }
 
   /*  footer */
-
   .social-icon {
     @apply w-12 h-12  flex justify-center items-center;
   }

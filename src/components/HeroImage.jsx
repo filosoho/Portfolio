@@ -9,7 +9,7 @@ const HeroImage = React.forwardRef(({ onClick, ...props }, ref) => {
   const { nodes, materials } = useGLTF("/models/low_poly_sci-fi_tablet.glb");
   const groupRef = useRef();
 
-  const [scale, setScale] = useState(5);
+  const [scale, setScale] = useState(3);
   const [position, setPosition] = useState([0, -1.5, 0]);
 
   function useDebounce(value, delay) {
@@ -31,11 +31,10 @@ const HeroImage = React.forwardRef(({ onClick, ...props }, ref) => {
   const debouncedWidth = useDebounce(window.innerWidth, 150);
 
   useEffect(() => {
-    // Handle resize logic within the effect
     const handleResize = () => {
       if (debouncedWidth <= 480) {
         setScale(8);
-        setPosition([0, -22, 0]);
+        setPosition([0, -18, 0]);
       } else if (debouncedWidth <= 640) {
         setScale(5);
         setPosition([0, -10, 0]);
@@ -50,11 +49,8 @@ const HeroImage = React.forwardRef(({ onClick, ...props }, ref) => {
         setPosition([0, -1.5, 0]);
       }
     };
-
     handleResize();
-
     window.addEventListener("resize", handleResize);
-
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 

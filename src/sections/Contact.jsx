@@ -20,7 +20,6 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     setLoading(true);
     try {
       await emailjs.send(
@@ -35,10 +34,8 @@ const Contact = () => {
         },
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
-
       setLoading(false);
       alert("Your message has been sent!");
-
       setForm({
         name: "",
         email: "",
@@ -64,7 +61,6 @@ const Contact = () => {
             <br />
             Let’s connect and share ideas.
           </p>
-
           <form
             ref={formRef}
             onSubmit={handleSubmit}
@@ -72,7 +68,6 @@ const Contact = () => {
           >
             <label className="space-y-3">
               <span className="field-label">Full Name</span>
-
               <input
                 type="text"
                 id="name"
@@ -101,7 +96,6 @@ const Contact = () => {
             </label>
             <label className="space-y-3">
               <span className="field-label">Your Message</span>
-
               <textarea
                 id="message"
                 name="message"
@@ -113,10 +107,8 @@ const Contact = () => {
                 placeholder="Hi, I'm interested in..."
               />
             </label>
-
             <button type="submit" className="field-btn" disabled={loading}>
               {loading ? "Sending..." : "Send Message"}
-
               <img
                 src="/assets/arrow-up.png"
                 alt="arrow up"

@@ -83,19 +83,18 @@ const Matrix = ({
     const updateCanvasSize = () => {
       const container = canvasRef.current.parentElement;
       const width = container.clientWidth;
-
       if (width <= 480) {
-        setDimensions({ width, height: 291 });
+        setDimensions({ width, height: 360 });
       } else if (width <= 640) {
         setDimensions({ width, height: 338 });
       } else if (width <= 767) {
         setDimensions({ width, height: 528 });
       } else if (width <= 1024) {
         setDimensions({ width, height: 528 });
-      } else if (width <= 1200) {
+      } else if (width < 1200) {
         setDimensions({ width, height: 528 });
       } else {
-        const aspectRatio = 1440 / 680;
+        const aspectRatio = 1440 / 760;
         const newHeight = width / aspectRatio;
         setDimensions({ width, height: newHeight });
       }

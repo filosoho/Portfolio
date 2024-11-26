@@ -20,15 +20,15 @@ const Loader = () => (
 const App = () => {
   return (
     <main className="max-w-7xl mx-auto">
+      <Navbar />
       <Suspense fallback={<Loader />}>
-        <Navbar />
         <Hero />
         <About />
         <Projects />
         <MyApproach />
         <Contact />
-        <Footer />
       </Suspense>
+      <Footer />
     </main>
   );
 };

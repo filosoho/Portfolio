@@ -1,13 +1,14 @@
-import { Suspense, useState } from "react";
+import { Suspense, useState, useCallback } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
-
+import { OrbitControls, AdaptiveDpr, AdaptiveEvents } from "@react-three/drei";
 import Developer from "../components/Developer.jsx";
-import CanvasLoader from "../components/Loading.jsx";
+import CanvasLoader from "../components/CanvasLoader.jsx";
 import { myApproachValues } from "../constants/index.js";
+import { useDebounce } from "../hooks/useDebounce";
 
 const MyApproach = () => {
   const [animationName, setAnimationName] = useState("idle");
+  const debouncedAnimationName = useDebounce(animationName, 500);
 
   return (
     <section className="c-space my-20" id="myApproach">
@@ -52,6 +53,8 @@ const MyApproach = () => {
           </div>
           <div className="my-approach-canvas canvas-full-height">
             <Canvas>
+              <AdaptiveDpr pixelated />
+              <AdaptiveEvents />
               <ambientLight intensity={3} />
               <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
               <directionalLight position={[10, 10, 10]} intensity={1} />
@@ -61,7 +64,7 @@ const MyApproach = () => {
                   scale={2.5}
                   rotation={[-1.5, 0, 0]}
                   position={[0.1, -2, 0]}
-                  animationName={animationName}
+                  animationName={debouncedAnimationName}
                 />
               </Suspense>
             </Canvas>

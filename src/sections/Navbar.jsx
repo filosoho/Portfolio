@@ -1,10 +1,41 @@
 import { useState } from "react";
-import { navLinks } from "../constants/index.js";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleMenu = () => setIsOpen((prevIsOpen) => !prevIsOpen);
+
+  const navLinks = [
+    {
+      id: 1,
+      name: "Home",
+      href: "#home",
+    },
+    {
+      id: 2,
+      name: "About",
+      href: "#about",
+    },
+    {
+      id: 3,
+      name: "Projects",
+      href: "#projects",
+    },
+    {
+      id: 4,
+      name: "My Approach",
+      href: "#myApproach",
+    },
+    {
+      id: 5,
+      name: "GitHub",
+      href: "https://github.com/filosoho",
+    },
+    {
+      id: 6,
+      name: "Contact",
+      href: "#contact",
+    },
+  ];
 
   const NavItems = () => {
     return (
@@ -21,14 +52,13 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0  bg-transparent backdrop-filter backdrop-blur-md z-[99999]">
+    <header className="fixed top-0 left-0 right-0 bg-transparent backdrop-filter backdrop-blur-md z-[99999]">
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center py-5 mx-auto c-space">
           <img
             className="logo-img"
-            src="https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/project-logo7.png"
+            src="/assets/project-logo7.png"
             alt="filosoho space logo"
-            loading="lazy"
           />
           <button
             onClick={toggleMenu}
@@ -36,23 +66,16 @@ const Navbar = () => {
             aria-label="Toggle menu"
           >
             <img
-              src={
-                isOpen
-                  ? "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/close.png"
-                  : "https://raw.githubusercontent.com/filosoho/Portfolio/refs/heads/main/public/assets/menu.png"
-              }
+              src={isOpen ? "/assets/close.png" : "/assets/menu.png"}
               alt="menu toggle"
               className="w-10 h-6"
-              loading="lazy"
             />
           </button>
-
           <nav className="sm:flex hidden">
             <NavItems />
           </nav>
         </div>
       </div>
-
       <div className={`nav-sidebar ${isOpen ? "max-h-screen" : "max-h-0"}`}>
         <nav className="p-5">
           <NavItems />
