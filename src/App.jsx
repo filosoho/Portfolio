@@ -1,9 +1,8 @@
 import React, { Suspense } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 
-import Navbar from "./sections/Navbar";
-import Hero from "./sections/Hero";
-
+const Navbar = React.lazy(() => import("./sections/Navbar"));
+const Hero = React.lazy(() => import("./sections/Hero"));
 const About = React.lazy(() => import("./sections/About"));
 const Projects = React.lazy(() => import("./sections/Projects"));
 const MyApproach = React.lazy(() => import("./sections/MyApproach"));
