@@ -12,6 +12,13 @@
     />
     <link
       rel="preload"
+      as="image"
+      href="/assets/hero.png"
+      media="(max-width: 480px)"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
       as="style"
       href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;700&display=swap"
     />
@@ -21,7 +28,12 @@
       media="print"
       onload="this.media='all'"
     />
-    <link rel="stylesheet" href="/src/index.css" defer />
+    <link
+      rel="stylesheet"
+      href="/src/index.css"
+      media="print"
+      onload="this.media='all'"
+    />
     <link rel="icon" type="image/svg+xml" href="/assets/project-logo7.png" />
 
     <title>Filosoho Space</title>

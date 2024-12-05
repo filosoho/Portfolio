@@ -1,10 +1,11 @@
-import { Suspense, useState, useCallback } from "react";
+import React, { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, AdaptiveDpr, AdaptiveEvents } from "@react-three/drei";
-import Developer from "../components/Developer.jsx";
-import CanvasLoader from "../components/CanvasLoader.jsx";
+import Loader from "../components/Loader";
+const Developer = React.lazy(() => import("../components/Developer"));
 import { myApproachValues } from "../constants/index.js";
 import { useDebounce } from "../hooks/useDebounce";
+import "../styles.css";
 
 const MyApproach = () => {
   const [animationName, setAnimationName] = useState("idle");
@@ -59,7 +60,7 @@ const MyApproach = () => {
               <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
               <directionalLight position={[10, 10, 10]} intensity={1} />
               <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
-              <Suspense fallback={<CanvasLoader />}>
+              <Suspense fallback={<Loader />}>
                 <Developer
                   scale={2.5}
                   rotation={[-1.5, 0, 0]}

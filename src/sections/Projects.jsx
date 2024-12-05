@@ -1,17 +1,15 @@
+import React, { Suspense, useState, useEffect, useRef } from "react";
 import { myProjects } from "../constants";
-import { Suspense, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Center, OrbitControls } from "@react-three/drei";
-import CanvasLoader from "../components/CanvasLoader";
-import DemoComputer from "../components/DemoComputer";
-import "../styles.css";
-
-const projectCount = myProjects.length;
-
+import Loader from "../components/Loader";
+const DemoComputer = React.lazy(() => import("../components/DemoComputer"));
 const Projects = () => {
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
 
+  const canvasRef = useRef(null);
   const currentProject = myProjects[selectedProjectIndex];
+  const projectCount = myProjects.length;
 
   const handleNavigation = (direction) => {
     setSelectedProjectIndex((prevIndex) => {
@@ -22,6 +20,39 @@ const Projects = () => {
       }
     });
   };
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const handleContextLoss = (event) => {
+      event.preventDefault();
+      console.log("WebGL context lost. Attempting to restore... 🚨 ");
+      setTimeout(() => {
+        try {
+          const gl = canvas.getContext("webgl");
+          if (gl) {
+            gl.restore();
+            console.log("WebGL context restored. ✅ ");
+          }
+        } catch (error) {
+          console.error("Failed to restore WebGL context:⛔ ", error);
+        }
+      }, 1000);
+    };
+
+    const handleContextRestored = () => {
+      console.log("WebGL context has been restored. ✅✅ ");
+    };
+
+    canvas.addEventListener("webglcontextlost", handleContextLoss);
+    canvas.addEventListener("webglcontextrestored", handleContextRestored);
+
+    return () => {
+      canvas.removeEventListener("webglcontextlost", handleContextLoss);
+      canvas.removeEventListener("webglcontextrestored", handleContextRestored);
+    };
+  }, []);
 
   return (
     <section className="c-space my-20" id="projects">
@@ -142,11 +173,11 @@ const Projects = () => {
           </div>
         </div>
         <div className="flex flex-col justify-center items-center border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
-          <Canvas>
+          <Canvas ref={canvasRef}>
             <ambientLight intensity={0.5} />
             <directionalLight position={[50, 30, 5]} />
             <Center>
-              <Suspense fallback={<CanvasLoader />}>
+              <Suspense fallback={<Loader />}>
                 <group scale={0.4} position={[0, 0, 0]} rotation={[0, 0, 0]}>
                   <DemoComputer texture={currentProject.texture} />
                 </group>

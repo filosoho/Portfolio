@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
-import HeroImage from "../components/HeroImage";
+const HeroImage = React.lazy(() => import("../components/HeroImage"));
 import CanvasLoader from "../components/CanvasLoader";
 import { useMediaQuery } from "react-responsive";
-import { calculateSizes } from "../constants/index.js";
 import HeroCamera from "../components/HeroCamera";
 import Button from "../components/Button";
 import BtnShowMatrix from "../components/BtnShowMatrix.jsx";
@@ -15,6 +14,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { CSSPlugin } from "gsap/CSSPlugin";
+import ErrorBoundary from "../components/ErrorBoundary";
+import "../styles.css";
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin, CSSPlugin);
 
@@ -46,12 +47,37 @@ const Hero = () => {
   const floatingRef = useRef();
   const heroImageRef = useRef();
 
+  const calculateSizes = (isSmall, isMedium, isMobile, isTablet) => {
+    return {
+      deskScale: isSmall ? 0.43 : isMobile ? 0.65 : 1,
+      deskPosition: isSmall
+        ? [0.35, 5, 3.5]
+        : isMedium
+        ? [0.35, 3, 3.5]
+        : isMobile
+        ? [0.35, 0, 3.5]
+        : isTablet
+        ? [0.35, -2, 3.5]
+        : [0.35, -2, 3.5],
+      deskRotation: isSmall
+        ? [0.15, 0, 0]
+        : isMedium
+        ? [0.1, 0, 0]
+        : isMobile
+        ? [-0.03, 0, 0]
+        : isTablet
+        ? [-0.1, 0, 0]
+        : [-0.1, 0, 0],
+    };
+  };
+
   const isSmall = useMediaQuery({ query: "(max-width: 480px)" });
   const isMedium = useMediaQuery({ query: "(max-width: 640px)" });
   const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
   const isTablet = useMediaQuery({
     query: "( min-width: 768px) and (max-width: 1024px)",
   });
+
   const isDesktop = useMediaQuery({ query: "(min-width: 1200px)" });
 
   const sizes = calculateSizes(isSmall, isMedium, isMobile, isTablet);
@@ -204,22 +230,24 @@ const Hero = () => {
         <section id="home" className="relative w-full">
           <div className="absolute inset-0 -z-10">
             <div style={{ marginTop: "70px" }}>
-              <Matrix
-                fontSizeMin={fontSizeMin}
-                fontSizeMax={fontSizeMax}
-                speed={speed}
-                colorSet={colorSet}
-                analogousColors={analogousColors}
-                hueColors={hueColors}
-                displayMode={displayMode}
-                animationState={animationState}
-                style={{
-                  cursor: "pointer",
-                  opacity: controlsVisible ? 0 : 1,
-                  visibility: controlsVisible ? "hidden" : "visible",
-                  transition: "opacity 2s ease, visibility 1s ease",
-                }}
-              />
+              <ErrorBoundary>
+                <Matrix
+                  fontSizeMin={fontSizeMin}
+                  fontSizeMax={fontSizeMax}
+                  speed={speed}
+                  colorSet={colorSet}
+                  analogousColors={analogousColors}
+                  hueColors={hueColors}
+                  displayMode={displayMode}
+                  animationState={animationState}
+                  style={{
+                    cursor: "pointer",
+                    opacity: controlsVisible ? 0 : 1,
+                    visibility: controlsVisible ? "hidden" : "visible",
+                    transition: "opacity 2s ease, visibility 1s ease",
+                  }}
+                />
+              </ErrorBoundary>
             </div>
           </div>
           <div className="flex items-center justify-center hero-container ">
@@ -277,30 +305,32 @@ const Hero = () => {
                     />
                   </div>
                 ) : (
-                  <Canvas className=" hero-canvas w-full h-full ">
-                    <Suspense fallback={<CanvasLoader />}>
-                      <PerspectiveCamera
-                        ref={cameraRef}
-                        makeDefault
-                        position={[0, 0, 30]}
-                      />
-                      <HeroCamera isMobile={isMobile}>
-                        <HeroImage
-                          ref={heroImageRef}
-                          camera={cameraRef.current}
-                          position={sizes.deskPosition}
-                          rotation={sizes.deskRotation}
-                          scale={sizes.deskScale}
-                          onClick={handleHeroImageClick}
-                          style={{
-                            cursor: "pointer",
-                          }}
+                  <ErrorBoundary>
+                    <Canvas className=" hero-canvas w-full h-full ">
+                      <Suspense fallback={<CanvasLoader />}>
+                        <PerspectiveCamera
+                          ref={cameraRef}
+                          makeDefault
+                          position={[0, 0, 30]}
                         />
-                      </HeroCamera>
-                      <ambientLight intensity={1} />
-                      <directionalLight position={[5, 2, 5]} intensity={2} />
-                    </Suspense>
-                  </Canvas>
+                        <HeroCamera isMobile={isMobile}>
+                          <HeroImage
+                            ref={heroImageRef}
+                            camera={cameraRef.current}
+                            position={sizes.deskPosition}
+                            rotation={sizes.deskRotation}
+                            scale={sizes.deskScale}
+                            onClick={handleHeroImageClick}
+                            style={{
+                              cursor: "pointer",
+                            }}
+                          />
+                        </HeroCamera>
+                        <ambientLight intensity={1} />
+                        <directionalLight position={[5, 2, 5]} intensity={2} />
+                      </Suspense>
+                    </Canvas>
+                  </ErrorBoundary>
                 )}
               </div>
               <section

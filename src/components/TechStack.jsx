@@ -1,4 +1,3 @@
-// TechStack.jsx
 import React, { useEffect, useRef, memo } from "react";
 import $ from "jquery";
 import {

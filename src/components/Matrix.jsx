@@ -105,6 +105,8 @@ const Matrix = ({
     return () => window.removeEventListener("resize", updateCanvasSize);
   }, []);
 
+  const intervalRef = useRef();
+
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
@@ -167,9 +169,13 @@ const Matrix = ({
       });
     };
 
-    const interval = setInterval(matrixEffect, speed);
+    intervalRef.current = setInterval(matrixEffect, speed);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(intervalRef.current);
+      canvas.width = 0;
+      canvas.height = 0;
+    };
   }, [
     fontSizeMin,
     fontSizeMax,

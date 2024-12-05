@@ -113,6 +113,7 @@ const Contact = () => {
                 src="/assets/arrow-up.png"
                 alt="arrow up"
                 className="field-btn-arrow"
+                loading="lazy"
               />
             </button>
           </form>
