@@ -1,5 +1,5 @@
 import React, { Suspense, useState, useEffect, useRef } from "react";
-import { myProjects } from "../constants";
+import { myProjects } from "../constants/myProjectsData.js";
 import { Canvas } from "@react-three/fiber";
 import { Center, OrbitControls } from "@react-three/drei";
 import Loader from "../components/Loader";

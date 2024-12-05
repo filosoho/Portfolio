@@ -3,7 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, AdaptiveDpr, AdaptiveEvents } from "@react-three/drei";
 import Loader from "../components/Loader";
 const Developer = React.lazy(() => import("../components/Developer"));
-import { myApproachValues } from "../constants/index.js";
+import { myApproachValues } from "../constants/myApproachData.js";
 import { useDebounce } from "../hooks/useDebounce";
 import "../styles.css";
 
