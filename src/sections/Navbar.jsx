@@ -56,7 +56,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center py-5 mx-auto c-space">
           <img
-            className="logo-img"
+            className="logo-img w-[60px] h-[60px]"
             src="/assets/project-logo7.png"
             alt="filosoho space logo"
           />
