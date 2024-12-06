@@ -62,7 +62,7 @@ const About = () => {
               loading="lazy"
             />
             <div>
-              <h4 className="grid-headtext">Fun Fact</h4>
+              <h3 className="grid-headtext">Fun Fact</h3>
               <p className="grid-subtext">
                 While learning Blender, I followed{" "}
                 <a

@@ -9,7 +9,7 @@ const JoyOfCoding = memo(() => (
       loading="lazy"
     />
     <div>
-      <h4 className="grid-headtext">The Joy of Coding</h4>
+      <h3 className="grid-headtext">The Joy of Coding</h3>
       <p className="grid-subtext">
         I see coding as an adventure, mixing creativity with the joy of
         discovering something new. Each project is a chance to solve puzzles and

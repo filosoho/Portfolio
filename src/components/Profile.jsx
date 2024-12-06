@@ -11,7 +11,7 @@ const Profile = memo(() => (
       />
     </div>
     <div>
-      <h4 className="grid-headtext">Hi, I&apos;m Anna</h4>
+      <h3 className="grid-headtext">Hi, I&apos;m Anna</h3>
       <p className="grid-subtext">
         <span className="about-highlight font-bold text-white">
           Front End Developer

@@ -34,7 +34,7 @@ const TechStack = memo(() => {
 
   return (
     <div id="tech-section" ref={(el) => markerRef.current.push(el)}>
-      <h4 className="grid-headtext ">Tech Stack</h4>
+      <h3 className="grid-headtext ">Tech Stack</h3>
       <p className="grid-subtext">
         <span className="relative inline-block font-bold text-yellow-500 marker">
           JavaScript
@@ -69,7 +69,7 @@ const TechStack = memo(() => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 tech-grid">
         {/* Frontend Section*/}
         <div className="tech-section">
-          <h5 className="tech-section-title">Frontend</h5>
+          <h4 className="tech-section-title">Frontend</h4>
           <ul className="tech-list">
             <li>JavaScript</li>
             <li>TypeScript</li>
@@ -90,14 +90,14 @@ const TechStack = memo(() => {
 
         {/* Backend Section  & Tools Section */}
         <div className="tech-section">
-          <h5 className="tech-section-title">Backend</h5>
+          <h4 className="tech-section-title">Backend</h4>
           <ul className="tech-list">
             <li>Node.js</li>
             <li>Express.js</li>
             <li>API</li>
           </ul>
           <br />
-          <h5 className="tech-section-title">Tools</h5>
+          <h4 className="tech-section-title">Tools</h4>
           <ul className="tech-list">
             <li>Git</li>
             <li>Linux</li>
@@ -117,7 +117,7 @@ const TechStack = memo(() => {
 
         {/* Databases Section & Workflows & Design Section & UI Section */}
         <div className="tech-section">
-          <h5 className="tech-section-title">Databases</h5>
+          <h4 className="tech-section-title">Databases</h4>
           <ul className="tech-list">
             <li>SQL</li>
             <li>PostgreSQL</li>
@@ -125,14 +125,14 @@ const TechStack = memo(() => {
             <li>Supabase</li>
           </ul>
           <br />
-          <h5 className="tech-section-title">Workflows</h5>
+          <h4 className="tech-section-title">Workflows</h4>
           <ul className="tech-list">
             <li>Agile</li>
             <li>Scrum</li>
             <li>Paired Programming</li>
           </ul>
           <br />
-          <h5 className="tech-section-title">Design</h5>
+          <h4 className="tech-section-title">Design</h4>
           <ul className="tech-list">
             <li>Figma</li>
             <li>Adobe Illustrator</li>
@@ -141,7 +141,7 @@ const TechStack = memo(() => {
             <li>Procreate</li>
           </ul>
           <br />
-          <h5 className="tech-section-title">UI/UX</h5>
+          <h4 className="tech-section-title">UI/UX</h4>
           <ul className="tech-list">
             <li>UI Design</li>
           </ul>

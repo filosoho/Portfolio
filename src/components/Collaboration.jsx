@@ -28,7 +28,7 @@ const Collaboration = memo(() => {
         )}
       </div>
       <div>
-        <h4 className="grid-headtext">Effective Remote Collaboration</h4>
+        <h3 className="grid-headtext">Effective Remote Collaboration</h3>
         <p className="grid-subtext">
           As a London-based developer, I embrace the flexibility of remote work
           across various time zones. I believe that strong communication and a
