@@ -10,7 +10,7 @@ const Footer = () => {
           >
             <img
               src="/assets/github.png"
-              alt="github"
+              alt="github icon"
               className="w-10 h-10 sm:w-full sm:h-full"
               loading="lazy"
             />
@@ -24,7 +24,7 @@ const Footer = () => {
           >
             <img
               src="/assets/linkedin.png"
-              alt="linkedin"
+              alt="linkedin icon"
               className="w-10 h-10 sm:w-full sm:h-full"
               loading="lazy"
             />
