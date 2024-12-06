@@ -120,7 +120,7 @@ const Projects = () => {
                   <img
                     src="/assets/github.png"
                     className="w-10 h-10"
-                    alt="github"
+                    alt="github icon"
                     loading="lazy"
                   />
                 </a>
