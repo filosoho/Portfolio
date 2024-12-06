@@ -152,7 +152,7 @@ const Projects = () => {
               <img
                 src="/assets/left-arrow.png"
                 alt="arrow pointing left to the previous project"
-                className="w-8 h-4 sm:w-10 sm:h-6 mr-2"
+                className="w-full h-4 sm:w-full sm:h-6 mr-2"
                 loading="lazy"
               />{" "}
               Prev
@@ -166,7 +166,7 @@ const Projects = () => {
               <img
                 src="/assets/right-arrow.png"
                 alt="arrow pointing right to next project"
-                className="w-8 h-4 sm:w-10 sm:h-6 ml-2"
+                className="w-full h-4 sm:w-full sm:h-6 ml-2"
                 loading="lazy"
               />{" "}
             </button>
