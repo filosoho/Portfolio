@@ -428,7 +428,6 @@ button {
     flex-direction: column;
   }
 
-
   /* projects section  */
   .arrow-btn {
     @apply w-10 h-10 p-3 cursor-pointer active:scale-95 transition-all rounded-full arrow-gradient;
@@ -541,8 +540,8 @@ button {
   .contact-bg {
     border-radius: 10px;
     background-color: #0e0e10;
-    height: 800px;
     padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 
   .contact-container {
