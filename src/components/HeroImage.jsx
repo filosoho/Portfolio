@@ -72,20 +72,24 @@ const HeroImage = React.forwardRef(({ onClick, ...props }, ref) => {
     >
       <group position={position} rotation={[0, 0, 0]} scale={scale}>
         <group rotation={[Math.PI / 2, 0, 0]}>
-          <mesh castShadow receiveShadow>
-            <mesh
-              geometry={nodes.defaultMaterial.geometry}
-              material={materials.MAT_TabletGlass}
-            />
-            <mesh
-              geometry={nodes.defaultMaterial_1.geometry}
-              material={materials.MAT_OpacityText}
-            />
-            <mesh
-              geometry={nodes.defaultMaterial_2.geometry}
-              material={materials.MAT_Tablet}
-            />
-          </mesh>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.defaultMaterial.geometry}
+            material={materials.MAT_TabletGlass}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.defaultMaterial001.geometry}
+            material={materials.MAT_OpacityText}
+          />
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.defaultMaterial002.geometry}
+            material={materials.MAT_Tablet}
+          />
         </group>
       </group>
     </group>
