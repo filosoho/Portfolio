@@ -428,37 +428,6 @@ button {
     flex-direction: column;
   }
 
-  .marker {
-    position: relative;
-    text-decoration: none;
-    display: inline-block;
-    white-space: nowrap;
-
-    & svg {
-      position: absolute;
-      left: 0;
-      top: -50%;
-      right: 0;
-      margin-left: auto;
-      margin-right: auto;
-      pointer-events: none;
-
-      @media (max-width: 1200px) {
-        display: none;
-      }
-    }
-    & path {
-      transition: stroke-dashoffset 420ms linear;
-      stroke-width: 0.5;
-      stroke: white;
-      fill: none;
-      stroke-linecap: round;
-      transform-origin: center;
-    }
-    &:hover path {
-      stroke-dashoffset: 0;
-    }
-  }
 
   /* projects section  */
   .arrow-btn {

@@ -1,37 +1,43 @@
 import React, { useEffect, useRef, memo } from "react";
-import $ from "jquery";
 import {
   createSVGElement,
   createPathElement,
   setCircleVisibility,
   circlePath,
 } from "../sections/utils/marker.js";
+import "../styles.css";
 
 const TechStack = memo(() => {
   const markerRef = useRef([]);
 
   useEffect(() => {
-    const markers = $(".marker");
-    markers.each(function () {
-      const marker = $(this);
-      const width = marker.width();
-      const height = 2 * marker.height();
+    const markers = document.querySelectorAll(".marker");
+    markers.forEach((marker) => {
+      const width = marker.offsetWidth;
+      const height = 2 * marker.offsetHeight;
       const svg = createSVGElement(width, height, 1, 1);
-      marker[0].appendChild(svg);
+      marker.appendChild(svg);
+
       const path = createPathElement();
       svg.appendChild(path);
+
       setCircleVisibility(path, false);
-      marker.mouseover(function () {
-        setCircleVisibility(path, true);
-        const newPath = circlePath(-0.15, 0.05, 150, 190, 0.05, 0.3);
-        $(path).attr({ d: newPath });
-      });
-      marker.mouseout(() =>
-        setTimeout(() => setCircleVisibility(path, false), 300)
-      );
+
+      if (!marker.dataset.listenerAttached) {
+        marker.addEventListener("mouseover", () => {
+          setCircleVisibility(path, true);
+          const newPath = circlePath(-0.15, 0.05, 150, 190, 0.05, 0.3);
+          path.setAttribute("d", newPath);
+        });
+
+        marker.addEventListener("mouseout", () => {
+          setTimeout(() => setCircleVisibility(path, false), 300);
+        });
+
+        marker.dataset.listenerAttached = true;
+      }
     });
   }, []);
-
   return (
     <div id="tech-section" ref={(el) => markerRef.current.push(el)}>
       <h3 className="grid-headtext ">Tech Stack</h3>
@@ -64,7 +70,6 @@ const TechStack = memo(() => {
         these tools and can’t wait to see how they’ll shape my projects and the
         experiences I create for users.
       </p>
-
       {/* Tech Stack Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 tech-grid">
         {/* Frontend Section*/}

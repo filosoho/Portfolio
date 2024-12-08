@@ -69,7 +69,7 @@ const About = () => {
                   href="https://youtu.be/TPrnSACiTJ4?si=6HAIk38iDdn0FVoq"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-500 hover:underline hover:text-blue-700"
+                  className="text-blue-500 hover:underline hover:text-blue-400"
                 >
                   Andrew Price&apos;s legendary doughnut tutorial
                 </a>{" "}
@@ -86,7 +86,7 @@ const About = () => {
                   href="https://andrewprice.art/17731-first-steps"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-yellow-500 hover:underline hover:text-orange-500"
+                  className="text-yellow-500 hover:underline hover:text-orange-400"
                 >
                   Group Doughnut
                 </a>
@@ -95,7 +95,7 @@ const About = () => {
                   href="https://andrewprice.art/17731-first-steps/donut/8233"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-pink-500 hover:underline hover:text-pink-700"
+                  className="text-pink-500 hover:underline hover:text-pink-400"
                 >
                   My Doughnut
                 </a>
