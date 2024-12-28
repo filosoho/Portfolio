@@ -216,7 +216,7 @@ export const myProjects = [
     desc: "Filosoho Space is my personal website and online portfolio where I showcase my work and connect with developers and enthusiasts. Building this website helped me refine my front-end development skills, as I focused on crafting a user-friendly experience that highlights my projects in a clean, minimalist design.",
     subdesc: ` Using HTML, CSS and JavaScript, I ensured the site was visually appealing and easy to navigate while keeping performance in mind. A significant part of the project was optimizing the design to be responsive, allowing users to seamlessly browse the site on various devices. I also paid close attention to accessibility, making sure that all users, regardless of their needs, could easily interact with the site. By focusing on best practices in web development, such as semantic HTML and mobile-first design, I was able to create a website that not only looks good but also functions efficiently. Throughout this project, I praqcticed my skills in layout design, performance optimization and making sure the site loads quickly and remains functional. Filosoho Space reflects my commitment to clean, accessible and high-quality web development while offering a space to share my work and connect with like-minded people.`,
     button: "Filosoho Space",
-    href: "https://filosoho.space/",
+    href: "https://filosohospace.netlify.app",
     texture: "/textures/project/project7.avif",
     logo: "/assets/project-logo7.png",
     alt: "Filosoho Space logo - black circle with yellow white and gray circels in the middle",
