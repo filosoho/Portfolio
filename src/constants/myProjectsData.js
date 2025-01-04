@@ -5,7 +5,7 @@ export const myProjects = [
     subdesc: `This project is one of my most technically challenging, built with React for the frontend and Node.js for the backend. I designed a RESTful API with Express and PostgreSQL, ensuring smooth communication between the client and server. On the frontend, I used React Router for navigation and the Context API for state management. Axios was used for making API requests, ensuring efficient and secure communication with the backend. Custom hooks helped manage state efficiently throughout the app. I also focused on creating a responsive, user-friendly interface that works seamlessly across mobile, tablet, and desktop. The backend service mimics real-world applications like Reddit, providing an API that handles CRUD operations for articles, comments, users, and topics. This approach ensures the platform is scalable and ready for real-world usage. NC NEWS is an example of my ability to build scalable, feature-rich applications, showcasing my skills in both front-end and back-end development.`,
     button: "NC NEWS",
     repo: "https://github.com/filosoho/nc-news",
-    href: "https://fe-nc-news-gui8.onrender.com/",
+    href: "https://fe-nc-news-sigma.vercel.app",
     texture: "/textures/project/project1.avif",
     logo: "/assets/project-logo1.svg",
     alt: "NC NEWS logo - newspaper icon",
