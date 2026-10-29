@@ -4,7 +4,7 @@ This repository contains a dynamic, visually engaging personal portfolio built w
 
 ## Deployed Version
 
-The live version is hosted at: [filosoho.space](https://filosoho-portfolio.netlify.app/).
+The live version is hosted at: [https://filosoho-portfolio.netlify.app/](https://filosoho-portfolio.netlify.app/).
 
 ## Overview
 
