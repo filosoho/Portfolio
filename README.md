@@ -1,4 +1,4 @@
-# Portfolio
+# Portfolio II
 
 This repository contains a dynamic, visually engaging personal portfolio built with React, Three.js and Tailwind CSS. It’s designed to showcase my projects, skills and development approach in an interactive and modern format.
 
